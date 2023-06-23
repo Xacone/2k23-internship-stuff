@@ -9,15 +9,23 @@ containers = client.containers.list()
 images = client.images.list()
 
 headers = {
-    "Authorization": "Bearer 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"
+    "Authorization": "Bearer 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"
 }
 
 docker_files = ['.dockerignore', 'dockerfile', 'Dockerfile', 'docker-compose.yml']
 maven_files = ['mvnw.cmd', 'pom.xml', "mvnw"]
 
 
+def owasp_dependency_check(target_file):
+    print("todo")
+
+
+def terraform_scan_img(target):
+    print("todo")
+
+
 def trivy_scan_img(img_name):
-    command = f"trivy image --format json --output trivy_report_{img_name}.json {img_name}"
+    command = f"trivy image --format json --output trivy_report_{img_name.replace('/', '_')}.json {img_name}"
     output = subprocess.check_output(command, shell=True, stderr=subprocess.STDOUT, text=True)
     print(output)
 
@@ -42,6 +50,9 @@ def arbre_recursif(link, root, indent=" "):
 
 
 for container in containers:
+
+    dockerised = False
+
     container_id = container.id
     container_name = container.name
     container_image = container.image.attrs['RepoTags'][0]
@@ -50,7 +61,7 @@ for container in containers:
     print(f"Container ID: {container_id}")
     print(f"Container Name: {container_name}")
     print(f"Container Image: {container_image}")
-    trivy_scan_img(container_name)
+    trivy_scan_img(container_image)
     print(f"Container Image Location: {container_image_location}")
 
     splited_img_loc = container_image_location.split("/")
