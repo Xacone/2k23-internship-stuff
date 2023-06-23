@@ -17,6 +17,7 @@ maven_files = ['mvnw.cmd', 'pom.xml', "mvnw"]
 
 
 def owasp_dependency_check(target_file):
+    # ./dependency-check --project /home/yazid/processing-storage-unit/pom.xml --scan . --format XML
     print("todo")
 
 
