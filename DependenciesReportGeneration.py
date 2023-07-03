@@ -27,8 +27,10 @@ def perform_dpcheck_scan(dir):
     dpcheck_generated_files_names.append(file_name)
     cmd = f"/home/yazid/Downloads/dependency-check/bin/dependency-check -s {dir} -n -f JSON -o {file_name}"
     debut_dpcheck = time.time() * 1000
-    output = subprocess.check_output(cmd, shell=True, stderr=subprocess.STDOUT, text=True)
-
+    try:
+        output = subprocess.check_output(cmd, shell=True, stderr=subprocess.STDOUT, text=True)
+    except Exception:
+        print("bon")
     fin_dpcheck = time.time() * 1000
     print("Dpcheck a mis : ", fin_dpcheck - debut_dpcheck, " pour ", dir)
 
@@ -39,7 +41,6 @@ def perform_dpcheck_scan(dir):
             number_of_deps += 1
             try:
                 if result['vulnerabilities'] and len(result['vulnerabilities']) > 0:
-                    # print(result, "\n")
                     number_of_vuln_deps += 1
                     for vuln in result['vulnerabilities']:
                         dpcheck_vuln_and_severity[vuln['name']] = vuln['severity']
@@ -85,20 +86,19 @@ def perform_snyk_scan(dir):
                 snyk_cwe[cwe] = 'present'
             vulnerable_packages[vuln['moduleName']] = 'vulnerable'
             found_vuln += 1
-
     print(vulnerable_packages)
     print("Nombre de vulnérabilités total : ", len(snyk_vuln_and_severity))
     print("Nombre de CVE : ", len(snyk_cve))
     print("Nombre de CWE : ", len(snyk_cwe))
-    print("Packages vulnérables : ", len(vulnerable_packages))
+    print("Dependances vulnérables : ", len(vulnerable_packages))
     occurences = Counter(snyk_vuln_and_severity.values())
     for val, occ in occurences.items():
         print(f"{val} : {occ}")
 
 
 def main():
-    dir = "/home/yazid/poc-88/"
-    perform_dpcheck_scan("/home/yazid/poc-88/")
+    dir = "/home/yazid/vul2/VulnerableApp"
+    perform_dpcheck_scan(dir)
     perform_snyk_scan(dir)
 
 
