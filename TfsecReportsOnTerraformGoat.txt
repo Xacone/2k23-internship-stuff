@@ -1,0 +1,1769 @@
+/home/yazid/PycharmProjects/DevSecOpsAdvisor/venv/bin/python /home/yazid/PycharmProjects/DevSecOpsAdvisor/IaCAnalysis.py 
+
+
+[*] Scanning  /home/yazid/TerraformGoat/aws/ec2/EBS_volumes_encryption_is_disabled
+/home/yazid/TerraformGoat/aws/ec2/EBS_volumes_encryption_is_disabled/main.tf
+/home/yazid/TerraformGoat/aws/ec2/EBS_volumes_encryption_is_disabled/versions.tf
+Nombre de lignes analysées :  15
+Tfsec a mis  884.89208984375  pour  /home/yazid/TerraformGoat/aws/ec2/EBS_volumes_encryption_is_disabled
+
+[*] Scanning  /home/yazid/TerraformGoat/aws/ec2/ec2_ssrf
+/home/yazid/TerraformGoat/aws/ec2/ec2_ssrf/main.tf
+/home/yazid/TerraformGoat/aws/ec2/ec2_ssrf/versions.tf
+/home/yazid/TerraformGoat/aws/ec2/ec2_ssrf/outputs.tf
+Nombre de lignes analysées :  69
+
+Tfsec a mis  673.541748046875  pour  /home/yazid/TerraformGoat/aws/ec2/ec2_ssrf
+Description :  Security group rule does not have a description.
+Impact :  Descriptions provide context for the firewall rule reasons
+Resolution :  Add descriptions for all security groups rules
+
+--------------------------------------------------------------------------------------------
+
+Description :  Root block device is not encrypted.
+Impact :  The block device could be compromised and read from
+Resolution :  Turn on encryption for all block devices
+
+--------------------------------------------------------------------------------------------
+
+Description :  Instance does not require IMDS access to require a token
+Impact :  Instance metadata service can be interacted with freely
+Resolution :  Enable HTTP token requirement for IMDS
+
+--------------------------------------------------------------------------------------------
+
+Description :  Security group rule allows egress to multiple public internet addresses.
+Impact :  Your port is egressing data to the internet
+Resolution :  Set a more restrictive cidr range
+
+--------------------------------------------------------------------------------------------
+
+Description :  Security group rule allows ingress from public internet.
+Impact :  Your port exposed to the internet
+Resolution :  Set a more restrictive cidr range
+
+--------------------------------------------------------------------------------------------
+
+Nombre de vulnérabilités trouvées :  5
+LOW : 1
+HIGH : 2
+CRITICAL : 2
+
+
+[*] Scanning  /home/yazid/TerraformGoat/aws/ec2/EBS_volumes_are_not_used
+/home/yazid/TerraformGoat/aws/ec2/EBS_volumes_are_not_used/main.tf
+/home/yazid/TerraformGoat/aws/ec2/EBS_volumes_are_not_used/versions.tf
+/home/yazid/TerraformGoat/aws/ec2/EBS_volumes_are_not_used/outputs.tf
+Nombre de lignes analysées :  19
+
+
+Tfsec a mis  649.05908203125  pour  /home/yazid/TerraformGoat/aws/ec2/EBS_volumes_are_not_used
+Description :  EBS volume is not encrypted.
+Impact :  Unencrypted sensitive data is vulnerable to compromise.
+Resolution :  Enable encryption of EBS volumes
+
+--------------------------------------------------------------------------------------------
+
+Description :  EBS volume does not use a customer-managed KMS key.
+Impact :  Using AWS managed keys does not allow for fine grained control
+Resolution :  Enable encryption using customer managed keys
+
+--------------------------------------------------------------------------------------------
+
+Nombre de vulnérabilités trouvées :  2
+HIGH : 1
+LOW : 1
+
+
+[*] Scanning  /home/yazid/TerraformGoat/aws/ec2/snapshots_of_EBS_volumes_are_unencrypted
+/home/yazid/TerraformGoat/aws/ec2/snapshots_of_EBS_volumes_are_unencrypted/main.tf
+/home/yazid/TerraformGoat/aws/ec2/snapshots_of_EBS_volumes_are_unencrypted/versions.tf
+/home/yazid/TerraformGoat/aws/ec2/snapshots_of_EBS_volumes_are_unencrypted/outputs.tf
+Nombre de lignes analysées :  24
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Tfsec a mis  597.75732421875  pour  /home/yazid/TerraformGoat/aws/ec2/snapshots_of_EBS_volumes_are_unencrypted
+Description :  Root block device is not encrypted.
+Impact :  The block device could be compromised and read from
+Resolution :  Turn on encryption for all block devices
+
+--------------------------------------------------------------------------------------------
+
+Description :  Instance does not require IMDS access to require a token
+Impact :  Instance metadata service can be interacted with freely
+Resolution :  Enable HTTP token requirement for IMDS
+
+--------------------------------------------------------------------------------------------
+
+Nombre de vulnérabilités trouvées :  2
+HIGH : 2
+
+
+[*] Scanning  /home/yazid/TerraformGoat/aws/ec2/console_takeover
+/home/yazid/TerraformGoat/aws/ec2/console_takeover/main.tf
+/home/yazid/TerraformGoat/aws/ec2/console_takeover/versions.tf
+/home/yazid/TerraformGoat/aws/ec2/console_takeover/outputs.tf
+Nombre de lignes analysées :  97
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Tfsec a mis  723.898193359375  pour  /home/yazid/TerraformGoat/aws/ec2/console_takeover
+Description :  Security group rule does not have a description.
+Impact :  Descriptions provide context for the firewall rule reasons
+Resolution :  Add descriptions for all security groups rules
+
+--------------------------------------------------------------------------------------------
+
+Description :  Root block device is not encrypted.
+Impact :  The block device could be compromised and read from
+Resolution :  Turn on encryption for all block devices
+
+--------------------------------------------------------------------------------------------
+
+Description :  Instance does not require IMDS access to require a token
+Impact :  Instance metadata service can be interacted with freely
+Resolution :  Enable HTTP token requirement for IMDS
+
+--------------------------------------------------------------------------------------------
+
+Description :  Security group rule allows egress to multiple public internet addresses.
+Impact :  Your port is egressing data to the internet
+Resolution :  Set a more restrictive cidr range
+
+--------------------------------------------------------------------------------------------
+
+Description :  Security group rule allows ingress from public internet.
+Impact :  Your port exposed to the internet
+Resolution :  Set a more restrictive cidr range
+
+--------------------------------------------------------------------------------------------
+
+Description :  IAM policy document uses wildcarded action '*'
+Impact :  Overly permissive policies may grant access to sensitive resources
+Resolution :  Specify the exact permissions required, and to which resources they should apply instead of using wildcards.
+
+--------------------------------------------------------------------------------------------
+
+Description :  IAM policy document uses sensitive action '*' on wildcarded resource '*'
+Impact :  Overly permissive policies may grant access to sensitive resources
+Resolution :  Specify the exact permissions required, and to which resources they should apply instead of using wildcards.
+
+--------------------------------------------------------------------------------------------
+
+Nombre de vulnérabilités trouvées :  6
+LOW : 1
+HIGH : 3
+CRITICAL : 2
+
+
+[*] Scanning  /home/yazid/TerraformGoat/aws/s3/bucket_logging_disable
+/home/yazid/TerraformGoat/aws/s3/bucket_logging_disable/output.tf
+/home/yazid/TerraformGoat/aws/s3/bucket_logging_disable/main.tf
+/home/yazid/TerraformGoat/aws/s3/bucket_logging_disable/version.tf
+Nombre de lignes analysées :  26
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Tfsec a mis  686.96044921875  pour  /home/yazid/TerraformGoat/aws/s3/bucket_logging_disable
+Description :  No public access block so not blocking public acls
+Impact :  PUT calls with public ACLs specified can make objects public
+Resolution :  Enable blocking any PUT calls with a public ACL specified
+
+--------------------------------------------------------------------------------------------
+
+Description :  No public access block so not blocking public policies
+Impact :  Users could put a policy that allows public access
+Resolution :  Prevent policies that allow public access being PUT
+
+--------------------------------------------------------------------------------------------
+
+Description :  Bucket does not have encryption enabled
+Impact :  The bucket objects could be read if compromised
+Resolution :  Configure bucket encryption
+
+--------------------------------------------------------------------------------------------
+
+Description :  Bucket does not have logging enabled
+Impact :  There is no way to determine the access to this bucket
+Resolution :  Add a logging block to the resource to enable access logging
+
+--------------------------------------------------------------------------------------------
+
+Description :  Bucket does not have versioning enabled
+Impact :  Deleted or modified data would not be recoverable
+Resolution :  Enable versioning to protect against accidental/malicious removal or modification
+
+--------------------------------------------------------------------------------------------
+
+Description :  Bucket does not encrypt data with a customer managed key.
+Impact :  Using AWS managed keys does not allow for fine grained control
+Resolution :  Enable encryption using customer managed keys
+
+--------------------------------------------------------------------------------------------
+
+Description :  No public access block so not ignoring public acls
+Impact :  PUT calls with public ACLs specified can make objects public
+Resolution :  Enable ignoring the application of public ACLs in PUT calls
+
+--------------------------------------------------------------------------------------------
+
+Description :  No public access block so not restricting public buckets
+Impact :  Public buckets can be accessed by anyone
+Resolution :  Limit the access to public buckets to only the owner or AWS Services (eg; CloudFront)
+
+--------------------------------------------------------------------------------------------
+
+Description :  Bucket does not have a corresponding public access block.
+Impact :  Public access policies may be applied to sensitive data buckets
+Resolution :  Define a aws_s3_bucket_public_access_block for the given bucket to control public access policies
+
+--------------------------------------------------------------------------------------------
+
+Nombre de vulnérabilités trouvées :  9
+HIGH : 6
+MEDIUM : 2
+LOW : 1
+
+
+[*] Scanning  /home/yazid/TerraformGoat/aws/s3/bucket_allow_http_access
+/home/yazid/TerraformGoat/aws/s3/bucket_allow_http_access/output.tf
+/home/yazid/TerraformGoat/aws/s3/bucket_allow_http_access/main.tf
+/home/yazid/TerraformGoat/aws/s3/bucket_allow_http_access/version.tf
+Nombre de lignes analysées :  48
+
+Tfsec a mis  579.936767578125  pour  /home/yazid/TerraformGoat/aws/s3/bucket_allow_http_access
+Description :  No public access block so not blocking public acls
+Impact :  PUT calls with public ACLs specified can make objects public
+Resolution :  Enable blocking any PUT calls with a public ACL specified
+
+--------------------------------------------------------------------------------------------
+
+Description :  No public access block so not blocking public policies
+Impact :  Users could put a policy that allows public access
+Resolution :  Prevent policies that allow public access being PUT
+
+--------------------------------------------------------------------------------------------
+
+Description :  Bucket does not have encryption enabled
+Impact :  The bucket objects could be read if compromised
+Resolution :  Configure bucket encryption
+
+--------------------------------------------------------------------------------------------
+
+Description :  Bucket does not have logging enabled
+Impact :  There is no way to determine the access to this bucket
+Resolution :  Add a logging block to the resource to enable access logging
+
+--------------------------------------------------------------------------------------------
+
+Description :  Bucket does not have versioning enabled
+Impact :  Deleted or modified data would not be recoverable
+Resolution :  Enable versioning to protect against accidental/malicious removal or modification
+
+--------------------------------------------------------------------------------------------
+
+Description :  Bucket does not encrypt data with a customer managed key.
+Impact :  Using AWS managed keys does not allow for fine grained control
+Resolution :  Enable encryption using customer managed keys
+
+--------------------------------------------------------------------------------------------
+
+Description :  No public access block so not ignoring public acls
+Impact :  PUT calls with public ACLs specified can make objects public
+Resolution :  Enable ignoring the application of public ACLs in PUT calls
+
+--------------------------------------------------------------------------------------------
+
+Description :  No public access block so not restricting public buckets
+Impact :  Public buckets can be accessed by anyone
+Resolution :  Limit the access to public buckets to only the owner or AWS Services (eg; CloudFront)
+
+--------------------------------------------------------------------------------------------
+
+Description :  Bucket does not have a corresponding public access block.
+Impact :  Public access policies may be applied to sensitive data buckets
+Resolution :  Define a aws_s3_bucket_public_access_block for the given bucket to control public access policies
+
+--------------------------------------------------------------------------------------------
+
+Nombre de vulnérabilités trouvées :  9
+HIGH : 6
+MEDIUM : 2
+LOW : 1
+
+
+[*] Scanning  /home/yazid/TerraformGoat/aws/s3/object_acl_writable
+/home/yazid/TerraformGoat/aws/s3/object_acl_writable/output.tf
+/home/yazid/TerraformGoat/aws/s3/object_acl_writable/main.tf
+/home/yazid/TerraformGoat/aws/s3/object_acl_writable/version.tf
+Nombre de lignes analysées :  64
+
+Tfsec a mis  584.772705078125  pour  /home/yazid/TerraformGoat/aws/s3/object_acl_writable
+Description :  No public access block so not blocking public acls
+Impact :  PUT calls with public ACLs specified can make objects public
+Resolution :  Enable blocking any PUT calls with a public ACL specified
+
+--------------------------------------------------------------------------------------------
+
+Description :  No public access block so not blocking public policies
+Impact :  Users could put a policy that allows public access
+Resolution :  Prevent policies that allow public access being PUT
+
+--------------------------------------------------------------------------------------------
+
+Description :  Bucket does not have encryption enabled
+Impact :  The bucket objects could be read if compromised
+Resolution :  Configure bucket encryption
+
+--------------------------------------------------------------------------------------------
+
+Description :  Bucket does not have logging enabled
+Impact :  There is no way to determine the access to this bucket
+Resolution :  Add a logging block to the resource to enable access logging
+
+--------------------------------------------------------------------------------------------
+
+Description :  Bucket does not have versioning enabled
+Impact :  Deleted or modified data would not be recoverable
+Resolution :  Enable versioning to protect against accidental/malicious removal or modification
+
+--------------------------------------------------------------------------------------------
+
+Description :  Bucket does not encrypt data with a customer managed key.
+Impact :  Using AWS managed keys does not allow for fine grained control
+Resolution :  Enable encryption using customer managed keys
+
+--------------------------------------------------------------------------------------------
+
+Description :  No public access block so not ignoring public acls
+Impact :  PUT calls with public ACLs specified can make objects public
+Resolution :  Enable ignoring the application of public ACLs in PUT calls
+
+--------------------------------------------------------------------------------------------
+
+Description :  Bucket has a public ACL: 'public-read-write'.
+Impact :  Public access to the bucket can lead to data leakage
+Resolution :  Don't use canned ACLs or switch to private acl
+
+--------------------------------------------------------------------------------------------
+
+Description :  No public access block so not restricting public buckets
+Impact :  Public buckets can be accessed by anyone
+Resolution :  Limit the access to public buckets to only the owner or AWS Services (eg; CloudFront)
+
+--------------------------------------------------------------------------------------------
+
+Description :  Bucket does not have a corresponding public access block.
+Impact :  Public access policies may be applied to sensitive data buckets
+Resolution :  Define a aws_s3_bucket_public_access_block for the given bucket to control public access policies
+
+--------------------------------------------------------------------------------------------
+
+Nombre de vulnérabilités trouvées :  10
+HIGH : 7
+MEDIUM : 2
+LOW : 1
+
+
+[*] Scanning  /home/yazid/TerraformGoat/aws/s3/mfa_delete_is_disable
+/home/yazid/TerraformGoat/aws/s3/mfa_delete_is_disable/output.tf
+/home/yazid/TerraformGoat/aws/s3/mfa_delete_is_disable/main.tf
+/home/yazid/TerraformGoat/aws/s3/mfa_delete_is_disable/version.tf
+Nombre de lignes analysées :  36
+
+Tfsec a mis  564.134033203125  pour  /home/yazid/TerraformGoat/aws/s3/mfa_delete_is_disable
+Description :  No public access block so not blocking public acls
+Impact :  PUT calls with public ACLs specified can make objects public
+Resolution :  Enable blocking any PUT calls with a public ACL specified
+
+--------------------------------------------------------------------------------------------
+
+Description :  No public access block so not blocking public policies
+Impact :  Users could put a policy that allows public access
+Resolution :  Prevent policies that allow public access being PUT
+
+--------------------------------------------------------------------------------------------
+
+Description :  Bucket does not have encryption enabled
+Impact :  The bucket objects could be read if compromised
+Resolution :  Configure bucket encryption
+
+--------------------------------------------------------------------------------------------
+
+Description :  Bucket does not have logging enabled
+Impact :  There is no way to determine the access to this bucket
+Resolution :  Add a logging block to the resource to enable access logging
+
+--------------------------------------------------------------------------------------------
+
+Description :  Bucket does not encrypt data with a customer managed key.
+Impact :  Using AWS managed keys does not allow for fine grained control
+Resolution :  Enable encryption using customer managed keys
+
+--------------------------------------------------------------------------------------------
+
+Description :  No public access block so not ignoring public acls
+Impact :  PUT calls with public ACLs specified can make objects public
+Resolution :  Enable ignoring the application of public ACLs in PUT calls
+
+--------------------------------------------------------------------------------------------
+
+Description :  No public access block so not restricting public buckets
+Impact :  Public buckets can be accessed by anyone
+Resolution :  Limit the access to public buckets to only the owner or AWS Services (eg; CloudFront)
+
+--------------------------------------------------------------------------------------------
+
+Description :  Bucket does not have a corresponding public access block.
+Impact :  Public access policies may be applied to sensitive data buckets
+Resolution :  Define a aws_s3_bucket_public_access_block for the given bucket to control public access policies
+
+--------------------------------------------------------------------------------------------
+
+Nombre de vulnérabilités trouvées :  8
+HIGH : 6
+MEDIUM : 1
+LOW : 1
+
+
+[*] Scanning  /home/yazid/TerraformGoat/aws/s3/bucket_object_traversal
+/home/yazid/TerraformGoat/aws/s3/bucket_object_traversal/output.tf
+/home/yazid/TerraformGoat/aws/s3/bucket_object_traversal/main.tf
+/home/yazid/TerraformGoat/aws/s3/bucket_object_traversal/version.tf
+Nombre de lignes analysées :  71
+
+Tfsec a mis  623.484375  pour  /home/yazid/TerraformGoat/aws/s3/bucket_object_traversal
+Description :  No public access block so not blocking public acls
+Impact :  PUT calls with public ACLs specified can make objects public
+Resolution :  Enable blocking any PUT calls with a public ACL specified
+
+--------------------------------------------------------------------------------------------
+
+Description :  No public access block so not blocking public policies
+Impact :  Users could put a policy that allows public access
+Resolution :  Prevent policies that allow public access being PUT
+
+--------------------------------------------------------------------------------------------
+
+Description :  Bucket does not have encryption enabled
+Impact :  The bucket objects could be read if compromised
+Resolution :  Configure bucket encryption
+
+--------------------------------------------------------------------------------------------
+
+Description :  Bucket does not have logging enabled
+Impact :  There is no way to determine the access to this bucket
+Resolution :  Add a logging block to the resource to enable access logging
+
+--------------------------------------------------------------------------------------------
+
+Description :  Bucket does not have versioning enabled
+Impact :  Deleted or modified data would not be recoverable
+Resolution :  Enable versioning to protect against accidental/malicious removal or modification
+
+--------------------------------------------------------------------------------------------
+
+Description :  Bucket does not encrypt data with a customer managed key.
+Impact :  Using AWS managed keys does not allow for fine grained control
+Resolution :  Enable encryption using customer managed keys
+
+--------------------------------------------------------------------------------------------
+
+Description :  No public access block so not ignoring public acls
+Impact :  PUT calls with public ACLs specified can make objects public
+Resolution :  Enable ignoring the application of public ACLs in PUT calls
+
+--------------------------------------------------------------------------------------------
+
+Description :  Bucket has a public ACL: 'public-read-write'.
+Impact :  Public access to the bucket can lead to data leakage
+Resolution :  Don't use canned ACLs or switch to private acl
+
+--------------------------------------------------------------------------------------------
+
+Description :  No public access block so not restricting public buckets
+Impact :  Public buckets can be accessed by anyone
+Resolution :  Limit the access to public buckets to only the owner or AWS Services (eg; CloudFront)
+
+--------------------------------------------------------------------------------------------
+
+Description :  Bucket does not have a corresponding public access block.
+Impact :  Public access policies may be applied to sensitive data buckets
+Resolution :  Define a aws_s3_bucket_public_access_block for the given bucket to control public access policies
+
+--------------------------------------------------------------------------------------------
+
+Nombre de vulnérabilités trouvées :  10
+HIGH : 7
+MEDIUM : 2
+LOW : 1
+
+
+[*] Scanning  /home/yazid/TerraformGoat/aws/s3/unrestricted_file_upload
+/home/yazid/TerraformGoat/aws/s3/unrestricted_file_upload/output.tf
+/home/yazid/TerraformGoat/aws/s3/unrestricted_file_upload/main.tf
+/home/yazid/TerraformGoat/aws/s3/unrestricted_file_upload/version.tf
+Nombre de lignes analysées :  68
+
+Tfsec a mis  582.790283203125  pour  /home/yazid/TerraformGoat/aws/s3/unrestricted_file_upload
+Description :  No public access block so not blocking public acls
+Impact :  PUT calls with public ACLs specified can make objects public
+Resolution :  Enable blocking any PUT calls with a public ACL specified
+
+--------------------------------------------------------------------------------------------
+
+Description :  No public access block so not blocking public policies
+Impact :  Users could put a policy that allows public access
+Resolution :  Prevent policies that allow public access being PUT
+
+--------------------------------------------------------------------------------------------
+
+Description :  Bucket does not have encryption enabled
+Impact :  The bucket objects could be read if compromised
+Resolution :  Configure bucket encryption
+
+--------------------------------------------------------------------------------------------
+
+Description :  Bucket does not have logging enabled
+Impact :  There is no way to determine the access to this bucket
+Resolution :  Add a logging block to the resource to enable access logging
+
+--------------------------------------------------------------------------------------------
+
+Description :  Bucket does not have versioning enabled
+Impact :  Deleted or modified data would not be recoverable
+Resolution :  Enable versioning to protect against accidental/malicious removal or modification
+
+--------------------------------------------------------------------------------------------
+
+Description :  Bucket does not encrypt data with a customer managed key.
+Impact :  Using AWS managed keys does not allow for fine grained control
+Resolution :  Enable encryption using customer managed keys
+
+--------------------------------------------------------------------------------------------
+
+Description :  No public access block so not ignoring public acls
+Impact :  PUT calls with public ACLs specified can make objects public
+Resolution :  Enable ignoring the application of public ACLs in PUT calls
+
+--------------------------------------------------------------------------------------------
+
+Description :  Bucket has a public ACL: 'public-read-write'.
+Impact :  Public access to the bucket can lead to data leakage
+Resolution :  Don't use canned ACLs or switch to private acl
+
+--------------------------------------------------------------------------------------------
+
+Description :  No public access block so not restricting public buckets
+Impact :  Public buckets can be accessed by anyone
+Resolution :  Limit the access to public buckets to only the owner or AWS Services (eg; CloudFront)
+
+--------------------------------------------------------------------------------------------
+
+Description :  Bucket does not have a corresponding public access block.
+Impact :  Public access policies may be applied to sensitive data buckets
+Resolution :  Define a aws_s3_bucket_public_access_block for the given bucket to control public access policies
+
+--------------------------------------------------------------------------------------------
+
+Nombre de vulnérabilités trouvées :  10
+HIGH : 7
+MEDIUM : 2
+LOW : 1
+
+
+[*] Scanning  /home/yazid/TerraformGoat/aws/s3/bucket_default_encryption_disable
+/home/yazid/TerraformGoat/aws/s3/bucket_default_encryption_disable/output.tf
+/home/yazid/TerraformGoat/aws/s3/bucket_default_encryption_disable/main.tf
+/home/yazid/TerraformGoat/aws/s3/bucket_default_encryption_disable/version.tf
+Nombre de lignes analysées :  26
+
+Tfsec a mis  592.14697265625  pour  /home/yazid/TerraformGoat/aws/s3/bucket_default_encryption_disable
+Description :  No public access block so not blocking public acls
+Impact :  PUT calls with public ACLs specified can make objects public
+Resolution :  Enable blocking any PUT calls with a public ACL specified
+
+--------------------------------------------------------------------------------------------
+
+Description :  No public access block so not blocking public policies
+Impact :  Users could put a policy that allows public access
+Resolution :  Prevent policies that allow public access being PUT
+
+--------------------------------------------------------------------------------------------
+
+Description :  Bucket does not have encryption enabled
+Impact :  The bucket objects could be read if compromised
+Resolution :  Configure bucket encryption
+
+--------------------------------------------------------------------------------------------
+
+Description :  Bucket does not have logging enabled
+Impact :  There is no way to determine the access to this bucket
+Resolution :  Add a logging block to the resource to enable access logging
+
+--------------------------------------------------------------------------------------------
+
+Description :  Bucket does not have versioning enabled
+Impact :  Deleted or modified data would not be recoverable
+Resolution :  Enable versioning to protect against accidental/malicious removal or modification
+
+--------------------------------------------------------------------------------------------
+
+Description :  Bucket does not encrypt data with a customer managed key.
+Impact :  Using AWS managed keys does not allow for fine grained control
+Resolution :  Enable encryption using customer managed keys
+
+--------------------------------------------------------------------------------------------
+
+Description :  No public access block so not ignoring public acls
+Impact :  PUT calls with public ACLs specified can make objects public
+Resolution :  Enable ignoring the application of public ACLs in PUT calls
+
+--------------------------------------------------------------------------------------------
+
+Description :  No public access block so not restricting public buckets
+Impact :  Public buckets can be accessed by anyone
+Resolution :  Limit the access to public buckets to only the owner or AWS Services (eg; CloudFront)
+
+--------------------------------------------------------------------------------------------
+
+Description :  Bucket does not have a corresponding public access block.
+Impact :  Public access policies may be applied to sensitive data buckets
+Resolution :  Define a aws_s3_bucket_public_access_block for the given bucket to control public access policies
+
+--------------------------------------------------------------------------------------------
+
+Nombre de vulnérabilités trouvées :  9
+HIGH : 6
+MEDIUM : 2
+LOW : 1
+
+
+[*] Scanning  /home/yazid/TerraformGoat/aws/s3/bucket_acl_writable
+/home/yazid/TerraformGoat/aws/s3/bucket_acl_writable/output.tf
+/home/yazid/TerraformGoat/aws/s3/bucket_acl_writable/main.tf
+/home/yazid/TerraformGoat/aws/s3/bucket_acl_writable/version.tf
+Nombre de lignes analysées :  69
+
+Tfsec a mis  541.101806640625  pour  /home/yazid/TerraformGoat/aws/s3/bucket_acl_writable
+Description :  No public access block so not blocking public acls
+Impact :  PUT calls with public ACLs specified can make objects public
+Resolution :  Enable blocking any PUT calls with a public ACL specified
+
+--------------------------------------------------------------------------------------------
+
+Description :  No public access block so not blocking public policies
+Impact :  Users could put a policy that allows public access
+Resolution :  Prevent policies that allow public access being PUT
+
+--------------------------------------------------------------------------------------------
+
+Description :  Bucket does not have encryption enabled
+Impact :  The bucket objects could be read if compromised
+Resolution :  Configure bucket encryption
+
+--------------------------------------------------------------------------------------------
+
+Description :  Bucket does not have logging enabled
+Impact :  There is no way to determine the access to this bucket
+Resolution :  Add a logging block to the resource to enable access logging
+
+--------------------------------------------------------------------------------------------
+
+Description :  Bucket does not have versioning enabled
+Impact :  Deleted or modified data would not be recoverable
+Resolution :  Enable versioning to protect against accidental/malicious removal or modification
+
+--------------------------------------------------------------------------------------------
+
+Description :  Bucket does not encrypt data with a customer managed key.
+Impact :  Using AWS managed keys does not allow for fine grained control
+Resolution :  Enable encryption using customer managed keys
+
+--------------------------------------------------------------------------------------------
+
+Description :  No public access block so not ignoring public acls
+Impact :  PUT calls with public ACLs specified can make objects public
+Resolution :  Enable ignoring the application of public ACLs in PUT calls
+
+--------------------------------------------------------------------------------------------
+
+Description :  No public access block so not restricting public buckets
+Impact :  Public buckets can be accessed by anyone
+Resolution :  Limit the access to public buckets to only the owner or AWS Services (eg; CloudFront)
+
+--------------------------------------------------------------------------------------------
+
+Description :  Bucket does not have a corresponding public access block.
+Impact :  Public access policies may be applied to sensitive data buckets
+Resolution :  Define a aws_s3_bucket_public_access_block for the given bucket to control public access policies
+
+--------------------------------------------------------------------------------------------
+
+Nombre de vulnérabilités trouvées :  9
+HIGH : 6
+MEDIUM : 2
+LOW : 1
+
+
+[*] Scanning  /home/yazid/TerraformGoat/aws/s3/bucket_public_access
+/home/yazid/TerraformGoat/aws/s3/bucket_public_access/output.tf
+/home/yazid/TerraformGoat/aws/s3/bucket_public_access/main.tf
+/home/yazid/TerraformGoat/aws/s3/bucket_public_access/version.tf
+Nombre de lignes analysées :  51
+
+Tfsec a mis  605.18505859375  pour  /home/yazid/TerraformGoat/aws/s3/bucket_public_access
+Description :  No public access block so not blocking public acls
+Impact :  PUT calls with public ACLs specified can make objects public
+Resolution :  Enable blocking any PUT calls with a public ACL specified
+
+--------------------------------------------------------------------------------------------
+
+Description :  No public access block so not blocking public policies
+Impact :  Users could put a policy that allows public access
+Resolution :  Prevent policies that allow public access being PUT
+
+--------------------------------------------------------------------------------------------
+
+Description :  Bucket does not have encryption enabled
+Impact :  The bucket objects could be read if compromised
+Resolution :  Configure bucket encryption
+
+--------------------------------------------------------------------------------------------
+
+Description :  Bucket does not have logging enabled
+Impact :  There is no way to determine the access to this bucket
+Resolution :  Add a logging block to the resource to enable access logging
+
+--------------------------------------------------------------------------------------------
+
+Description :  Bucket does not have versioning enabled
+Impact :  Deleted or modified data would not be recoverable
+Resolution :  Enable versioning to protect against accidental/malicious removal or modification
+
+--------------------------------------------------------------------------------------------
+
+Description :  Bucket does not encrypt data with a customer managed key.
+Impact :  Using AWS managed keys does not allow for fine grained control
+Resolution :  Enable encryption using customer managed keys
+
+--------------------------------------------------------------------------------------------
+
+Description :  No public access block so not ignoring public acls
+Impact :  PUT calls with public ACLs specified can make objects public
+Resolution :  Enable ignoring the application of public ACLs in PUT calls
+
+--------------------------------------------------------------------------------------------
+
+Description :  No public access block so not restricting public buckets
+Impact :  Public buckets can be accessed by anyone
+Resolution :  Limit the access to public buckets to only the owner or AWS Services (eg; CloudFront)
+
+--------------------------------------------------------------------------------------------
+
+Description :  Bucket does not have a corresponding public access block.
+Impact :  Public access policies may be applied to sensitive data buckets
+Resolution :  Define a aws_s3_bucket_public_access_block for the given bucket to control public access policies
+
+--------------------------------------------------------------------------------------------
+
+Nombre de vulnérabilités trouvées :  9
+HIGH : 6
+MEDIUM : 2
+LOW : 1
+
+
+[*] Scanning  /home/yazid/TerraformGoat/aws/s3/special_bucket_policy
+/home/yazid/TerraformGoat/aws/s3/special_bucket_policy/output.tf
+/home/yazid/TerraformGoat/aws/s3/special_bucket_policy/main.tf
+/home/yazid/TerraformGoat/aws/s3/special_bucket_policy/version.tf
+Nombre de lignes analysées :  68
+
+Tfsec a mis  614.340576171875  pour  /home/yazid/TerraformGoat/aws/s3/special_bucket_policy
+Description :  No public access block so not blocking public acls
+Impact :  PUT calls with public ACLs specified can make objects public
+Resolution :  Enable blocking any PUT calls with a public ACL specified
+
+--------------------------------------------------------------------------------------------
+
+Description :  No public access block so not blocking public policies
+Impact :  Users could put a policy that allows public access
+Resolution :  Prevent policies that allow public access being PUT
+
+--------------------------------------------------------------------------------------------
+
+Description :  Bucket does not have encryption enabled
+Impact :  The bucket objects could be read if compromised
+Resolution :  Configure bucket encryption
+
+--------------------------------------------------------------------------------------------
+
+Description :  Bucket does not have logging enabled
+Impact :  There is no way to determine the access to this bucket
+Resolution :  Add a logging block to the resource to enable access logging
+
+--------------------------------------------------------------------------------------------
+
+Description :  Bucket does not have versioning enabled
+Impact :  Deleted or modified data would not be recoverable
+Resolution :  Enable versioning to protect against accidental/malicious removal or modification
+
+--------------------------------------------------------------------------------------------
+
+Description :  Bucket does not encrypt data with a customer managed key.
+Impact :  Using AWS managed keys does not allow for fine grained control
+Resolution :  Enable encryption using customer managed keys
+
+--------------------------------------------------------------------------------------------
+
+Description :  No public access block so not ignoring public acls
+Impact :  PUT calls with public ACLs specified can make objects public
+Resolution :  Enable ignoring the application of public ACLs in PUT calls
+
+--------------------------------------------------------------------------------------------
+
+Description :  Bucket has a public ACL: 'public-read-write'.
+Impact :  Public access to the bucket can lead to data leakage
+Resolution :  Don't use canned ACLs or switch to private acl
+
+--------------------------------------------------------------------------------------------
+
+Description :  No public access block so not restricting public buckets
+Impact :  Public buckets can be accessed by anyone
+Resolution :  Limit the access to public buckets to only the owner or AWS Services (eg; CloudFront)
+
+--------------------------------------------------------------------------------------------
+
+Description :  Bucket does not have a corresponding public access block.
+Impact :  Public access policies may be applied to sensitive data buckets
+Resolution :  Define a aws_s3_bucket_public_access_block for the given bucket to control public access policies
+
+--------------------------------------------------------------------------------------------
+
+Nombre de vulnérabilités trouvées :  10
+HIGH : 7
+MEDIUM : 2
+LOW : 1
+
+
+[*] Scanning  /home/yazid/TerraformGoat/aws/s3/bucket_acl_readable
+/home/yazid/TerraformGoat/aws/s3/bucket_acl_readable/output.tf
+/home/yazid/TerraformGoat/aws/s3/bucket_acl_readable/main.tf
+/home/yazid/TerraformGoat/aws/s3/bucket_acl_readable/version.tf
+Nombre de lignes analysées :  51
+
+Tfsec a mis  548.314208984375  pour  /home/yazid/TerraformGoat/aws/s3/bucket_acl_readable
+Description :  No public access block so not blocking public acls
+Impact :  PUT calls with public ACLs specified can make objects public
+Resolution :  Enable blocking any PUT calls with a public ACL specified
+
+--------------------------------------------------------------------------------------------
+
+Description :  No public access block so not blocking public policies
+Impact :  Users could put a policy that allows public access
+Resolution :  Prevent policies that allow public access being PUT
+
+--------------------------------------------------------------------------------------------
+
+Description :  Bucket does not have encryption enabled
+Impact :  The bucket objects could be read if compromised
+Resolution :  Configure bucket encryption
+
+--------------------------------------------------------------------------------------------
+
+Description :  Bucket does not have logging enabled
+Impact :  There is no way to determine the access to this bucket
+Resolution :  Add a logging block to the resource to enable access logging
+
+--------------------------------------------------------------------------------------------
+
+Description :  Bucket does not have versioning enabled
+Impact :  Deleted or modified data would not be recoverable
+Resolution :  Enable versioning to protect against accidental/malicious removal or modification
+
+--------------------------------------------------------------------------------------------
+
+Description :  Bucket does not encrypt data with a customer managed key.
+Impact :  Using AWS managed keys does not allow for fine grained control
+Resolution :  Enable encryption using customer managed keys
+
+--------------------------------------------------------------------------------------------
+
+Description :  No public access block so not ignoring public acls
+Impact :  PUT calls with public ACLs specified can make objects public
+Resolution :  Enable ignoring the application of public ACLs in PUT calls
+
+--------------------------------------------------------------------------------------------
+
+Description :  No public access block so not restricting public buckets
+Impact :  Public buckets can be accessed by anyone
+Resolution :  Limit the access to public buckets to only the owner or AWS Services (eg; CloudFront)
+
+--------------------------------------------------------------------------------------------
+
+Description :  Bucket does not have a corresponding public access block.
+Impact :  Public access policies may be applied to sensitive data buckets
+Resolution :  Define a aws_s3_bucket_public_access_block for the given bucket to control public access policies
+
+--------------------------------------------------------------------------------------------
+
+Nombre de vulnérabilités trouvées :  9
+HIGH : 6
+MEDIUM : 2
+LOW : 1
+
+
+[*] Scanning  /home/yazid/TerraformGoat/aws/iam/privilege_escalation
+/home/yazid/TerraformGoat/aws/iam/privilege_escalation/main.tf
+/home/yazid/TerraformGoat/aws/iam/privilege_escalation/versions.tf
+Nombre de lignes analysées :  54
+
+Tfsec a mis  580.97802734375  pour  /home/yazid/TerraformGoat/aws/iam/privilege_escalation
+Description :  IAM policy document uses sensitive action 'iam:*' on wildcarded resource '*'
+Impact :  Overly permissive policies may grant access to sensitive resources
+Resolution :  Specify the exact permissions required, and to which resources they should apply instead of using wildcards.
+
+--------------------------------------------------------------------------------------------
+
+Description :  IAM policy document uses wildcarded action 'iam:*'
+Impact :  Overly permissive policies may grant access to sensitive resources
+Resolution :  Specify the exact permissions required, and to which resources they should apply instead of using wildcards.
+
+--------------------------------------------------------------------------------------------
+
+Description :  One or more policies are attached directly to a user
+Impact :  Complex access control is difficult to manage and maintain.
+Resolution :  Grant policies at the group level instead.
+
+--------------------------------------------------------------------------------------------
+
+Nombre de vulnérabilités trouvées :  2
+HIGH : 1
+LOW : 1
+
+
+[*] Scanning  /home/yazid/TerraformGoat/aws/networking/vpc_security_group_open_common_ports
+/home/yazid/TerraformGoat/aws/networking/vpc_security_group_open_common_ports/main.tf
+/home/yazid/TerraformGoat/aws/networking/vpc_security_group_open_common_ports/versions.tf
+/home/yazid/TerraformGoat/aws/networking/vpc_security_group_open_common_ports/outputs.tf
+Nombre de lignes analysées :  297
+
+Tfsec a mis  568.349365234375  pour  /home/yazid/TerraformGoat/aws/networking/vpc_security_group_open_common_ports
+Description :  Security group explicitly uses the default description.
+Impact :  Descriptions provide context for the firewall rule reasons
+Resolution :  Add descriptions for all security groups
+
+--------------------------------------------------------------------------------------------
+
+Description :  Security group rule does not have a description.
+Impact :  Descriptions provide context for the firewall rule reasons
+Resolution :  Add descriptions for all security groups rules
+
+--------------------------------------------------------------------------------------------
+
+Description :  Security group rule does not have a description.
+Impact :  Descriptions provide context for the firewall rule reasons
+Resolution :  Add descriptions for all security groups rules
+
+--------------------------------------------------------------------------------------------
+
+Description :  Security group rule does not have a description.
+Impact :  Descriptions provide context for the firewall rule reasons
+Resolution :  Add descriptions for all security groups rules
+
+--------------------------------------------------------------------------------------------
+
+Description :  Security group rule does not have a description.
+Impact :  Descriptions provide context for the firewall rule reasons
+Resolution :  Add descriptions for all security groups rules
+
+--------------------------------------------------------------------------------------------
+
+Description :  Security group rule does not have a description.
+Impact :  Descriptions provide context for the firewall rule reasons
+Resolution :  Add descriptions for all security groups rules
+
+--------------------------------------------------------------------------------------------
+
+Description :  Security group rule does not have a description.
+Impact :  Descriptions provide context for the firewall rule reasons
+Resolution :  Add descriptions for all security groups rules
+
+--------------------------------------------------------------------------------------------
+
+Description :  Security group rule does not have a description.
+Impact :  Descriptions provide context for the firewall rule reasons
+Resolution :  Add descriptions for all security groups rules
+
+--------------------------------------------------------------------------------------------
+
+Description :  Security group rule does not have a description.
+Impact :  Descriptions provide context for the firewall rule reasons
+Resolution :  Add descriptions for all security groups rules
+
+--------------------------------------------------------------------------------------------
+
+Description :  Security group rule does not have a description.
+Impact :  Descriptions provide context for the firewall rule reasons
+Resolution :  Add descriptions for all security groups rules
+
+--------------------------------------------------------------------------------------------
+
+Description :  Security group rule does not have a description.
+Impact :  Descriptions provide context for the firewall rule reasons
+Resolution :  Add descriptions for all security groups rules
+
+--------------------------------------------------------------------------------------------
+
+Description :  Security group rule does not have a description.
+Impact :  Descriptions provide context for the firewall rule reasons
+Resolution :  Add descriptions for all security groups rules
+
+--------------------------------------------------------------------------------------------
+
+Description :  Security group rule does not have a description.
+Impact :  Descriptions provide context for the firewall rule reasons
+Resolution :  Add descriptions for all security groups rules
+
+--------------------------------------------------------------------------------------------
+
+Description :  Security group rule does not have a description.
+Impact :  Descriptions provide context for the firewall rule reasons
+Resolution :  Add descriptions for all security groups rules
+
+--------------------------------------------------------------------------------------------
+
+Description :  Security group rule does not have a description.
+Impact :  Descriptions provide context for the firewall rule reasons
+Resolution :  Add descriptions for all security groups rules
+
+--------------------------------------------------------------------------------------------
+
+Description :  Security group rule does not have a description.
+Impact :  Descriptions provide context for the firewall rule reasons
+Resolution :  Add descriptions for all security groups rules
+
+--------------------------------------------------------------------------------------------
+
+Description :  Security group rule does not have a description.
+Impact :  Descriptions provide context for the firewall rule reasons
+Resolution :  Add descriptions for all security groups rules
+
+--------------------------------------------------------------------------------------------
+
+Description :  Security group rule does not have a description.
+Impact :  Descriptions provide context for the firewall rule reasons
+Resolution :  Add descriptions for all security groups rules
+
+--------------------------------------------------------------------------------------------
+
+Description :  Security group rule does not have a description.
+Impact :  Descriptions provide context for the firewall rule reasons
+Resolution :  Add descriptions for all security groups rules
+
+--------------------------------------------------------------------------------------------
+
+Description :  Security group rule does not have a description.
+Impact :  Descriptions provide context for the firewall rule reasons
+Resolution :  Add descriptions for all security groups rules
+
+--------------------------------------------------------------------------------------------
+
+Description :  Security group rule does not have a description.
+Impact :  Descriptions provide context for the firewall rule reasons
+Resolution :  Add descriptions for all security groups rules
+
+--------------------------------------------------------------------------------------------
+
+Description :  Security group rule does not have a description.
+Impact :  Descriptions provide context for the firewall rule reasons
+Resolution :  Add descriptions for all security groups rules
+
+--------------------------------------------------------------------------------------------
+
+Description :  Security group rule does not have a description.
+Impact :  Descriptions provide context for the firewall rule reasons
+Resolution :  Add descriptions for all security groups rules
+
+--------------------------------------------------------------------------------------------
+
+Description :  Security group rule does not have a description.
+Impact :  Descriptions provide context for the firewall rule reasons
+Resolution :  Add descriptions for all security groups rules
+
+--------------------------------------------------------------------------------------------
+
+Description :  Security group rule does not have a description.
+Impact :  Descriptions provide context for the firewall rule reasons
+Resolution :  Add descriptions for all security groups rules
+
+--------------------------------------------------------------------------------------------
+
+Description :  Security group rule does not have a description.
+Impact :  Descriptions provide context for the firewall rule reasons
+Resolution :  Add descriptions for all security groups rules
+
+--------------------------------------------------------------------------------------------
+
+Description :  Security group rule does not have a description.
+Impact :  Descriptions provide context for the firewall rule reasons
+Resolution :  Add descriptions for all security groups rules
+
+--------------------------------------------------------------------------------------------
+
+Description :  Security group rule does not have a description.
+Impact :  Descriptions provide context for the firewall rule reasons
+Resolution :  Add descriptions for all security groups rules
+
+--------------------------------------------------------------------------------------------
+
+Description :  Root block device is not encrypted.
+Impact :  The block device could be compromised and read from
+Resolution :  Turn on encryption for all block devices
+
+--------------------------------------------------------------------------------------------
+
+Description :  Instance does not require IMDS access to require a token
+Impact :  Instance metadata service can be interacted with freely
+Resolution :  Enable HTTP token requirement for IMDS
+
+--------------------------------------------------------------------------------------------
+
+Description :  Security group rule allows ingress from public internet.
+Impact :  Your port exposed to the internet
+Resolution :  Set a more restrictive cidr range
+
+--------------------------------------------------------------------------------------------
+
+Description :  Security group rule allows ingress from public internet.
+Impact :  Your port exposed to the internet
+Resolution :  Set a more restrictive cidr range
+
+--------------------------------------------------------------------------------------------
+
+Description :  Security group rule allows ingress from public internet.
+Impact :  Your port exposed to the internet
+Resolution :  Set a more restrictive cidr range
+
+--------------------------------------------------------------------------------------------
+
+Description :  Security group rule allows ingress from public internet.
+Impact :  Your port exposed to the internet
+Resolution :  Set a more restrictive cidr range
+
+--------------------------------------------------------------------------------------------
+
+Description :  Security group rule allows ingress from public internet.
+Impact :  Your port exposed to the internet
+Resolution :  Set a more restrictive cidr range
+
+--------------------------------------------------------------------------------------------
+
+Description :  Security group rule allows ingress from public internet.
+Impact :  Your port exposed to the internet
+Resolution :  Set a more restrictive cidr range
+
+--------------------------------------------------------------------------------------------
+
+Description :  Security group rule allows ingress from public internet.
+Impact :  Your port exposed to the internet
+Resolution :  Set a more restrictive cidr range
+
+--------------------------------------------------------------------------------------------
+
+Description :  Security group rule allows ingress from public internet.
+Impact :  Your port exposed to the internet
+Resolution :  Set a more restrictive cidr range
+
+--------------------------------------------------------------------------------------------
+
+Description :  Security group rule allows ingress from public internet.
+Impact :  Your port exposed to the internet
+Resolution :  Set a more restrictive cidr range
+
+--------------------------------------------------------------------------------------------
+
+Description :  Security group rule allows ingress from public internet.
+Impact :  Your port exposed to the internet
+Resolution :  Set a more restrictive cidr range
+
+--------------------------------------------------------------------------------------------
+
+Description :  Security group rule allows ingress from public internet.
+Impact :  Your port exposed to the internet
+Resolution :  Set a more restrictive cidr range
+
+--------------------------------------------------------------------------------------------
+
+Description :  Security group rule allows ingress from public internet.
+Impact :  Your port exposed to the internet
+Resolution :  Set a more restrictive cidr range
+
+--------------------------------------------------------------------------------------------
+
+Description :  Security group rule allows ingress from public internet.
+Impact :  Your port exposed to the internet
+Resolution :  Set a more restrictive cidr range
+
+--------------------------------------------------------------------------------------------
+
+Description :  Security group rule allows ingress from public internet.
+Impact :  Your port exposed to the internet
+Resolution :  Set a more restrictive cidr range
+
+--------------------------------------------------------------------------------------------
+
+Description :  Security group rule allows ingress from public internet.
+Impact :  Your port exposed to the internet
+Resolution :  Set a more restrictive cidr range
+
+--------------------------------------------------------------------------------------------
+
+Description :  Security group rule allows ingress from public internet.
+Impact :  Your port exposed to the internet
+Resolution :  Set a more restrictive cidr range
+
+--------------------------------------------------------------------------------------------
+
+Description :  Security group rule allows ingress from public internet.
+Impact :  Your port exposed to the internet
+Resolution :  Set a more restrictive cidr range
+
+--------------------------------------------------------------------------------------------
+
+Description :  Security group rule allows ingress from public internet.
+Impact :  Your port exposed to the internet
+Resolution :  Set a more restrictive cidr range
+
+--------------------------------------------------------------------------------------------
+
+Description :  Security group rule allows ingress from public internet.
+Impact :  Your port exposed to the internet
+Resolution :  Set a more restrictive cidr range
+
+--------------------------------------------------------------------------------------------
+
+Description :  Security group rule allows ingress from public internet.
+Impact :  Your port exposed to the internet
+Resolution :  Set a more restrictive cidr range
+
+--------------------------------------------------------------------------------------------
+
+Description :  Security group rule allows ingress from public internet.
+Impact :  Your port exposed to the internet
+Resolution :  Set a more restrictive cidr range
+
+--------------------------------------------------------------------------------------------
+
+Description :  Security group rule allows ingress from public internet.
+Impact :  Your port exposed to the internet
+Resolution :  Set a more restrictive cidr range
+
+--------------------------------------------------------------------------------------------
+
+Description :  Security group rule allows ingress from public internet.
+Impact :  Your port exposed to the internet
+Resolution :  Set a more restrictive cidr range
+
+--------------------------------------------------------------------------------------------
+
+Description :  Security group rule allows ingress from public internet.
+Impact :  Your port exposed to the internet
+Resolution :  Set a more restrictive cidr range
+
+--------------------------------------------------------------------------------------------
+
+Description :  Security group rule allows ingress from public internet.
+Impact :  Your port exposed to the internet
+Resolution :  Set a more restrictive cidr range
+
+--------------------------------------------------------------------------------------------
+
+Description :  Security group rule allows ingress from public internet.
+Impact :  Your port exposed to the internet
+Resolution :  Set a more restrictive cidr range
+
+--------------------------------------------------------------------------------------------
+
+Description :  Security group rule allows ingress from public internet.
+Impact :  Your port exposed to the internet
+Resolution :  Set a more restrictive cidr range
+
+--------------------------------------------------------------------------------------------
+
+Nombre de vulnérabilités trouvées :  5
+LOW : 2
+HIGH : 2
+CRITICAL : 1
+
+
+[*] Scanning  /home/yazid/TerraformGoat/aws/networking/vpc_security_group_open_all_ports
+/home/yazid/TerraformGoat/aws/networking/vpc_security_group_open_all_ports/main.tf
+/home/yazid/TerraformGoat/aws/networking/vpc_security_group_open_all_ports/versions.tf
+/home/yazid/TerraformGoat/aws/networking/vpc_security_group_open_all_ports/outputs.tf
+Nombre de lignes analysées :  34
+
+Tfsec a mis  584.05517578125  pour  /home/yazid/TerraformGoat/aws/networking/vpc_security_group_open_all_ports
+Description :  Security group explicitly uses the default description.
+Impact :  Descriptions provide context for the firewall rule reasons
+Resolution :  Add descriptions for all security groups
+
+--------------------------------------------------------------------------------------------
+
+Description :  Security group rule does not have a description.
+Impact :  Descriptions provide context for the firewall rule reasons
+Resolution :  Add descriptions for all security groups rules
+
+--------------------------------------------------------------------------------------------
+
+Description :  Root block device is not encrypted.
+Impact :  The block device could be compromised and read from
+Resolution :  Turn on encryption for all block devices
+
+--------------------------------------------------------------------------------------------
+
+Description :  Instance does not require IMDS access to require a token
+Impact :  Instance metadata service can be interacted with freely
+Resolution :  Enable HTTP token requirement for IMDS
+
+--------------------------------------------------------------------------------------------
+
+Description :  Security group rule allows ingress from public internet.
+Impact :  Your port exposed to the internet
+Resolution :  Set a more restrictive cidr range
+
+--------------------------------------------------------------------------------------------
+
+Nombre de vulnérabilités trouvées :  5
+LOW : 2
+HIGH : 2
+CRITICAL : 1
+
+
+[*] Scanning  /home/yazid/TerraformGoat/gcp/vm/vm_command_execution
+/home/yazid/TerraformGoat/gcp/vm/vm_command_execution/main.tf
+/home/yazid/TerraformGoat/gcp/vm/vm_command_execution/versions.tf
+/home/yazid/TerraformGoat/gcp/vm/vm_command_execution/variables.tf
+/home/yazid/TerraformGoat/gcp/vm/vm_command_execution/outputs.tf
+Nombre de lignes analysées :  91
+
+Tfsec a mis  532.263427734375  pour  /home/yazid/TerraformGoat/gcp/vm/vm_command_execution
+Description :  Instance does not have shielded VM integrity monitoring enabled.
+Impact :  No visibility of VM instance boot state.
+Resolution :  Enable Shielded VM Integrity Monitoring
+
+--------------------------------------------------------------------------------------------
+
+Description :  Instance does not have VTPM for shielded VMs enabled.
+Impact :  Unable to prevent unwanted system state modification
+Resolution :  Enable Shielded VM VTPM
+
+--------------------------------------------------------------------------------------------
+
+Description :  Subnetwork does not have VPC flow logs enabled.
+Impact :  Limited auditing capability and awareness
+Resolution :  Enable VPC flow logs
+
+--------------------------------------------------------------------------------------------
+
+Description :  Instance allows use of project-level SSH keys.
+Impact :  Compromise of a single key pair compromises all instances
+Resolution :  Disable project-wide SSH keys
+
+--------------------------------------------------------------------------------------------
+
+Description :  Firewall rule allows ingress traffic from multiple addresses on the public internet.
+Impact :  The port is exposed for ingress from the internet
+Resolution :  Set a more restrictive cidr range
+
+--------------------------------------------------------------------------------------------
+
+Description :  Instance has a public IP allocated.
+Impact :  Direct exposure of an instance to the public internet
+Resolution :  Remove public IP
+
+--------------------------------------------------------------------------------------------
+
+Description :  Instance disk encryption does not use a customer managed key.
+Impact :  Using unmanaged keys does not allow for proper management
+Resolution :  Use managed keys 
+
+--------------------------------------------------------------------------------------------
+
+Nombre de vulnérabilités trouvées :  7
+MEDIUM : 3
+LOW : 2
+CRITICAL : 1
+HIGH : 1
+
+
+[*] Scanning  /home/yazid/TerraformGoat/gcp/cs/object_acl_writable
+/home/yazid/TerraformGoat/gcp/cs/object_acl_writable/main.tf
+/home/yazid/TerraformGoat/gcp/cs/object_acl_writable/versions.tf
+/home/yazid/TerraformGoat/gcp/cs/object_acl_writable/variables.tf
+/home/yazid/TerraformGoat/gcp/cs/object_acl_writable/outputs.tf
+Nombre de lignes analysées :  52
+
+Tfsec a mis  549.708984375  pour  /home/yazid/TerraformGoat/gcp/cs/object_acl_writable
+Description :  Storage bucket encryption does not use a customer-managed key.
+Impact :  Using unmanaged keys does not allow for proper key management.
+Resolution :  Encrypt Cloud Storage buckets using customer-managed keys.
+
+--------------------------------------------------------------------------------------------
+
+Description :  Bucket has uniform bucket level access disabled.
+Impact :  ACLs are difficult to manage and often lead to incorrect/unintended configurations.
+Resolution :  Enable uniform bucket level access to provide a uniform permissioning system.
+
+--------------------------------------------------------------------------------------------
+
+Nombre de vulnérabilités trouvées :  2
+LOW : 1
+MEDIUM : 1
+
+
+[*] Scanning  /home/yazid/TerraformGoat/gcp/cs/bucket_object_traversal
+/home/yazid/TerraformGoat/gcp/cs/bucket_object_traversal/main.tf
+/home/yazid/TerraformGoat/gcp/cs/bucket_object_traversal/versions.tf
+/home/yazid/TerraformGoat/gcp/cs/bucket_object_traversal/variables.tf
+/home/yazid/TerraformGoat/gcp/cs/bucket_object_traversal/outputs.tf
+Nombre de lignes analysées :  61
+
+Tfsec a mis  659.971923828125  pour  /home/yazid/TerraformGoat/gcp/cs/bucket_object_traversal
+Description :  Storage bucket encryption does not use a customer-managed key.
+Impact :  Using unmanaged keys does not allow for proper key management.
+Resolution :  Encrypt Cloud Storage buckets using customer-managed keys.
+
+--------------------------------------------------------------------------------------------
+
+Description :  Bucket has uniform bucket level access disabled.
+Impact :  ACLs are difficult to manage and often lead to incorrect/unintended configurations.
+Resolution :  Enable uniform bucket level access to provide a uniform permissioning system.
+
+--------------------------------------------------------------------------------------------
+
+Nombre de vulnérabilités trouvées :  2
+LOW : 1
+MEDIUM : 1
+
+
+[*] Scanning  /home/yazid/TerraformGoat/gcp/cs/unrestricted_file_upload
+/home/yazid/TerraformGoat/gcp/cs/unrestricted_file_upload/main.tf
+/home/yazid/TerraformGoat/gcp/cs/unrestricted_file_upload/versions.tf
+/home/yazid/TerraformGoat/gcp/cs/unrestricted_file_upload/variables.tf
+/home/yazid/TerraformGoat/gcp/cs/unrestricted_file_upload/outputs.tf
+Nombre de lignes analysées :  50
+
+Tfsec a mis  591.0751953125  pour  /home/yazid/TerraformGoat/gcp/cs/unrestricted_file_upload
+Description :  Storage bucket encryption does not use a customer-managed key.
+Impact :  Using unmanaged keys does not allow for proper key management.
+Resolution :  Encrypt Cloud Storage buckets using customer-managed keys.
+
+--------------------------------------------------------------------------------------------
+
+Description :  Bucket has uniform bucket level access disabled.
+Impact :  ACLs are difficult to manage and often lead to incorrect/unintended configurations.
+Resolution :  Enable uniform bucket level access to provide a uniform permissioning system.
+
+--------------------------------------------------------------------------------------------
+
+Nombre de vulnérabilités trouvées :  2
+LOW : 1
+MEDIUM : 1
+
+
+[*] Scanning  /home/yazid/TerraformGoat/gcp/cs/bucket_acl_writable
+/home/yazid/TerraformGoat/gcp/cs/bucket_acl_writable/main.tf
+/home/yazid/TerraformGoat/gcp/cs/bucket_acl_writable/versions.tf
+/home/yazid/TerraformGoat/gcp/cs/bucket_acl_writable/variables.tf
+/home/yazid/TerraformGoat/gcp/cs/bucket_acl_writable/outputs.tf
+Nombre de lignes analysées :  61
+
+Tfsec a mis  640.7724609375  pour  /home/yazid/TerraformGoat/gcp/cs/bucket_acl_writable
+Description :  Storage bucket encryption does not use a customer-managed key.
+Impact :  Using unmanaged keys does not allow for proper key management.
+Resolution :  Encrypt Cloud Storage buckets using customer-managed keys.
+
+--------------------------------------------------------------------------------------------
+
+Description :  Bucket has uniform bucket level access disabled.
+Impact :  ACLs are difficult to manage and often lead to incorrect/unintended configurations.
+Resolution :  Enable uniform bucket level access to provide a uniform permissioning system.
+
+--------------------------------------------------------------------------------------------
+
+Nombre de vulnérabilités trouvées :  2
+LOW : 1
+MEDIUM : 1
+
+
+[*] Scanning  /home/yazid/TerraformGoat/azure/blob/blob_public_access
+/home/yazid/TerraformGoat/azure/blob/blob_public_access/main.tf
+/home/yazid/TerraformGoat/azure/blob/blob_public_access/versions.tf
+/home/yazid/TerraformGoat/azure/blob/blob_public_access/outputs.tf
+Nombre de lignes analysées :  48
+
+Tfsec a mis  589.464599609375  pour  /home/yazid/TerraformGoat/azure/blob/blob_public_access
+Description :  Container allows public access.
+Impact :  Data in the storage container could be exposed publicly
+Resolution :  Disable public access to storage containers
+
+--------------------------------------------------------------------------------------------
+
+Description :  Storage account uses an insecure TLS version.
+Impact :  The TLS version being outdated and has known vulnerabilities
+Resolution :  Use a more recent TLS/SSL policy for the load balancer
+
+--------------------------------------------------------------------------------------------
+
+Nombre de vulnérabilités trouvées :  2
+HIGH : 1
+CRITICAL : 1
+
+
+[*] Scanning  /home/yazid/TerraformGoat/azure/blob/container_blob_traversal
+/home/yazid/TerraformGoat/azure/blob/container_blob_traversal/main.tf
+/home/yazid/TerraformGoat/azure/blob/container_blob_traversal/versions.tf
+/home/yazid/TerraformGoat/azure/blob/container_blob_traversal/outputs.tf
+Nombre de lignes analysées :  48
+
+Tfsec a mis  588.76806640625  pour  /home/yazid/TerraformGoat/azure/blob/container_blob_traversal
+Description :  Container allows public access.
+Impact :  Data in the storage container could be exposed publicly
+Resolution :  Disable public access to storage containers
+
+--------------------------------------------------------------------------------------------
+
+Description :  Storage account uses an insecure TLS version.
+Impact :  The TLS version being outdated and has known vulnerabilities
+Resolution :  Use a more recent TLS/SSL policy for the load balancer
+
+--------------------------------------------------------------------------------------------
+
+Nombre de vulnérabilités trouvées :  2
+HIGH : 1
+CRITICAL : 1
+
+
+[*] Scanning  /home/yazid/TerraformGoat/azure/vm/vm_command_execution
+/home/yazid/TerraformGoat/azure/vm/vm_command_execution/main.tf
+/home/yazid/TerraformGoat/azure/vm/vm_command_execution/versions.tf
+/home/yazid/TerraformGoat/azure/vm/vm_command_execution/outputs.tf
+Nombre de lignes analysées :  123
+
+Tfsec a mis  562.563720703125  pour  /home/yazid/TerraformGoat/azure/vm/vm_command_execution
+Description :  Linux virtual machine allows password authentication.
+Impact :  Using password authentication is less secure that ssh keys may result in compromised servers
+Resolution :  Use ssh authentication for virtual machines
+
+--------------------------------------------------------------------------------------------
+
+Description :  Security group rule allows ingress to RDP port from multiple public internet addresses.
+Impact :  Anyone from the internet can potentially RDP onto an instance
+Resolution :  Block RDP port from internet
+
+--------------------------------------------------------------------------------------------
+
+Description :  Security group rule allows ingress from public internet.
+Impact :  The port is exposed for ingress from the internet
+Resolution :  Set a more restrictive cidr range
+
+--------------------------------------------------------------------------------------------
+
+Description :  Security group rule allows ingress to SSH port from multiple public internet addresses.
+Impact :  Its dangerous to allow SSH access from the internet
+Resolution :  Block port 22 access from the internet
+
+--------------------------------------------------------------------------------------------
+
+Nombre de vulnérabilités trouvées :  4
+HIGH : 1
+CRITICAL : 3
+
+
+[*] Scanning  /home/yazid/TerraformGoat/aliyun/oss/server_side_encryption_no_kms_set
+/home/yazid/TerraformGoat/aliyun/oss/server_side_encryption_no_kms_set/output.tf
+/home/yazid/TerraformGoat/aliyun/oss/server_side_encryption_no_kms_set/main.tf
+/home/yazid/TerraformGoat/aliyun/oss/server_side_encryption_no_kms_set/version.tf
+Nombre de lignes analysées :  32
+Tfsec a mis  590.063232421875  pour  /home/yazid/TerraformGoat/aliyun/oss/server_side_encryption_no_kms_set
+
+
+[*] Scanning  /home/yazid/TerraformGoat/aliyun/oss/bucket_logging_disable
+/home/yazid/TerraformGoat/aliyun/oss/bucket_logging_disable/output.tf
+/home/yazid/TerraformGoat/aliyun/oss/bucket_logging_disable/main.tf
+/home/yazid/TerraformGoat/aliyun/oss/bucket_logging_disable/version.tf
+Nombre de lignes analysées :  27
+Tfsec a mis  584.99169921875  pour  /home/yazid/TerraformGoat/aliyun/oss/bucket_logging_disable
+
+
+[*] Scanning  /home/yazid/TerraformGoat/aliyun/oss/server_side_encryption_not_using_BYOK
+/home/yazid/TerraformGoat/aliyun/oss/server_side_encryption_not_using_BYOK/output.tf
+/home/yazid/TerraformGoat/aliyun/oss/server_side_encryption_not_using_BYOK/main.tf
+/home/yazid/TerraformGoat/aliyun/oss/server_side_encryption_not_using_BYOK/version.tf
+Nombre de lignes analysées :  32
+Tfsec a mis  585.780029296875  pour  /home/yazid/TerraformGoat/aliyun/oss/server_side_encryption_not_using_BYOK
+
+
+[*] Scanning  /home/yazid/TerraformGoat/aliyun/oss/bucket_policy_readable
+/home/yazid/TerraformGoat/aliyun/oss/bucket_policy_readable/output.tf
+/home/yazid/TerraformGoat/aliyun/oss/bucket_policy_readable/main.tf
+/home/yazid/TerraformGoat/aliyun/oss/bucket_policy_readable/version.tf
+Nombre de lignes analysées :  45
+Tfsec a mis  541.911376953125  pour  /home/yazid/TerraformGoat/aliyun/oss/bucket_policy_readable
+
+
+[*] Scanning  /home/yazid/TerraformGoat/aliyun/oss/object_acl_writable
+/home/yazid/TerraformGoat/aliyun/oss/object_acl_writable/output.tf
+/home/yazid/TerraformGoat/aliyun/oss/object_acl_writable/main.tf
+/home/yazid/TerraformGoat/aliyun/oss/object_acl_writable/version.tf
+Nombre de lignes analysées :  52
+Tfsec a mis  598.270263671875  pour  /home/yazid/TerraformGoat/aliyun/oss/object_acl_writable
+
+
+[*] Scanning  /home/yazid/TerraformGoat/aliyun/oss/object_acl_readable
+/home/yazid/TerraformGoat/aliyun/oss/object_acl_readable/output.tf
+/home/yazid/TerraformGoat/aliyun/oss/object_acl_readable/main.tf
+/home/yazid/TerraformGoat/aliyun/oss/object_acl_readable/version.tf
+Nombre de lignes analysées :  51
+Tfsec a mis  555.96337890625  pour  /home/yazid/TerraformGoat/aliyun/oss/object_acl_readable
+
+
+[*] Scanning  /home/yazid/TerraformGoat/aliyun/oss/bucket_object_traversal
+/home/yazid/TerraformGoat/aliyun/oss/bucket_object_traversal/output.tf
+/home/yazid/TerraformGoat/aliyun/oss/bucket_object_traversal/main.tf
+/home/yazid/TerraformGoat/aliyun/oss/bucket_object_traversal/version.tf
+Nombre de lignes analysées :  85
+Tfsec a mis  538.3330078125  pour  /home/yazid/TerraformGoat/aliyun/oss/bucket_object_traversal
+
+
+[*] Scanning  /home/yazid/TerraformGoat/aliyun/oss/unrestricted_file_upload
+/home/yazid/TerraformGoat/aliyun/oss/unrestricted_file_upload/output.tf
+/home/yazid/TerraformGoat/aliyun/oss/unrestricted_file_upload/main.tf
+/home/yazid/TerraformGoat/aliyun/oss/unrestricted_file_upload/version.tf
+/home/yazid/TerraformGoat/aliyun/oss/unrestricted_file_upload/variables.tf
+Nombre de lignes analysées :  55
+Tfsec a mis  586.693359375  pour  /home/yazid/TerraformGoat/aliyun/oss/unrestricted_file_upload
+
+
+[*] Scanning  /home/yazid/TerraformGoat/aliyun/oss/bucket_public_access
+/home/yazid/TerraformGoat/aliyun/oss/bucket_public_access/output.tf
+/home/yazid/TerraformGoat/aliyun/oss/bucket_public_access/main.tf
+/home/yazid/TerraformGoat/aliyun/oss/bucket_public_access/version.tf
+Nombre de lignes analysées :  28
+Tfsec a mis  570.148681640625  pour  /home/yazid/TerraformGoat/aliyun/oss/bucket_public_access
+
+
+[*] Scanning  /home/yazid/TerraformGoat/aliyun/oss/special_bucket_policy
+/home/yazid/TerraformGoat/aliyun/oss/special_bucket_policy/output.tf
+/home/yazid/TerraformGoat/aliyun/oss/special_bucket_policy/main.tf
+/home/yazid/TerraformGoat/aliyun/oss/special_bucket_policy/version.tf
+Nombre de lignes analysées :  79
+Tfsec a mis  535.677978515625  pour  /home/yazid/TerraformGoat/aliyun/oss/special_bucket_policy
+
+
+[*] Scanning  /home/yazid/TerraformGoat/aliyun/oss/object_public_access
+/home/yazid/TerraformGoat/aliyun/oss/object_public_access/output.tf
+/home/yazid/TerraformGoat/aliyun/oss/object_public_access/main.tf
+/home/yazid/TerraformGoat/aliyun/oss/object_public_access/version.tf
+Nombre de lignes analysées :  36
+Tfsec a mis  593.2919921875  pour  /home/yazid/TerraformGoat/aliyun/oss/object_public_access
+
+
+[*] Scanning  /home/yazid/TerraformGoat/aliyun/oss/bucket_http_enable
+/home/yazid/TerraformGoat/aliyun/oss/bucket_http_enable/output.tf
+/home/yazid/TerraformGoat/aliyun/oss/bucket_http_enable/main.tf
+/home/yazid/TerraformGoat/aliyun/oss/bucket_http_enable/version.tf
+Nombre de lignes analysées :  51
+Tfsec a mis  549.19287109375  pour  /home/yazid/TerraformGoat/aliyun/oss/bucket_http_enable
+
+
+[*] Scanning  /home/yazid/TerraformGoat/aliyun/ecs/ecs_unattached_disks_are_unencrypted
+/home/yazid/TerraformGoat/aliyun/ecs/ecs_unattached_disks_are_unencrypted/main.tf
+/home/yazid/TerraformGoat/aliyun/ecs/ecs_unattached_disks_are_unencrypted/versions.tf
+/home/yazid/TerraformGoat/aliyun/ecs/ecs_unattached_disks_are_unencrypted/outputs.tf
+Nombre de lignes analysées :  28
+Tfsec a mis  595.98828125  pour  /home/yazid/TerraformGoat/aliyun/ecs/ecs_unattached_disks_are_unencrypted
+
+
+[*] Scanning  /home/yazid/TerraformGoat/aliyun/ecs/ecs_ssrf
+/home/yazid/TerraformGoat/aliyun/ecs/ecs_ssrf/main.tf
+/home/yazid/TerraformGoat/aliyun/ecs/ecs_ssrf/versions.tf
+/home/yazid/TerraformGoat/aliyun/ecs/ecs_ssrf/outputs.tf
+Nombre de lignes analysées :  143
+Tfsec a mis  641.395263671875  pour  /home/yazid/TerraformGoat/aliyun/ecs/ecs_ssrf
+
+
+[*] Scanning  /home/yazid/TerraformGoat/aliyun/ecs/ecs_virtual_machine_disks_are_unencrypted
+/home/yazid/TerraformGoat/aliyun/ecs/ecs_virtual_machine_disks_are_unencrypted/main.tf
+/home/yazid/TerraformGoat/aliyun/ecs/ecs_virtual_machine_disks_are_unencrypted/versions.tf
+/home/yazid/TerraformGoat/aliyun/ecs/ecs_virtual_machine_disks_are_unencrypted/outputs.tf
+Nombre de lignes analysées :  56
+Tfsec a mis  556.623046875  pour  /home/yazid/TerraformGoat/aliyun/ecs/ecs_virtual_machine_disks_are_unencrypted
+
+
+[*] Scanning  /home/yazid/TerraformGoat/aliyun/networking/vpc_security_group_open_common_ports
+/home/yazid/TerraformGoat/aliyun/networking/vpc_security_group_open_common_ports/main.tf
+/home/yazid/TerraformGoat/aliyun/networking/vpc_security_group_open_common_ports/versions.tf
+/home/yazid/TerraformGoat/aliyun/networking/vpc_security_group_open_common_ports/outputs.tf
+Nombre de lignes analysées :  434
+Tfsec a mis  580.028076171875  pour  /home/yazid/TerraformGoat/aliyun/networking/vpc_security_group_open_common_ports
+
+
+[*] Scanning  /home/yazid/TerraformGoat/aliyun/networking/vpc_security_group_open_all_ports
+/home/yazid/TerraformGoat/aliyun/networking/vpc_security_group_open_all_ports/main.tf
+/home/yazid/TerraformGoat/aliyun/networking/vpc_security_group_open_all_ports/versions.tf
+/home/yazid/TerraformGoat/aliyun/networking/vpc_security_group_open_all_ports/outputs.tf
+Nombre de lignes analysées :  70
+Tfsec a mis  584.83642578125  pour  /home/yazid/TerraformGoat/aliyun/networking/vpc_security_group_open_all_ports
+OUI
