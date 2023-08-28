@@ -1,0 +1,473 @@
+C:\Users\1234Y\PycharmProjects\JustAnotherShellcodeGenerator\venv\Scripts\python.exe C:\Users\1234Y\PycharmProjects\JustAnotherShellcodeGenerator\checkovjsongenerator.py 
+TerraformGoat/aliyun\ecs\ecs_ssrf
+TerraformGoat/aliyun\ecs\ecs_ssrf\main.tf
+TerraformGoat/aliyun\ecs\ecs_ssrf\outputs.tf
+TerraformGoat/aliyun\ecs\ecs_ssrf\versions.tf
+Nombre de lignes :  143
+A mis :  2.142333984375 ms
+TerraformGoat/aliyun\ecs\ecs_unattached_disks_are_unencrypted
+TerraformGoat/aliyun\ecs\ecs_unattached_disks_are_unencrypted\main.tf
+TerraformGoat/aliyun\ecs\ecs_unattached_disks_are_unencrypted\outputs.tf
+TerraformGoat/aliyun\ecs\ecs_unattached_disks_are_unencrypted\versions.tf
+Nombre de lignes :  28
+A mis :  1.971435546875 ms
+TerraformGoat/aliyun\ecs\ecs_virtual_machine_disks_are_unencrypted
+TerraformGoat/aliyun\ecs\ecs_virtual_machine_disks_are_unencrypted\main.tf
+TerraformGoat/aliyun\ecs\ecs_virtual_machine_disks_are_unencrypted\outputs.tf
+TerraformGoat/aliyun\ecs\ecs_virtual_machine_disks_are_unencrypted\versions.tf
+Nombre de lignes :  56
+A mis :  3.103759765625 ms
+TerraformGoat/aliyun\networking\vpc_security_group_open_all_ports
+TerraformGoat/aliyun\networking\vpc_security_group_open_all_ports\main.tf
+TerraformGoat/aliyun\networking\vpc_security_group_open_all_ports\outputs.tf
+TerraformGoat/aliyun\networking\vpc_security_group_open_all_ports\versions.tf
+Nombre de lignes :  70
+A mis :  2.008544921875 ms
+TerraformGoat/aliyun\networking\vpc_security_group_open_common_ports
+TerraformGoat/aliyun\networking\vpc_security_group_open_common_ports\main.tf
+TerraformGoat/aliyun\networking\vpc_security_group_open_common_ports\outputs.tf
+TerraformGoat/aliyun\networking\vpc_security_group_open_common_ports\versions.tf
+Nombre de lignes :  434
+A mis :  2.9931640625 ms
+TerraformGoat/aliyun\oss\bucket_http_enable
+TerraformGoat/aliyun\oss\bucket_http_enable\main.tf
+TerraformGoat/aliyun\oss\bucket_http_enable\output.tf
+TerraformGoat/aliyun\oss\bucket_http_enable\version.tf
+Nombre de lignes :  51
+A mis :  1.994873046875 ms
+TerraformGoat/aliyun\oss\bucket_logging_disable
+TerraformGoat/aliyun\oss\bucket_logging_disable\main.tf
+TerraformGoat/aliyun\oss\bucket_logging_disable\output.tf
+TerraformGoat/aliyun\oss\bucket_logging_disable\version.tf
+Nombre de lignes :  27
+A mis :  2.146484375 ms
+TerraformGoat/aliyun\oss\bucket_object_traversal
+TerraformGoat/aliyun\oss\bucket_object_traversal\main.tf
+TerraformGoat/aliyun\oss\bucket_object_traversal\output.tf
+TerraformGoat/aliyun\oss\bucket_object_traversal\version.tf
+Nombre de lignes :  85
+A mis :  2.96630859375 ms
+TerraformGoat/aliyun\oss\bucket_policy_readable
+TerraformGoat/aliyun\oss\bucket_policy_readable\main.tf
+TerraformGoat/aliyun\oss\bucket_policy_readable\output.tf
+TerraformGoat/aliyun\oss\bucket_policy_readable\version.tf
+Nombre de lignes :  45
+A mis :  1.1435546875 ms
+TerraformGoat/aliyun\oss\bucket_public_access
+TerraformGoat/aliyun\oss\bucket_public_access\main.tf
+TerraformGoat/aliyun\oss\bucket_public_access\output.tf
+TerraformGoat/aliyun\oss\bucket_public_access\version.tf
+Nombre de lignes :  28
+A mis :  1.9716796875 ms
+TerraformGoat/aliyun\oss\object_acl_readable
+TerraformGoat/aliyun\oss\object_acl_readable\main.tf
+TerraformGoat/aliyun\oss\object_acl_readable\output.tf
+TerraformGoat/aliyun\oss\object_acl_readable\version.tf
+Nombre de lignes :  51
+A mis :  2.09033203125 ms
+TerraformGoat/aliyun\oss\object_acl_writable
+TerraformGoat/aliyun\oss\object_acl_writable\main.tf
+TerraformGoat/aliyun\oss\object_acl_writable\output.tf
+TerraformGoat/aliyun\oss\object_acl_writable\version.tf
+Nombre de lignes :  52
+A mis :  2.033935546875 ms
+TerraformGoat/aliyun\oss\object_public_access
+TerraformGoat/aliyun\oss\object_public_access\main.tf
+TerraformGoat/aliyun\oss\object_public_access\output.tf
+TerraformGoat/aliyun\oss\object_public_access\version.tf
+Nombre de lignes :  36
+A mis :  2.010986328125 ms
+TerraformGoat/aliyun\oss\server_side_encryption_not_using_BYOK
+TerraformGoat/aliyun\oss\server_side_encryption_not_using_BYOK\main.tf
+TerraformGoat/aliyun\oss\server_side_encryption_not_using_BYOK\output.tf
+TerraformGoat/aliyun\oss\server_side_encryption_not_using_BYOK\version.tf
+Nombre de lignes :  32
+A mis :  1.174072265625 ms
+TerraformGoat/aliyun\oss\server_side_encryption_no_kms_set
+TerraformGoat/aliyun\oss\server_side_encryption_no_kms_set\main.tf
+TerraformGoat/aliyun\oss\server_side_encryption_no_kms_set\output.tf
+TerraformGoat/aliyun\oss\server_side_encryption_no_kms_set\version.tf
+Nombre de lignes :  32
+A mis :  1.01708984375 ms
+TerraformGoat/aliyun\oss\special_bucket_policy
+TerraformGoat/aliyun\oss\special_bucket_policy\main.tf
+TerraformGoat/aliyun\oss\special_bucket_policy\output.tf
+TerraformGoat/aliyun\oss\special_bucket_policy\version.tf
+Nombre de lignes :  79
+A mis :  1.007568359375 ms
+TerraformGoat/aliyun\oss\unrestricted_file_upload
+TerraformGoat/aliyun\oss\unrestricted_file_upload\main.tf
+TerraformGoat/aliyun\oss\unrestricted_file_upload\output.tf
+TerraformGoat/aliyun\oss\unrestricted_file_upload\variables.tf
+TerraformGoat/aliyun\oss\unrestricted_file_upload\version.tf
+Nombre de lignes :  55
+A mis :  3.372802734375 ms
+TerraformGoat/aws\ec2\console_takeover
+TerraformGoat/aws\ec2\console_takeover\main.tf
+TerraformGoat/aws\ec2\console_takeover\outputs.tf
+TerraformGoat/aws\ec2\console_takeover\versions.tf
+Nombre de lignes :  97
+A mis :  1.98974609375 ms
+TerraformGoat/aws\ec2\EBS_volumes_are_not_used
+TerraformGoat/aws\ec2\EBS_volumes_are_not_used\main.tf
+TerraformGoat/aws\ec2\EBS_volumes_are_not_used\outputs.tf
+TerraformGoat/aws\ec2\EBS_volumes_are_not_used\versions.tf
+Nombre de lignes :  19
+A mis :  0.9951171875 ms
+TerraformGoat/aws\ec2\EBS_volumes_encryption_is_disabled
+TerraformGoat/aws\ec2\EBS_volumes_encryption_is_disabled\main.tf
+TerraformGoat/aws\ec2\EBS_volumes_encryption_is_disabled\versions.tf
+Nombre de lignes :  15
+A mis :  0.999755859375 ms
+TerraformGoat/aws\ec2\ec2_ssrf
+TerraformGoat/aws\ec2\ec2_ssrf\main.tf
+TerraformGoat/aws\ec2\ec2_ssrf\outputs.tf
+TerraformGoat/aws\ec2\ec2_ssrf\versions.tf
+Nombre de lignes :  69
+A mis :  2.0986328125 ms
+TerraformGoat/aws\ec2\snapshots_of_EBS_volumes_are_unencrypted
+TerraformGoat/aws\ec2\snapshots_of_EBS_volumes_are_unencrypted\main.tf
+TerraformGoat/aws\ec2\snapshots_of_EBS_volumes_are_unencrypted\outputs.tf
+TerraformGoat/aws\ec2\snapshots_of_EBS_volumes_are_unencrypted\versions.tf
+Nombre de lignes :  24
+A mis :  1.032958984375 ms
+TerraformGoat/aws\iam\privilege_escalation
+TerraformGoat/aws\iam\privilege_escalation\main.tf
+TerraformGoat/aws\iam\privilege_escalation\versions.tf
+Nombre de lignes :  54
+A mis :  1.033203125 ms
+TerraformGoat/aws\networking\vpc_security_group_open_all_ports
+TerraformGoat/aws\networking\vpc_security_group_open_all_ports\main.tf
+TerraformGoat/aws\networking\vpc_security_group_open_all_ports\outputs.tf
+TerraformGoat/aws\networking\vpc_security_group_open_all_ports\versions.tf
+Nombre de lignes :  34
+A mis :  2.059326171875 ms
+TerraformGoat/aws\networking\vpc_security_group_open_common_ports
+TerraformGoat/aws\networking\vpc_security_group_open_common_ports\main.tf
+TerraformGoat/aws\networking\vpc_security_group_open_common_ports\outputs.tf
+TerraformGoat/aws\networking\vpc_security_group_open_common_ports\versions.tf
+Nombre de lignes :  297
+A mis :  2.025146484375 ms
+TerraformGoat/aws\s3\bucket_acl_readable
+TerraformGoat/aws\s3\bucket_acl_readable\main.tf
+TerraformGoat/aws\s3\bucket_acl_readable\output.tf
+TerraformGoat/aws\s3\bucket_acl_readable\version.tf
+Nombre de lignes :  51
+A mis :  2.025390625 ms
+TerraformGoat/aws\s3\bucket_acl_writable
+TerraformGoat/aws\s3\bucket_acl_writable\main.tf
+TerraformGoat/aws\s3\bucket_acl_writable\output.tf
+TerraformGoat/aws\s3\bucket_acl_writable\version.tf
+Nombre de lignes :  69
+A mis :  1.974609375 ms
+TerraformGoat/aws\s3\bucket_allow_http_access
+TerraformGoat/aws\s3\bucket_allow_http_access\main.tf
+TerraformGoat/aws\s3\bucket_allow_http_access\output.tf
+TerraformGoat/aws\s3\bucket_allow_http_access\version.tf
+Nombre de lignes :  48
+A mis :  2.00244140625 ms
+TerraformGoat/aws\s3\bucket_default_encryption_disable
+TerraformGoat/aws\s3\bucket_default_encryption_disable\main.tf
+TerraformGoat/aws\s3\bucket_default_encryption_disable\output.tf
+TerraformGoat/aws\s3\bucket_default_encryption_disable\version.tf
+Nombre de lignes :  26
+A mis :  0.998046875 ms
+TerraformGoat/aws\s3\bucket_logging_disable
+TerraformGoat/aws\s3\bucket_logging_disable\main.tf
+TerraformGoat/aws\s3\bucket_logging_disable\output.tf
+TerraformGoat/aws\s3\bucket_logging_disable\version.tf
+Nombre de lignes :  26
+A mis :  1.08740234375 ms
+TerraformGoat/aws\s3\bucket_object_traversal
+TerraformGoat/aws\s3\bucket_object_traversal\main.tf
+TerraformGoat/aws\s3\bucket_object_traversal\output.tf
+TerraformGoat/aws\s3\bucket_object_traversal\version.tf
+Nombre de lignes :  71
+A mis :  1.995361328125 ms
+TerraformGoat/aws\s3\bucket_public_access
+TerraformGoat/aws\s3\bucket_public_access\main.tf
+TerraformGoat/aws\s3\bucket_public_access\output.tf
+TerraformGoat/aws\s3\bucket_public_access\version.tf
+Nombre de lignes :  51
+A mis :  0.986083984375 ms
+TerraformGoat/aws\s3\mfa_delete_is_disable
+TerraformGoat/aws\s3\mfa_delete_is_disable\main.tf
+TerraformGoat/aws\s3\mfa_delete_is_disable\output.tf
+TerraformGoat/aws\s3\mfa_delete_is_disable\version.tf
+Nombre de lignes :  36
+A mis :  0.999267578125 ms
+TerraformGoat/aws\s3\object_acl_writable
+TerraformGoat/aws\s3\object_acl_writable\main.tf
+TerraformGoat/aws\s3\object_acl_writable\output.tf
+TerraformGoat/aws\s3\object_acl_writable\version.tf
+Nombre de lignes :  64
+A mis :  2.001708984375 ms
+TerraformGoat/aws\s3\special_bucket_policy
+TerraformGoat/aws\s3\special_bucket_policy\main.tf
+TerraformGoat/aws\s3\special_bucket_policy\output.tf
+TerraformGoat/aws\s3\special_bucket_policy\version.tf
+Nombre de lignes :  68
+A mis :  1.135498046875 ms
+TerraformGoat/aws\s3\unrestricted_file_upload
+TerraformGoat/aws\s3\unrestricted_file_upload\main.tf
+TerraformGoat/aws\s3\unrestricted_file_upload\output.tf
+TerraformGoat/aws\s3\unrestricted_file_upload\version.tf
+Nombre de lignes :  68
+A mis :  2.226806640625 ms
+TerraformGoat/azure\blob\blob_public_access
+TerraformGoat/azure\blob\blob_public_access\main.tf
+TerraformGoat/azure\blob\blob_public_access\outputs.tf
+TerraformGoat/azure\blob\blob_public_access\versions.tf
+Nombre de lignes :  48
+A mis :  0.9658203125 ms
+TerraformGoat/azure\blob\container_blob_traversal
+TerraformGoat/azure\blob\container_blob_traversal\main.tf
+TerraformGoat/azure\blob\container_blob_traversal\outputs.tf
+TerraformGoat/azure\blob\container_blob_traversal\versions.tf
+Nombre de lignes :  48
+A mis :  2.22314453125 ms
+TerraformGoat/azure\vm\vm_command_execution
+TerraformGoat/azure\vm\vm_command_execution\main.tf
+TerraformGoat/azure\vm\vm_command_execution\outputs.tf
+TerraformGoat/azure\vm\vm_command_execution\versions.tf
+Nombre de lignes :  123
+A mis :  1.044677734375 ms
+TerraformGoat/gcp\cs\bucket_acl_writable
+TerraformGoat/gcp\cs\bucket_acl_writable\main.tf
+TerraformGoat/gcp\cs\bucket_acl_writable\outputs.tf
+TerraformGoat/gcp\cs\bucket_acl_writable\variables.tf
+TerraformGoat/gcp\cs\bucket_acl_writable\versions.tf
+Nombre de lignes :  61
+A mis :  1.015380859375 ms
+TerraformGoat/gcp\cs\bucket_object_traversal
+TerraformGoat/gcp\cs\bucket_object_traversal\main.tf
+TerraformGoat/gcp\cs\bucket_object_traversal\outputs.tf
+TerraformGoat/gcp\cs\bucket_object_traversal\variables.tf
+TerraformGoat/gcp\cs\bucket_object_traversal\versions.tf
+Nombre de lignes :  61
+A mis :  1.00244140625 ms
+TerraformGoat/gcp\cs\object_acl_writable
+TerraformGoat/gcp\cs\object_acl_writable\main.tf
+TerraformGoat/gcp\cs\object_acl_writable\outputs.tf
+TerraformGoat/gcp\cs\object_acl_writable\variables.tf
+TerraformGoat/gcp\cs\object_acl_writable\versions.tf
+Nombre de lignes :  52
+A mis :  1.003173828125 ms
+TerraformGoat/gcp\cs\unrestricted_file_upload
+TerraformGoat/gcp\cs\unrestricted_file_upload\main.tf
+TerraformGoat/gcp\cs\unrestricted_file_upload\outputs.tf
+TerraformGoat/gcp\cs\unrestricted_file_upload\variables.tf
+TerraformGoat/gcp\cs\unrestricted_file_upload\versions.tf
+Nombre de lignes :  50
+A mis :  1.09130859375 ms
+TerraformGoat/gcp\vm\vm_command_execution
+TerraformGoat/gcp\vm\vm_command_execution\main.tf
+TerraformGoat/gcp\vm\vm_command_execution\outputs.tf
+TerraformGoat/gcp\vm\vm_command_execution\variables.tf
+TerraformGoat/gcp\vm\vm_command_execution\versions.tf
+Nombre de lignes :  91
+A mis :  2.02001953125 ms
+TerraformGoat/huaweicloud\ecs\ecs_ssrf
+TerraformGoat/huaweicloud\ecs\ecs_ssrf\main.tf
+TerraformGoat/huaweicloud\ecs\ecs_ssrf\outputs.tf
+TerraformGoat/huaweicloud\ecs\ecs_ssrf\variables.tf
+TerraformGoat/huaweicloud\ecs\ecs_ssrf\versions.tf
+Nombre de lignes :  126
+A mis :  0.998046875 ms
+TerraformGoat/huaweicloud\networking\cis_unsafe_secgroup
+TerraformGoat/huaweicloud\networking\cis_unsafe_secgroup\main.tf
+TerraformGoat/huaweicloud\networking\cis_unsafe_secgroup\outputs.tf
+TerraformGoat/huaweicloud\networking\cis_unsafe_secgroup\variables.tf
+TerraformGoat/huaweicloud\networking\cis_unsafe_secgroup\versions.tf
+Nombre de lignes :  280
+A mis :  2.1455078125 ms
+TerraformGoat/huaweicloud\obs\bucket_object_traversal
+TerraformGoat/huaweicloud\obs\bucket_object_traversal\main.tf
+TerraformGoat/huaweicloud\obs\bucket_object_traversal\outputs.tf
+TerraformGoat/huaweicloud\obs\bucket_object_traversal\variables.tf
+TerraformGoat/huaweicloud\obs\bucket_object_traversal\versions.tf
+Nombre de lignes :  72
+A mis :  2.974609375 ms
+TerraformGoat/huaweicloud\obs\object_acl_writable
+TerraformGoat/huaweicloud\obs\object_acl_writable\main.tf
+TerraformGoat/huaweicloud\obs\object_acl_writable\outputs.tf
+TerraformGoat/huaweicloud\obs\object_acl_writable\variables.tf
+TerraformGoat/huaweicloud\obs\object_acl_writable\versions.tf
+Nombre de lignes :  71
+A mis :  2.159423828125 ms
+TerraformGoat/huaweicloud\obs\policy_of_unrestricted_file_upload
+TerraformGoat/huaweicloud\obs\policy_of_unrestricted_file_upload\main.tf
+TerraformGoat/huaweicloud\obs\policy_of_unrestricted_file_upload\outputs.tf
+TerraformGoat/huaweicloud\obs\policy_of_unrestricted_file_upload\variables.tf
+TerraformGoat/huaweicloud\obs\policy_of_unrestricted_file_upload\versions.tf
+Nombre de lignes :  70
+A mis :  1.999267578125 ms
+TerraformGoat/huaweicloud\obs\special_bucket_policy
+TerraformGoat/huaweicloud\obs\special_bucket_policy\main.tf
+TerraformGoat/huaweicloud\obs\special_bucket_policy\outputs.tf
+TerraformGoat/huaweicloud\obs\special_bucket_policy\variables.tf
+TerraformGoat/huaweicloud\obs\special_bucket_policy\versions.tf
+Nombre de lignes :  80
+A mis :  2.06005859375 ms
+TerraformGoat/huaweicloud\obs\unrestricted_file_upload
+TerraformGoat/huaweicloud\obs\unrestricted_file_upload\main.tf
+TerraformGoat/huaweicloud\obs\unrestricted_file_upload\outputs.tf
+TerraformGoat/huaweicloud\obs\unrestricted_file_upload\variables.tf
+TerraformGoat/huaweicloud\obs\unrestricted_file_upload\versions.tf
+Nombre de lignes :  42
+A mis :  2.044189453125 ms
+TerraformGoat/huaweicloud\rds\cis_rds_mysql
+TerraformGoat/huaweicloud\rds\cis_rds_mysql\main.tf
+TerraformGoat/huaweicloud\rds\cis_rds_mysql\variables.tf
+TerraformGoat/huaweicloud\rds\cis_rds_mysql\versions.tf
+Nombre de lignes :  98
+A mis :  1.002197265625 ms
+TerraformGoat/kubernetes\apiserver\dashboard
+TerraformGoat/kubernetes\apiserver\dashboard\main.tf
+---
+TerraformGoat/kubernetes\apiserver\dashboard\outputs.tf
+TerraformGoat/kubernetes\apiserver\dashboard\versions.tf
+Nombre de lignes :  17
+A mis :  2.04638671875 ms
+TerraformGoat/kubernetes\apiserver\unauth
+TerraformGoat/kubernetes\apiserver\unauth\main.tf
+---
+TerraformGoat/kubernetes\apiserver\unauth\outputs.tf
+TerraformGoat/kubernetes\apiserver\unauth\versions.tf
+Nombre de lignes :  17
+A mis :  1.973876953125 ms
+TerraformGoat/kubernetes\etcd\grpc_proxy_unauth
+TerraformGoat/kubernetes\etcd\grpc_proxy_unauth\main.tf
+---
+TerraformGoat/kubernetes\etcd\grpc_proxy_unauth\outputs.tf
+TerraformGoat/kubernetes\etcd\grpc_proxy_unauth\versions.tf
+Nombre de lignes :  17
+A mis :  3.20849609375 ms
+TerraformGoat/kubernetes\etcd\unauth
+TerraformGoat/kubernetes\etcd\unauth\main.tf
+---
+TerraformGoat/kubernetes\etcd\unauth\outputs.tf
+TerraformGoat/kubernetes\etcd\unauth\versions.tf
+Nombre de lignes :  17
+A mis :  2.0 ms
+TerraformGoat/kubernetes\kube-proxy\CVE-2020-8558
+TerraformGoat/kubernetes\kube-proxy\CVE-2020-8558\main.tf
+---
+TerraformGoat/kubernetes\kube-proxy\CVE-2020-8558\outputs.tf
+TerraformGoat/kubernetes\kube-proxy\CVE-2020-8558\versions.tf
+Nombre de lignes :  17
+A mis :  2.090087890625 ms
+TerraformGoat/kubernetes\kubelet\anonymous-auth
+TerraformGoat/kubernetes\kubelet\anonymous-auth\main.tf
+---
+TerraformGoat/kubernetes\kubelet\anonymous-auth\outputs.tf
+TerraformGoat/kubernetes\kubelet\anonymous-auth\versions.tf
+Nombre de lignes :  17
+A mis :  1.991455078125 ms
+TerraformGoat/kubernetes\kubelet\log-mount
+TerraformGoat/kubernetes\kubelet\log-mount\main.tf
+---
+TerraformGoat/kubernetes\kubelet\log-mount\outputs.tf
+TerraformGoat/kubernetes\kubelet\log-mount\versions.tf
+Nombre de lignes :  17
+A mis :  2.0771484375 ms
+TerraformGoat/kubernetes\kubelet\read-only-port
+TerraformGoat/kubernetes\kubelet\read-only-port\main.tf
+---
+TerraformGoat/kubernetes\kubelet\read-only-port\outputs.tf
+TerraformGoat/kubernetes\kubelet\read-only-port\versions.tf
+Nombre de lignes :  17
+A mis :  1.973388671875 ms
+TerraformGoat/tencentcloud\cos\bucket_acl_readable
+TerraformGoat/tencentcloud\cos\bucket_acl_readable\main.tf
+TerraformGoat/tencentcloud\cos\bucket_acl_readable\output.tf
+TerraformGoat/tencentcloud\cos\bucket_acl_readable\variables.tf
+TerraformGoat/tencentcloud\cos\bucket_acl_readable\version.tf
+Nombre de lignes :  71
+A mis :  2.000244140625 ms
+TerraformGoat/tencentcloud\cos\bucket_acl_writable
+TerraformGoat/tencentcloud\cos\bucket_acl_writable\main.tf
+TerraformGoat/tencentcloud\cos\bucket_acl_writable\output.tf
+TerraformGoat/tencentcloud\cos\bucket_acl_writable\variables.tf
+TerraformGoat/tencentcloud\cos\bucket_acl_writable\version.tf
+Nombre de lignes :  84
+A mis :  2.0 ms
+TerraformGoat/tencentcloud\cos\bucket_logging_disable
+TerraformGoat/tencentcloud\cos\bucket_logging_disable\main.tf
+TerraformGoat/tencentcloud\cos\bucket_logging_disable\output.tf
+TerraformGoat/tencentcloud\cos\bucket_logging_disable\variables.tf
+TerraformGoat/tencentcloud\cos\bucket_logging_disable\version.tf
+Nombre de lignes :  49
+A mis :  0.999755859375 ms
+TerraformGoat/tencentcloud\cos\bucket_object_traversal
+TerraformGoat/tencentcloud\cos\bucket_object_traversal\main.tf
+TerraformGoat/tencentcloud\cos\bucket_object_traversal\output.tf
+TerraformGoat/tencentcloud\cos\bucket_object_traversal\variables.tf
+TerraformGoat/tencentcloud\cos\bucket_object_traversal\version.tf
+Nombre de lignes :  104
+A mis :  1.10107421875 ms
+TerraformGoat/tencentcloud\cos\bucket_public_access
+TerraformGoat/tencentcloud\cos\bucket_public_access\main.tf
+TerraformGoat/tencentcloud\cos\bucket_public_access\output.tf
+TerraformGoat/tencentcloud\cos\bucket_public_access\variables.tf
+TerraformGoat/tencentcloud\cos\bucket_public_access\version.tf
+Nombre de lignes :  49
+A mis :  2.070556640625 ms
+TerraformGoat/tencentcloud\cos\object_public_access
+TerraformGoat/tencentcloud\cos\object_public_access\main.tf
+TerraformGoat/tencentcloud\cos\object_public_access\output.tf
+TerraformGoat/tencentcloud\cos\object_public_access\variables.tf
+TerraformGoat/tencentcloud\cos\object_public_access\version.tf
+Nombre de lignes :  59
+A mis :  2.0029296875 ms
+TerraformGoat/tencentcloud\cos\server_side_encryption_disable
+TerraformGoat/tencentcloud\cos\server_side_encryption_disable\main.tf
+TerraformGoat/tencentcloud\cos\server_side_encryption_disable\output.tf
+TerraformGoat/tencentcloud\cos\server_side_encryption_disable\variables.tf
+TerraformGoat/tencentcloud\cos\server_side_encryption_disable\version.tf
+Nombre de lignes :  48
+A mis :  1.9990234375 ms
+TerraformGoat/tencentcloud\cos\unrestricted_file_upload
+TerraformGoat/tencentcloud\cos\unrestricted_file_upload\main.tf
+TerraformGoat/tencentcloud\cos\unrestricted_file_upload\output.tf
+TerraformGoat/tencentcloud\cos\unrestricted_file_upload\variables.tf
+TerraformGoat/tencentcloud\cos\unrestricted_file_upload\version.tf
+Nombre de lignes :  54
+A mis :  1.990234375 ms
+TerraformGoat/tencentcloud\cvm\cbs_storage_are_not_used
+TerraformGoat/tencentcloud\cvm\cbs_storage_are_not_used\main.tf
+TerraformGoat/tencentcloud\cvm\cbs_storage_are_not_used\outputs.tf
+TerraformGoat/tencentcloud\cvm\cbs_storage_are_not_used\variables.tf
+TerraformGoat/tencentcloud\cvm\cbs_storage_are_not_used\versions.tf
+Nombre de lignes :  38
+A mis :  2.06640625 ms
+TerraformGoat/tencentcloud\cvm\cvm_ssrf
+TerraformGoat/tencentcloud\cvm\cvm_ssrf\main.tf
+TerraformGoat/tencentcloud\cvm\cvm_ssrf\outputs.tf
+TerraformGoat/tencentcloud\cvm\cvm_ssrf\variables.tf
+TerraformGoat/tencentcloud\cvm\cvm_ssrf\versions.tf
+Nombre de lignes :  97
+A mis :  2.055419921875 ms
+TerraformGoat/tencentcloud\cvm\cvm_virtual_machine_disks_are_unencrypted
+TerraformGoat/tencentcloud\cvm\cvm_virtual_machine_disks_are_unencrypted\main.tf
+TerraformGoat/tencentcloud\cvm\cvm_virtual_machine_disks_are_unencrypted\outputs.tf
+TerraformGoat/tencentcloud\cvm\cvm_virtual_machine_disks_are_unencrypted\variables.tf
+TerraformGoat/tencentcloud\cvm\cvm_virtual_machine_disks_are_unencrypted\versions.tf
+Nombre de lignes :  50
+A mis :  1.9970703125 ms
+TerraformGoat/tencentcloud\networking\vpc_security_group_open_all_ports
+TerraformGoat/tencentcloud\networking\vpc_security_group_open_all_ports\main.tf
+TerraformGoat/tencentcloud\networking\vpc_security_group_open_all_ports\outputs.tf
+TerraformGoat/tencentcloud\networking\vpc_security_group_open_all_ports\variables.tf
+TerraformGoat/tencentcloud\networking\vpc_security_group_open_all_ports\versions.tf
+Nombre de lignes :  68
+A mis :  2.158935546875 ms
+TerraformGoat/tencentcloud\networking\vpc_security_group_open_common_ports
+TerraformGoat/tencentcloud\networking\vpc_security_group_open_common_ports\main.tf
+TerraformGoat/tencentcloud\networking\vpc_security_group_open_common_ports\outputs.tf
+TerraformGoat/tencentcloud\networking\vpc_security_group_open_common_ports\variables.tf
+TerraformGoat/tencentcloud\networking\vpc_security_group_open_common_ports\versions.tf
+Nombre de lignes :  299
+A mis :  1.995361328125 ms
+
+Process finished with exit code 0
