@@ -1,0 +1,981 @@
+C:\Users\1234Y\PycharmProjects\JustAnotherShellcodeGenerator\venv\Scripts\python.exe C:\Users\1234Y\PycharmProjects\JustAnotherShellcodeGenerator\checkov_parser.py 
+-------------------------------------------------------------------
+  .\TerraformGoat_aliyun_ecs_ecs_ssrf_main.json
+passed checks: 2
+failed checks: 0
+
+passed checks : 
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 22
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389
+
+failed checks : 
+-------------------------------------------------------------------
+no failed or passed checks for  .\TerraformGoat_aliyun_ecs_ecs_unattached_disks_are_unencrypted_main.json
+-------------------------------------------------------------------
+no failed or passed checks for  .\TerraformGoat_aliyun_ecs_ecs_virtual_machine_disks_are_unencrypted_main.json
+-------------------------------------------------------------------
+  .\TerraformGoat_aliyun_networking_vpc_security_group_open_all_ports_main.json
+passed checks: 0
+failed checks: 2
+
+passed checks : 
+
+failed checks : 
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 22
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389
+-------------------------------------------------------------------
+  .\TerraformGoat_aliyun_networking_vpc_security_group_open_common_ports_main.json
+passed checks: 52
+failed checks: 2
+
+passed checks : 
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 22
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 22
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 22
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 22
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 22
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 22
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 22
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 22
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 22
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 22
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 22
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 22
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 22
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 22
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 22
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 22
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 22
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 22
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 22
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 22
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 22
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 22
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 22
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 22
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 22
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 22
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389
+
+failed checks : 
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 22
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389
+-------------------------------------------------------------------
+  .\TerraformGoat_aliyun_oss_bucket_http_enable_main.json
+passed checks: 1
+failed checks: 4
+
+passed checks : 
+Alibaba Cloud OSS bucket accessible to public
+
+failed checks : 
+Ensure the OSS bucket has access logging enabled
+Ensure OSS bucket is encrypted with Customer Master Key
+Ensure OSS bucket has transfer Acceleration enabled
+Ensure OSS bucket has versioning enabled
+-------------------------------------------------------------------
+  .\TerraformGoat_aliyun_oss_bucket_logging_disable_main.json
+passed checks: 1
+failed checks: 4
+
+passed checks : 
+Alibaba Cloud OSS bucket accessible to public
+
+failed checks : 
+Ensure the OSS bucket has access logging enabled
+Ensure OSS bucket is encrypted with Customer Master Key
+Ensure OSS bucket has transfer Acceleration enabled
+Ensure OSS bucket has versioning enabled
+-------------------------------------------------------------------
+  .\TerraformGoat_aliyun_oss_bucket_object_traversal_main.json
+passed checks: 0
+failed checks: 5
+
+passed checks : 
+
+failed checks : 
+Ensure the OSS bucket has access logging enabled
+Ensure OSS bucket is encrypted with Customer Master Key
+Alibaba Cloud OSS bucket accessible to public
+Ensure OSS bucket has transfer Acceleration enabled
+Ensure OSS bucket has versioning enabled
+-------------------------------------------------------------------
+  .\TerraformGoat_aliyun_oss_bucket_policy_readable_main.json
+passed checks: 1
+failed checks: 4
+
+passed checks : 
+Alibaba Cloud OSS bucket accessible to public
+
+failed checks : 
+Ensure the OSS bucket has access logging enabled
+Ensure OSS bucket is encrypted with Customer Master Key
+Ensure OSS bucket has transfer Acceleration enabled
+Ensure OSS bucket has versioning enabled
+-------------------------------------------------------------------
+  .\TerraformGoat_aliyun_oss_bucket_public_access_main.json
+passed checks: 0
+failed checks: 5
+
+passed checks : 
+
+failed checks : 
+Ensure the OSS bucket has access logging enabled
+Ensure OSS bucket is encrypted with Customer Master Key
+Alibaba Cloud OSS bucket accessible to public
+Ensure OSS bucket has transfer Acceleration enabled
+Ensure OSS bucket has versioning enabled
+-------------------------------------------------------------------
+  .\TerraformGoat_aliyun_oss_object_acl_readable_main.json
+passed checks: 1
+failed checks: 4
+
+passed checks : 
+Alibaba Cloud OSS bucket accessible to public
+
+failed checks : 
+Ensure the OSS bucket has access logging enabled
+Ensure OSS bucket is encrypted with Customer Master Key
+Ensure OSS bucket has transfer Acceleration enabled
+Ensure OSS bucket has versioning enabled
+-------------------------------------------------------------------
+  .\TerraformGoat_aliyun_oss_object_acl_writable_main.json
+passed checks: 1
+failed checks: 4
+
+passed checks : 
+Alibaba Cloud OSS bucket accessible to public
+
+failed checks : 
+Ensure the OSS bucket has access logging enabled
+Ensure OSS bucket is encrypted with Customer Master Key
+Ensure OSS bucket has transfer Acceleration enabled
+Ensure OSS bucket has versioning enabled
+-------------------------------------------------------------------
+  .\TerraformGoat_aliyun_oss_object_public_access_main.json
+passed checks: 0
+failed checks: 5
+
+passed checks : 
+
+failed checks : 
+Ensure the OSS bucket has access logging enabled
+Ensure OSS bucket is encrypted with Customer Master Key
+Alibaba Cloud OSS bucket accessible to public
+Ensure OSS bucket has transfer Acceleration enabled
+Ensure OSS bucket has versioning enabled
+-------------------------------------------------------------------
+  .\TerraformGoat_aliyun_oss_server_side_encryption_not_using_BYOK_main.json
+passed checks: 1
+failed checks: 4
+
+passed checks : 
+Alibaba Cloud OSS bucket accessible to public
+
+failed checks : 
+Ensure the OSS bucket has access logging enabled
+Ensure OSS bucket is encrypted with Customer Master Key
+Ensure OSS bucket has transfer Acceleration enabled
+Ensure OSS bucket has versioning enabled
+-------------------------------------------------------------------
+  .\TerraformGoat_aliyun_oss_server_side_encryption_no_kms_set_main.json
+passed checks: 1
+failed checks: 4
+
+passed checks : 
+Alibaba Cloud OSS bucket accessible to public
+
+failed checks : 
+Ensure the OSS bucket has access logging enabled
+Ensure OSS bucket is encrypted with Customer Master Key
+Ensure OSS bucket has transfer Acceleration enabled
+Ensure OSS bucket has versioning enabled
+-------------------------------------------------------------------
+  .\TerraformGoat_aliyun_oss_special_bucket_policy_main.json
+passed checks: 0
+failed checks: 5
+
+passed checks : 
+
+failed checks : 
+Ensure the OSS bucket has access logging enabled
+Ensure OSS bucket is encrypted with Customer Master Key
+Alibaba Cloud OSS bucket accessible to public
+Ensure OSS bucket has transfer Acceleration enabled
+Ensure OSS bucket has versioning enabled
+-------------------------------------------------------------------
+  .\TerraformGoat_aliyun_oss_unrestricted_file_upload_main.json
+passed checks: 0
+failed checks: 5
+
+passed checks : 
+
+failed checks : 
+Ensure the OSS bucket has access logging enabled
+Ensure OSS bucket is encrypted with Customer Master Key
+Alibaba Cloud OSS bucket accessible to public
+Ensure OSS bucket has transfer Acceleration enabled
+Ensure OSS bucket has versioning enabled
+-------------------------------------------------------------------
+  .\TerraformGoat_aws_ec2_console_takeover_main.json
+passed checks: 12
+failed checks: 6
+
+passed checks : 
+Ensure no hard coded AWS access key and secret key exists in provider
+Ensure no hard-coded secrets exist in EC2 user data
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 22
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 80
+Ensure no security groups allow ingress from 0.0.0.0:0 to port -1
+Disallow IAM roles, users, and groups from using the AWS AdministratorAccess policy
+Ensure AWS IAM policy does not allow assume role permission across all services
+Ensure IAM role allows only specific services or principals to assume it
+Ensure an IAM role is attached to EC2 instance
+Ensure AWS Managed IAMFullAccess IAM policy is not used.
+Ensure that Security Groups are attached to another resource
+
+failed checks : 
+Ensure that detailed monitoring is enabled for EC2 instances
+Ensure that EC2 is EBS optimized
+EC2 instance should not have public IP.
+Ensure Instance Metadata Service Version 1 is not enabled
+Ensure all data stored in the Launch configuration or instance Elastic Blocks Store is securely encrypted
+Ensure every security groups rule has a description
+-------------------------------------------------------------------
+  .\TerraformGoat_aws_ec2_EBS_volumes_are_not_used_main.json
+passed checks: 2
+failed checks: 2
+
+passed checks : 
+Ensure no hard coded AWS access key and secret key exists in provider
+Ensure that only encrypted EBS volumes are attached to EC2 instances
+
+failed checks : 
+Ensure all data stored in the EBS is securely encrypted
+Ensure EBS Volume is encrypted by KMS using a customer managed Key (CMK)
+-------------------------------------------------------------------
+  .\TerraformGoat_aws_ec2_EBS_volumes_encryption_is_disabled_main.json
+passed checks: 1
+failed checks: 1
+
+passed checks : 
+Ensure no hard coded AWS access key and secret key exists in provider
+
+failed checks : 
+Ensure EBS default encryption is enabled
+-------------------------------------------------------------------
+  .\TerraformGoat_aws_ec2_ec2_ssrf_main.json
+passed checks: 7
+failed checks: 7
+
+passed checks : 
+Ensure no hard-coded secrets exist in EC2 user data
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 22
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 80
+Ensure no security groups allow ingress from 0.0.0.0:0 to port -1
+Ensure no hard coded AWS access key and secret key exists in provider
+Ensure that Security Groups are attached to another resource
+
+failed checks : 
+Ensure that detailed monitoring is enabled for EC2 instances
+Ensure that EC2 is EBS optimized
+EC2 instance should not have public IP.
+Ensure Instance Metadata Service Version 1 is not enabled
+Ensure all data stored in the Launch configuration or instance Elastic Blocks Store is securely encrypted
+Ensure every security groups rule has a description
+Ensure an IAM role is attached to EC2 instance
+-------------------------------------------------------------------
+  .\TerraformGoat_aws_ec2_snapshots_of_EBS_volumes_are_unencrypted_main.json
+passed checks: 3
+failed checks: 5
+
+passed checks : 
+Ensure no hard-coded secrets exist in EC2 user data
+EC2 instance should not have public IP.
+Ensure no hard coded AWS access key and secret key exists in provider
+
+failed checks : 
+Ensure that detailed monitoring is enabled for EC2 instances
+Ensure that EC2 is EBS optimized
+Ensure Instance Metadata Service Version 1 is not enabled
+Ensure all data stored in the Launch configuration or instance Elastic Blocks Store is securely encrypted
+Ensure an IAM role is attached to EC2 instance
+-------------------------------------------------------------------
+  .\TerraformGoat_aws_iam_privilege_escalation_main.json
+passed checks: 7
+failed checks: 7
+
+passed checks : 
+Ensure IAM root user doesnt have Access keys
+Ensure IAM policies that allow full "*-*" administrative privileges are not created
+Ensure IAM policies does not allow data exfiltration
+Ensure no IAM policies documents allow "*" as a statement's actions
+Ensure IAM policies does not allow write access without constraints
+Ensure no hard coded AWS access key and secret key exists in provider
+Ensure an IAM User does not have access to the console
+
+failed checks : 
+Ensure access is controlled through SSO and not AWS IAM defined users
+Ensure IAM policies does not allow credentials exposure
+Ensure IAM policies does not allow permissions management / resource exposure without constraints
+Ensure IAM policies are attached only to groups or roles (Reducing access management complexity may in-turn reduce opportunity for a principal to inadvertently receive or retain excessive privileges.)
+Ensure IAM policies does not allow privilege escalation
+Ensure no IAM policies documents allow "*" as a statement's resource for restrictable actions
+Ensure AWS IAM policy does not allow full IAM privileges
+-------------------------------------------------------------------
+  .\TerraformGoat_aws_networking_vpc_security_group_open_all_ports_main.json
+passed checks: 5
+failed checks: 9
+
+passed checks : 
+Ensure no hard-coded secrets exist in EC2 user data
+EC2 instance should not have public IP.
+Ensure no security groups allow ingress from 0.0.0.0:0 to port -1
+Ensure no hard coded AWS access key and secret key exists in provider
+Ensure that Security Groups are attached to another resource
+
+failed checks : 
+Ensure that detailed monitoring is enabled for EC2 instances
+Ensure that EC2 is EBS optimized
+Ensure Instance Metadata Service Version 1 is not enabled
+Ensure all data stored in the Launch configuration or instance Elastic Blocks Store is securely encrypted
+Ensure every security groups rule has a description
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 22
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 80
+Ensure an IAM role is attached to EC2 instance
+-------------------------------------------------------------------
+  .\TerraformGoat_aws_networking_vpc_security_group_open_common_ports_main.json
+passed checks: 114
+failed checks: 35
+
+passed checks : 
+Ensure no hard-coded secrets exist in EC2 user data
+EC2 instance should not have public IP.
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 22
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 80
+Ensure no security groups allow ingress from 0.0.0.0:0 to port -1
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 22
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 80
+Ensure no security groups allow ingress from 0.0.0.0:0 to port -1
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 80
+Ensure no security groups allow ingress from 0.0.0.0:0 to port -1
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 22
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 80
+Ensure no security groups allow ingress from 0.0.0.0:0 to port -1
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 22
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 80
+Ensure no security groups allow ingress from 0.0.0.0:0 to port -1
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 22
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 80
+Ensure no security groups allow ingress from 0.0.0.0:0 to port -1
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 22
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 80
+Ensure no security groups allow ingress from 0.0.0.0:0 to port -1
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 22
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 80
+Ensure no security groups allow ingress from 0.0.0.0:0 to port -1
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 22
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 80
+Ensure no security groups allow ingress from 0.0.0.0:0 to port -1
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 22
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 80
+Ensure no security groups allow ingress from 0.0.0.0:0 to port -1
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 22
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 80
+Ensure no security groups allow ingress from 0.0.0.0:0 to port -1
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 22
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 80
+Ensure no security groups allow ingress from 0.0.0.0:0 to port -1
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 22
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 80
+Ensure no security groups allow ingress from 0.0.0.0:0 to port -1
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 22
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 80
+Ensure no security groups allow ingress from 0.0.0.0:0 to port -1
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 22
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 80
+Ensure no security groups allow ingress from 0.0.0.0:0 to port -1
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 22
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 80
+Ensure no security groups allow ingress from 0.0.0.0:0 to port -1
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 22
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 80
+Ensure no security groups allow ingress from 0.0.0.0:0 to port -1
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 22
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 80
+Ensure no security groups allow ingress from 0.0.0.0:0 to port -1
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 22
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 80
+Ensure no security groups allow ingress from 0.0.0.0:0 to port -1
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 22
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 80
+Ensure no security groups allow ingress from 0.0.0.0:0 to port -1
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 22
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 80
+Ensure no security groups allow ingress from 0.0.0.0:0 to port -1
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 22
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 80
+Ensure no security groups allow ingress from 0.0.0.0:0 to port -1
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 22
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 80
+Ensure no security groups allow ingress from 0.0.0.0:0 to port -1
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 22
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 80
+Ensure no security groups allow ingress from 0.0.0.0:0 to port -1
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 22
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 80
+Ensure no security groups allow ingress from 0.0.0.0:0 to port -1
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 22
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 80
+Ensure no security groups allow ingress from 0.0.0.0:0 to port -1
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 22
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 80
+Ensure no security groups allow ingress from 0.0.0.0:0 to port -1
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 22
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 80
+Ensure no security groups allow ingress from 0.0.0.0:0 to port -1
+Ensure no hard coded AWS access key and secret key exists in provider
+Ensure that Security Groups are attached to another resource
+
+failed checks : 
+Ensure that detailed monitoring is enabled for EC2 instances
+Ensure that EC2 is EBS optimized
+Ensure Instance Metadata Service Version 1 is not enabled
+Ensure all data stored in the Launch configuration or instance Elastic Blocks Store is securely encrypted
+Ensure every security groups rule has a description
+Ensure every security groups rule has a description
+Ensure every security groups rule has a description
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 22
+Ensure every security groups rule has a description
+Ensure every security groups rule has a description
+Ensure every security groups rule has a description
+Ensure every security groups rule has a description
+Ensure every security groups rule has a description
+Ensure every security groups rule has a description
+Ensure every security groups rule has a description
+Ensure every security groups rule has a description
+Ensure every security groups rule has a description
+Ensure every security groups rule has a description
+Ensure every security groups rule has a description
+Ensure every security groups rule has a description
+Ensure every security groups rule has a description
+Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389
+Ensure every security groups rule has a description
+Ensure every security groups rule has a description
+Ensure every security groups rule has a description
+Ensure every security groups rule has a description
+Ensure every security groups rule has a description
+Ensure every security groups rule has a description
+Ensure every security groups rule has a description
+Ensure every security groups rule has a description
+Ensure every security groups rule has a description
+Ensure every security groups rule has a description
+Ensure every security groups rule has a description
+Ensure every security groups rule has a description
+Ensure an IAM role is attached to EC2 instance
+-------------------------------------------------------------------
+  .\TerraformGoat_aws_s3_bucket_acl_readable_main.json
+passed checks: 4
+failed checks: 9
+
+passed checks : 
+Ensure no hard coded AWS access key and secret key exists in provider
+Ensure S3 bucket policy does not lockout all but root user. (Prevent lockouts needing root account fixes)
+Ensure S3 Bucket does not allow access to all Authenticated users
+Ensure all data stored in the S3 bucket is securely encrypted at rest
+
+failed checks : 
+Ensure S3 buckets should have event notifications enabled
+Ensure all data stored in the S3 bucket have versioning enabled
+S3 Bucket has an ACL defined which allows public READ access.
+Ensure that S3 bucket has cross-region replication enabled
+Ensure that S3 buckets are encrypted with KMS by default
+S3 Bucket has an ACL defined which allows public WRITE access.
+Ensure the S3 bucket has access logging enabled
+Ensure that S3 bucket has a Public Access block
+Ensure that an S3 bucket has a lifecycle configuration
+-------------------------------------------------------------------
+  .\TerraformGoat_aws_s3_bucket_acl_writable_main.json
+passed checks: 4
+failed checks: 9
+
+passed checks : 
+Ensure no hard coded AWS access key and secret key exists in provider
+Ensure S3 bucket policy does not lockout all but root user. (Prevent lockouts needing root account fixes)
+Ensure S3 Bucket does not allow access to all Authenticated users
+Ensure all data stored in the S3 bucket is securely encrypted at rest
+
+failed checks : 
+Ensure S3 buckets should have event notifications enabled
+Ensure that S3 bucket has cross-region replication enabled
+Ensure the S3 bucket has access logging enabled
+S3 Bucket has an ACL defined which allows public WRITE access.
+Ensure that S3 bucket has a Public Access block
+Ensure all data stored in the S3 bucket have versioning enabled
+S3 Bucket has an ACL defined which allows public READ access.
+Ensure that an S3 bucket has a lifecycle configuration
+Ensure that S3 buckets are encrypted with KMS by default
+-------------------------------------------------------------------
+  .\TerraformGoat_aws_s3_bucket_allow_http_access_main.json
+passed checks: 6
+failed checks: 8
+
+passed checks : 
+Ensure S3 bucket policy does not lockout all but root user. (Prevent lockouts needing root account fixes)
+Ensure S3 bucket policy does not lockout all but root user. (Prevent lockouts needing root account fixes)
+Ensure no hard coded AWS access key and secret key exists in provider
+Ensure all data stored in the S3 bucket is securely encrypted at rest
+S3 Bucket has an ACL defined which allows public READ access.
+S3 Bucket has an ACL defined which allows public WRITE access.
+
+failed checks : 
+Ensure S3 bucket does not allow an action with any Principal
+Ensure S3 buckets should have event notifications enabled
+Ensure all data stored in the S3 bucket have versioning enabled
+Ensure that S3 buckets are encrypted with KMS by default
+Ensure the S3 bucket has access logging enabled
+Ensure that an S3 bucket has a lifecycle configuration
+Ensure that S3 bucket has a Public Access block
+Ensure that S3 bucket has cross-region replication enabled
+-------------------------------------------------------------------
+  .\TerraformGoat_aws_s3_bucket_default_encryption_disable_main.json
+passed checks: 5
+failed checks: 7
+
+passed checks : 
+Ensure no hard coded AWS access key and secret key exists in provider
+Ensure S3 bucket policy does not lockout all but root user. (Prevent lockouts needing root account fixes)
+Ensure all data stored in the S3 bucket is securely encrypted at rest
+S3 Bucket has an ACL defined which allows public WRITE access.
+S3 Bucket has an ACL defined which allows public READ access.
+
+failed checks : 
+Ensure S3 buckets should have event notifications enabled
+Ensure all data stored in the S3 bucket have versioning enabled
+Ensure that S3 bucket has cross-region replication enabled
+Ensure that S3 buckets are encrypted with KMS by default
+Ensure the S3 bucket has access logging enabled
+Ensure that S3 bucket has a Public Access block
+Ensure that an S3 bucket has a lifecycle configuration
+-------------------------------------------------------------------
+  .\TerraformGoat_aws_s3_bucket_logging_disable_main.json
+passed checks: 5
+failed checks: 7
+
+passed checks : 
+Ensure S3 bucket policy does not lockout all but root user. (Prevent lockouts needing root account fixes)
+Ensure no hard coded AWS access key and secret key exists in provider
+Ensure all data stored in the S3 bucket is securely encrypted at rest
+S3 Bucket has an ACL defined which allows public READ access.
+S3 Bucket has an ACL defined which allows public WRITE access.
+
+failed checks : 
+Ensure that an S3 bucket has a lifecycle configuration
+Ensure that S3 bucket has a Public Access block
+Ensure that S3 buckets are encrypted with KMS by default
+Ensure all data stored in the S3 bucket have versioning enabled
+Ensure that S3 bucket has cross-region replication enabled
+Ensure S3 buckets should have event notifications enabled
+Ensure the S3 bucket has access logging enabled
+-------------------------------------------------------------------
+  .\TerraformGoat_aws_s3_bucket_object_traversal_main.json
+passed checks: 5
+failed checks: 10
+
+passed checks : 
+Ensure S3 bucket policy does not lockout all but root user. (Prevent lockouts needing root account fixes)
+Ensure S3 bucket policy does not lockout all but root user. (Prevent lockouts needing root account fixes)
+Ensure no hard coded AWS access key and secret key exists in provider
+Ensure S3 Bucket does not allow access to all Authenticated users
+Ensure all data stored in the S3 bucket is securely encrypted at rest
+
+failed checks : 
+Ensure S3 bucket does not allow an action with any Principal
+Ensure the S3 bucket has access logging enabled
+Ensure that S3 bucket has cross-region replication enabled
+S3 Bucket has an ACL defined which allows public WRITE access.
+Ensure that S3 bucket has a Public Access block
+Ensure S3 buckets should have event notifications enabled
+S3 Bucket has an ACL defined which allows public READ access.
+Ensure that S3 buckets are encrypted with KMS by default
+Ensure all data stored in the S3 bucket have versioning enabled
+Ensure that an S3 bucket has a lifecycle configuration
+-------------------------------------------------------------------
+  .\TerraformGoat_aws_s3_bucket_public_access_main.json
+passed checks: 4
+failed checks: 9
+
+passed checks : 
+Ensure no hard coded AWS access key and secret key exists in provider
+Ensure S3 bucket policy does not lockout all but root user. (Prevent lockouts needing root account fixes)
+Ensure S3 Bucket does not allow access to all Authenticated users
+Ensure all data stored in the S3 bucket is securely encrypted at rest
+
+failed checks : 
+Ensure that an S3 bucket has a lifecycle configuration
+S3 Bucket has an ACL defined which allows public READ access.
+Ensure the S3 bucket has access logging enabled
+Ensure S3 buckets should have event notifications enabled
+Ensure that S3 bucket has cross-region replication enabled
+Ensure that S3 bucket has a Public Access block
+S3 Bucket has an ACL defined which allows public WRITE access.
+Ensure all data stored in the S3 bucket have versioning enabled
+Ensure that S3 buckets are encrypted with KMS by default
+-------------------------------------------------------------------
+  .\TerraformGoat_aws_s3_mfa_delete_is_disable_main.json
+passed checks: 6
+failed checks: 6
+
+passed checks : 
+Ensure S3 bucket policy does not lockout all but root user. (Prevent lockouts needing root account fixes)
+Ensure no hard coded AWS access key and secret key exists in provider
+Ensure all data stored in the S3 bucket is securely encrypted at rest
+S3 Bucket has an ACL defined which allows public READ access.
+Ensure all data stored in the S3 bucket have versioning enabled
+S3 Bucket has an ACL defined which allows public WRITE access.
+
+failed checks : 
+Ensure S3 buckets should have event notifications enabled
+Ensure the S3 bucket has access logging enabled
+Ensure that an S3 bucket has a lifecycle configuration
+Ensure that S3 buckets are encrypted with KMS by default
+Ensure that S3 bucket has cross-region replication enabled
+Ensure that S3 bucket has a Public Access block
+-------------------------------------------------------------------
+  .\TerraformGoat_aws_s3_object_acl_writable_main.json
+passed checks: 5
+failed checks: 10
+
+passed checks : 
+Ensure S3 bucket policy does not lockout all but root user. (Prevent lockouts needing root account fixes)
+Ensure S3 bucket policy does not lockout all but root user. (Prevent lockouts needing root account fixes)
+Ensure no hard coded AWS access key and secret key exists in provider
+Ensure S3 Bucket does not allow access to all Authenticated users
+Ensure all data stored in the S3 bucket is securely encrypted at rest
+
+failed checks : 
+Ensure S3 bucket does not allow an action with any Principal
+Ensure S3 buckets should have event notifications enabled
+Ensure that S3 bucket has cross-region replication enabled
+Ensure that S3 buckets are encrypted with KMS by default
+S3 Bucket has an ACL defined which allows public WRITE access.
+Ensure all data stored in the S3 bucket have versioning enabled
+Ensure that an S3 bucket has a lifecycle configuration
+Ensure that S3 bucket has a Public Access block
+S3 Bucket has an ACL defined which allows public READ access.
+Ensure the S3 bucket has access logging enabled
+-------------------------------------------------------------------
+  .\TerraformGoat_aws_s3_special_bucket_policy_main.json
+passed checks: 5
+failed checks: 10
+
+passed checks : 
+Ensure S3 bucket policy does not lockout all but root user. (Prevent lockouts needing root account fixes)
+Ensure S3 bucket policy does not lockout all but root user. (Prevent lockouts needing root account fixes)
+Ensure no hard coded AWS access key and secret key exists in provider
+Ensure S3 Bucket does not allow access to all Authenticated users
+Ensure all data stored in the S3 bucket is securely encrypted at rest
+
+failed checks : 
+Ensure S3 bucket does not allow an action with any Principal
+Ensure the S3 bucket has access logging enabled
+Ensure that S3 buckets are encrypted with KMS by default
+Ensure S3 buckets should have event notifications enabled
+S3 Bucket has an ACL defined which allows public WRITE access.
+Ensure that S3 bucket has a Public Access block
+Ensure that S3 bucket has cross-region replication enabled
+Ensure all data stored in the S3 bucket have versioning enabled
+S3 Bucket has an ACL defined which allows public READ access.
+Ensure that an S3 bucket has a lifecycle configuration
+-------------------------------------------------------------------
+  .\TerraformGoat_aws_s3_unrestricted_file_upload_main.json
+passed checks: 5
+failed checks: 11
+
+passed checks : 
+Ensure no hard coded AWS access key and secret key exists in provider
+Ensure S3 bucket policy does not lockout all but root user. (Prevent lockouts needing root account fixes)
+Ensure S3 bucket policy does not lockout all but root user. (Prevent lockouts needing root account fixes)
+Ensure S3 Bucket does not allow access to all Authenticated users
+Ensure all data stored in the S3 bucket is securely encrypted at rest
+
+failed checks : 
+Ensure S3 bucket does not allow an action with any Principal
+Ensure S3 bucket Object is encrypted by KMS using a customer managed Key (CMK)
+Ensure that S3 bucket has a Public Access block
+Ensure S3 buckets should have event notifications enabled
+S3 Bucket has an ACL defined which allows public WRITE access.
+Ensure that an S3 bucket has a lifecycle configuration
+S3 Bucket has an ACL defined which allows public READ access.
+Ensure the S3 bucket has access logging enabled
+Ensure all data stored in the S3 bucket have versioning enabled
+Ensure that S3 bucket has cross-region replication enabled
+Ensure that S3 buckets are encrypted with KMS by default
+-------------------------------------------------------------------
+  .\TerraformGoat_azure_blob_blob_public_access_main.json
+passed checks: 3
+failed checks: 10
+
+passed checks : 
+Ensure 'Trusted Microsoft Services' is enabled for Storage Account access
+Ensure that 'enable_https_traffic_only' is enabled
+Ensure the storage container storing the activity logs is not publicly accessible
+
+failed checks : 
+Ensure that Storage accounts disallow public access
+Ensure Storage logging is enabled for Queue service for read, write and delete requests
+Ensure Storage Account is using the latest version of TLS encryption
+Ensure that Storage Accounts use replication
+Ensure that Storage blobs restrict public access
+Ensure that 'Public access level' is set to Private for blob containers
+Ensure soft-delete is enabled on Azure storage account
+Ensure storage account is configured with private endpoint
+Ensure storage for critical data are encrypted with Customer Managed Key
+Ensure Storage logging is enabled for Blob service for read requests
+-------------------------------------------------------------------
+  .\TerraformGoat_azure_blob_container_blob_traversal_main.json
+passed checks: 3
+failed checks: 10
+
+passed checks : 
+Ensure 'Trusted Microsoft Services' is enabled for Storage Account access
+Ensure that 'enable_https_traffic_only' is enabled
+Ensure the storage container storing the activity logs is not publicly accessible
+
+failed checks : 
+Ensure that Storage accounts disallow public access
+Ensure Storage logging is enabled for Queue service for read, write and delete requests
+Ensure Storage Account is using the latest version of TLS encryption
+Ensure that Storage Accounts use replication
+Ensure that Storage blobs restrict public access
+Ensure that 'Public access level' is set to Private for blob containers
+Ensure soft-delete is enabled on Azure storage account
+Ensure storage account is configured with private endpoint
+Ensure Storage logging is enabled for Blob service for read requests
+Ensure storage for critical data are encrypted with Customer Managed Key
+-------------------------------------------------------------------
+  .\TerraformGoat_azure_vm_vm_command_execution_main.json
+passed checks: 6
+failed checks: 9
+
+passed checks : 
+Ensure that UDP Services are restricted from the Internet 
+Ensure that VNET uses local DNS addresses
+Ensure that VNET has at least 2 connected DNS Endpoints
+Ensure that Network Interfaces disable IP forwarding
+Ensure VM agent is installed
+Ensure that Virtual Machines use managed disks
+
+failed checks : 
+Ensure that HTTP (port 80) access is restricted from the internet
+Ensure that RDP access is restricted from the internet
+Ensure that SSH access is restricted from the internet
+Ensure Virtual Machine Extensions are not Installed
+Ensure Azure Instance does not use basic authentication(Use SSH Key Instead)
+Ensure linux VM enables SSH with keys for secure communication
+Ensure that Virtual machine does not enable password authentication
+Ensure that Network Interfaces don't use public IPs
+Ensure VNET subnet is configured with a Network Security Group (NSG)
+-------------------------------------------------------------------
+  .\TerraformGoat_gcp_cs_bucket_acl_writable_main.json
+passed checks: 0
+failed checks: 4
+
+passed checks : 
+
+failed checks : 
+Bucket should log access
+Ensure Cloud storage has versioning enabled
+Ensure that Cloud Storage buckets have uniform bucket-level access enabled
+Ensure public access prevention is enforced on Cloud Storage bucket
+-------------------------------------------------------------------
+  .\TerraformGoat_gcp_cs_bucket_object_traversal_main.json
+passed checks: 0
+failed checks: 4
+
+passed checks : 
+
+failed checks : 
+Bucket should log access
+Ensure Cloud storage has versioning enabled
+Ensure that Cloud Storage buckets have uniform bucket-level access enabled
+Ensure public access prevention is enforced on Cloud Storage bucket
+-------------------------------------------------------------------
+  .\TerraformGoat_gcp_cs_object_acl_writable_main.json
+passed checks: 0
+failed checks: 4
+
+passed checks : 
+
+failed checks : 
+Bucket should log access
+Ensure Cloud storage has versioning enabled
+Ensure that Cloud Storage buckets have uniform bucket-level access enabled
+Ensure public access prevention is enforced on Cloud Storage bucket
+-------------------------------------------------------------------
+  .\TerraformGoat_gcp_cs_unrestricted_file_upload_main.json
+passed checks: 0
+failed checks: 4
+
+passed checks : 
+
+failed checks : 
+Bucket should log access
+Ensure Cloud storage has versioning enabled
+Ensure that Cloud Storage buckets have uniform bucket-level access enabled
+Ensure public access prevention is enforced on Cloud Storage bucket
+-------------------------------------------------------------------
+  .\TerraformGoat_gcp_vm_vm_command_execution_main.json
+passed checks: 12
+failed checks: 9
+
+passed checks : 
+Ensure that instances are not configured to use the default service account with full access to all Cloud APIs
+Ensure that no instance in the project overrides the project setting for enabling OSLogin(OSLogin needs to be enabled in project metadata for all instances)
+Ensure that IP forwarding is not enabled on Instances
+Ensure 'Enable connecting to serial ports' is not enabled for VM Instance
+Ensure Google compute firewall ingress does not allow on ftp port
+Ensure Google compute firewall ingress does not allow unrestricted FTP access
+Ensure Google compute firewall ingress does not allow unrestricted ssh access
+Ensure Google compute firewall ingress does not allow unrestricted mysql access
+Ensure Google compute firewall ingress does not allow unrestricted rdp access
+Ensure Google compute firewall ingress does not allow unrestricted http port 80 access
+Ensure GCP compute firewall ingress does not allow unrestricted access to all ports
+Ensure GCP network defines a firewall and does not use the default firewall
+
+failed checks : 
+Ensure 'Block Project-wide SSH keys' is enabled for VM instances
+Ensure VM disks for critical VMs are encrypted with Customer Supplied Encryption Keys (CSEK)
+Ensure that instances are not configured to use the default service account
+Ensure that Compute instances do not have public IP addresses
+Ensure Compute instances are launched with Shielded VM enabled
+Ensure that Private google access is enabled for IPV6
+Ensure that VPC Flow Logs is enabled for every subnet in a VPC Network
+Ensure that private_ip_google_access is enabled for Subnet
+Ensure GCP network defines a firewall and does not use the default firewall
+-------------------------------------------------------------------
+no failed or passed checks for  .\TerraformGoat_huaweicloud_ecs_ecs_ssrf_main.json
+-------------------------------------------------------------------
+no failed or passed checks for  .\TerraformGoat_huaweicloud_networking_cis_unsafe_secgroup_main.json
+-------------------------------------------------------------------
+no failed or passed checks for  .\TerraformGoat_huaweicloud_obs_bucket_object_traversal_main.json
+-------------------------------------------------------------------
+no failed or passed checks for  .\TerraformGoat_huaweicloud_obs_object_acl_writable_main.json
+-------------------------------------------------------------------
+no failed or passed checks for  .\TerraformGoat_huaweicloud_obs_policy_of_unrestricted_file_upload_main.json
+-------------------------------------------------------------------
+no failed or passed checks for  .\TerraformGoat_huaweicloud_obs_special_bucket_policy_main.json
+-------------------------------------------------------------------
+no failed or passed checks for  .\TerraformGoat_huaweicloud_obs_unrestricted_file_upload_main.json
+-------------------------------------------------------------------
+no failed or passed checks for  .\TerraformGoat_huaweicloud_rds_cis_rds_mysql_main.json
+-------------------------------------------------------------------
+Boum
+-------------------------------------------------------------------
+Boum
+-------------------------------------------------------------------
+Boum
+-------------------------------------------------------------------
+Boum
+-------------------------------------------------------------------
+Boum
+-------------------------------------------------------------------
+Boum
+-------------------------------------------------------------------
+Boum
+-------------------------------------------------------------------
+no failed or passed checks for  .\TerraformGoat_tencentcloud_cos_bucket_acl_readable_main.json
+-------------------------------------------------------------------
+no failed or passed checks for  .\TerraformGoat_tencentcloud_cos_bucket_acl_writable_main.json
+-------------------------------------------------------------------
+no failed or passed checks for  .\TerraformGoat_tencentcloud_cos_bucket_logging_disable_main.json
+-------------------------------------------------------------------
+no failed or passed checks for  .\TerraformGoat_tencentcloud_cos_bucket_object_traversal_main.json
+-------------------------------------------------------------------
+no failed or passed checks for  .\TerraformGoat_tencentcloud_cos_bucket_public_access_main.json
+-------------------------------------------------------------------
+no failed or passed checks for  .\TerraformGoat_tencentcloud_cos_object_public_access_main.json
+-------------------------------------------------------------------
+no failed or passed checks for  .\TerraformGoat_tencentcloud_cos_server_side_encryption_disable_main.json
+-------------------------------------------------------------------
+no failed or passed checks for  .\TerraformGoat_tencentcloud_cos_unrestricted_file_upload_main.json
+-------------------------------------------------------------------
+no failed or passed checks for  .\TerraformGoat_tencentcloud_cvm_cbs_storage_are_not_used_main.json
+-------------------------------------------------------------------
+no failed or passed checks for  .\TerraformGoat_tencentcloud_cvm_cvm_ssrf_main.json
+-------------------------------------------------------------------
+no failed or passed checks for  .\TerraformGoat_tencentcloud_cvm_cvm_virtual_machine_disks_are_unencrypted_main.json
+-------------------------------------------------------------------
+no failed or passed checks for  .\TerraformGoat_tencentcloud_networking_vpc_security_group_open_all_ports_main.json
+-------------------------------------------------------------------
+no failed or passed checks for  .\TerraformGoat_tencentcloud_networking_vpc_security_group_open_common_ports_main.json
+-------------------------------------------------------------------
+  .\TerraformGoat\aliyun\oss\server_side_encryption_no_kms_set_main.json
+passed checks: 1
+failed checks: 4
+
+passed checks : 
+Alibaba Cloud OSS bucket accessible to public
+
+failed checks : 
+Ensure the OSS bucket has access logging enabled
+Ensure OSS bucket is encrypted with Customer Master Key
+Ensure OSS bucket has transfer Acceleration enabled
+Ensure OSS bucket has versioning enabled
+
+Process finished with exit code 0
