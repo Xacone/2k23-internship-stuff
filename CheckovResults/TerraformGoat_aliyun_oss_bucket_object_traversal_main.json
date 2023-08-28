@@ -1,0 +1,1314 @@
+{
+    "check_type": "terraform",
+    "results": {
+        "passed_checks": [],
+        "failed_checks": [
+            {
+                "check_id": "CKV_ALI_12",
+                "bc_check_id": "BC_ALI_LOGGING_2",
+                "check_name": "Ensure the OSS bucket has access logging enabled",
+                "check_result": {
+                    "result": "FAILED",
+                    "evaluated_keys": [
+                        "logging"
+                    ]
+                },
+                "code_block": [
+                    [
+                        13,
+                        "resource \"alicloud_oss_bucket\" \"Create_Bucket\" {\n"
+                    ],
+                    [
+                        14,
+                        "  bucket        = \"hx-cloud-security-${random_string.random_suffix.result}\"\n"
+                    ],
+                    [
+                        15,
+                        "  acl           = \"public-read\"\n"
+                    ],
+                    [
+                        16,
+                        "  force_destroy = true\n"
+                    ],
+                    [
+                        17,
+                        "  policy        = <<POLICY\n"
+                    ],
+                    [
+                        18,
+                        "{\n"
+                    ],
+                    [
+                        19,
+                        "\t\"Version\": \"1\",\n"
+                    ],
+                    [
+                        20,
+                        "\t\"Statement\": [{\n"
+                    ],
+                    [
+                        21,
+                        "\t\t\"Effect\": \"Allow\",\n"
+                    ],
+                    [
+                        22,
+                        "\t\t\"Action\": [\n"
+                    ],
+                    [
+                        23,
+                        "\t\t\t\"oss:GetObject\",\n"
+                    ],
+                    [
+                        24,
+                        "\t\t\t\"oss:PutObject\",\n"
+                    ],
+                    [
+                        25,
+                        "\t\t\t\"oss:GetObjectAcl\",\n"
+                    ],
+                    [
+                        26,
+                        "\t\t\t\"oss:PutObjectAcl\",\n"
+                    ],
+                    [
+                        27,
+                        "\t\t\t\"oss:ListObjects\",\n"
+                    ],
+                    [
+                        28,
+                        "\t\t\t\"oss:AbortMultipartUpload\",\n"
+                    ],
+                    [
+                        29,
+                        "\t\t\t\"oss:ListParts\",\n"
+                    ],
+                    [
+                        30,
+                        "\t\t\t\"oss:RestoreObject\",\n"
+                    ],
+                    [
+                        31,
+                        "\t\t\t\"oss:GetVodPlaylist\",\n"
+                    ],
+                    [
+                        32,
+                        "\t\t\t\"oss:PostVodPlaylist\",\n"
+                    ],
+                    [
+                        33,
+                        "\t\t\t\"oss:PublishRtmpStream\",\n"
+                    ],
+                    [
+                        34,
+                        "\t\t\t\"oss:ListObjectVersions\",\n"
+                    ],
+                    [
+                        35,
+                        "\t\t\t\"oss:GetObjectVersion\",\n"
+                    ],
+                    [
+                        36,
+                        "\t\t\t\"oss:GetObjectVersionAcl\",\n"
+                    ],
+                    [
+                        37,
+                        "\t\t\t\"oss:RestoreObjectVersion\"\n"
+                    ],
+                    [
+                        38,
+                        "\t\t],\n"
+                    ],
+                    [
+                        39,
+                        "\t\t\"Principal\": [\n"
+                    ],
+                    [
+                        40,
+                        "\t\t\t\"*\"\n"
+                    ],
+                    [
+                        41,
+                        "\t\t],\n"
+                    ],
+                    [
+                        42,
+                        "\t\t\"Resource\": [\n"
+                    ],
+                    [
+                        43,
+                        "\t\t\t\"acs:oss:*:*:*/*\"\n"
+                    ],
+                    [
+                        44,
+                        "\t\t]\n"
+                    ],
+                    [
+                        45,
+                        "\t}, {\n"
+                    ],
+                    [
+                        46,
+                        "\t\t\"Effect\": \"Allow\",\n"
+                    ],
+                    [
+                        47,
+                        "\t\t\"Action\": [\n"
+                    ],
+                    [
+                        48,
+                        "\t\t\t\"oss:ListObjects\",\n"
+                    ],
+                    [
+                        49,
+                        "\t\t\t\"oss:GetObject\"\n"
+                    ],
+                    [
+                        50,
+                        "\t\t],\n"
+                    ],
+                    [
+                        51,
+                        "\t\t\"Principal\": [\n"
+                    ],
+                    [
+                        52,
+                        "\t\t\t\"*\"\n"
+                    ],
+                    [
+                        53,
+                        "\t\t],\n"
+                    ],
+                    [
+                        54,
+                        "\t\t\"Resource\": [\n"
+                    ],
+                    [
+                        55,
+                        "\t\t\t\"acs:oss:*:*:*\"\n"
+                    ],
+                    [
+                        56,
+                        "\t\t],\n"
+                    ],
+                    [
+                        57,
+                        "\t\t\"Condition\": {\n"
+                    ],
+                    [
+                        58,
+                        "\t\t\t\"StringLike\": {\n"
+                    ],
+                    [
+                        59,
+                        "          \t\t\"oss:Prefix\": [\n"
+                    ],
+                    [
+                        60,
+                        "\t\t\t\t\t\"*\"\n"
+                    ],
+                    [
+                        61,
+                        "\t\t\t\t]\n"
+                    ],
+                    [
+                        62,
+                        "\t\t\t}\n"
+                    ],
+                    [
+                        63,
+                        "\t\t}\n"
+                    ],
+                    [
+                        64,
+                        "\t}]\n"
+                    ],
+                    [
+                        65,
+                        "}\n"
+                    ],
+                    [
+                        66,
+                        "POLICY\n"
+                    ],
+                    [
+                        67,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "\\main.tf",
+                "file_abs_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\aliyun\\oss\\bucket_object_traversal\\main.tf",
+                "repo_file_path": "/TerraformGoat/aliyun/oss/bucket_object_traversal/main.tf",
+                "file_line_range": [
+                    13,
+                    67
+                ],
+                "resource": "alicloud_oss_bucket.Create_Bucket",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.alicloud.OSSBucketAccessLogs",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.paloaltonetworks.com/content/techdocs/en_US/prisma/prisma-cloud/prisma-cloud-code-security-policy-reference/alibaba-policies/alibaba-logging-policies/ensure-alibaba-cloud-oss-bucket-has-access-logging-enabled.html",
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\aliyun\\oss\\bucket_object_traversal\\main.tf"
+            },
+            {
+                "check_id": "CKV_ALI_6",
+                "bc_check_id": "BC_ALI_GENERAL_2",
+                "check_name": "Ensure OSS bucket is encrypted with Customer Master Key",
+                "check_result": {
+                    "result": "FAILED",
+                    "evaluated_keys": [
+                        "server_side_encryption_rule/[0]/kms_master_key_id"
+                    ]
+                },
+                "code_block": [
+                    [
+                        13,
+                        "resource \"alicloud_oss_bucket\" \"Create_Bucket\" {\n"
+                    ],
+                    [
+                        14,
+                        "  bucket        = \"hx-cloud-security-${random_string.random_suffix.result}\"\n"
+                    ],
+                    [
+                        15,
+                        "  acl           = \"public-read\"\n"
+                    ],
+                    [
+                        16,
+                        "  force_destroy = true\n"
+                    ],
+                    [
+                        17,
+                        "  policy        = <<POLICY\n"
+                    ],
+                    [
+                        18,
+                        "{\n"
+                    ],
+                    [
+                        19,
+                        "\t\"Version\": \"1\",\n"
+                    ],
+                    [
+                        20,
+                        "\t\"Statement\": [{\n"
+                    ],
+                    [
+                        21,
+                        "\t\t\"Effect\": \"Allow\",\n"
+                    ],
+                    [
+                        22,
+                        "\t\t\"Action\": [\n"
+                    ],
+                    [
+                        23,
+                        "\t\t\t\"oss:GetObject\",\n"
+                    ],
+                    [
+                        24,
+                        "\t\t\t\"oss:PutObject\",\n"
+                    ],
+                    [
+                        25,
+                        "\t\t\t\"oss:GetObjectAcl\",\n"
+                    ],
+                    [
+                        26,
+                        "\t\t\t\"oss:PutObjectAcl\",\n"
+                    ],
+                    [
+                        27,
+                        "\t\t\t\"oss:ListObjects\",\n"
+                    ],
+                    [
+                        28,
+                        "\t\t\t\"oss:AbortMultipartUpload\",\n"
+                    ],
+                    [
+                        29,
+                        "\t\t\t\"oss:ListParts\",\n"
+                    ],
+                    [
+                        30,
+                        "\t\t\t\"oss:RestoreObject\",\n"
+                    ],
+                    [
+                        31,
+                        "\t\t\t\"oss:GetVodPlaylist\",\n"
+                    ],
+                    [
+                        32,
+                        "\t\t\t\"oss:PostVodPlaylist\",\n"
+                    ],
+                    [
+                        33,
+                        "\t\t\t\"oss:PublishRtmpStream\",\n"
+                    ],
+                    [
+                        34,
+                        "\t\t\t\"oss:ListObjectVersions\",\n"
+                    ],
+                    [
+                        35,
+                        "\t\t\t\"oss:GetObjectVersion\",\n"
+                    ],
+                    [
+                        36,
+                        "\t\t\t\"oss:GetObjectVersionAcl\",\n"
+                    ],
+                    [
+                        37,
+                        "\t\t\t\"oss:RestoreObjectVersion\"\n"
+                    ],
+                    [
+                        38,
+                        "\t\t],\n"
+                    ],
+                    [
+                        39,
+                        "\t\t\"Principal\": [\n"
+                    ],
+                    [
+                        40,
+                        "\t\t\t\"*\"\n"
+                    ],
+                    [
+                        41,
+                        "\t\t],\n"
+                    ],
+                    [
+                        42,
+                        "\t\t\"Resource\": [\n"
+                    ],
+                    [
+                        43,
+                        "\t\t\t\"acs:oss:*:*:*/*\"\n"
+                    ],
+                    [
+                        44,
+                        "\t\t]\n"
+                    ],
+                    [
+                        45,
+                        "\t}, {\n"
+                    ],
+                    [
+                        46,
+                        "\t\t\"Effect\": \"Allow\",\n"
+                    ],
+                    [
+                        47,
+                        "\t\t\"Action\": [\n"
+                    ],
+                    [
+                        48,
+                        "\t\t\t\"oss:ListObjects\",\n"
+                    ],
+                    [
+                        49,
+                        "\t\t\t\"oss:GetObject\"\n"
+                    ],
+                    [
+                        50,
+                        "\t\t],\n"
+                    ],
+                    [
+                        51,
+                        "\t\t\"Principal\": [\n"
+                    ],
+                    [
+                        52,
+                        "\t\t\t\"*\"\n"
+                    ],
+                    [
+                        53,
+                        "\t\t],\n"
+                    ],
+                    [
+                        54,
+                        "\t\t\"Resource\": [\n"
+                    ],
+                    [
+                        55,
+                        "\t\t\t\"acs:oss:*:*:*\"\n"
+                    ],
+                    [
+                        56,
+                        "\t\t],\n"
+                    ],
+                    [
+                        57,
+                        "\t\t\"Condition\": {\n"
+                    ],
+                    [
+                        58,
+                        "\t\t\t\"StringLike\": {\n"
+                    ],
+                    [
+                        59,
+                        "          \t\t\"oss:Prefix\": [\n"
+                    ],
+                    [
+                        60,
+                        "\t\t\t\t\t\"*\"\n"
+                    ],
+                    [
+                        61,
+                        "\t\t\t\t]\n"
+                    ],
+                    [
+                        62,
+                        "\t\t\t}\n"
+                    ],
+                    [
+                        63,
+                        "\t\t}\n"
+                    ],
+                    [
+                        64,
+                        "\t}]\n"
+                    ],
+                    [
+                        65,
+                        "}\n"
+                    ],
+                    [
+                        66,
+                        "POLICY\n"
+                    ],
+                    [
+                        67,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "\\main.tf",
+                "file_abs_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\aliyun\\oss\\bucket_object_traversal\\main.tf",
+                "repo_file_path": "/TerraformGoat/aliyun/oss/bucket_object_traversal/main.tf",
+                "file_line_range": [
+                    13,
+                    67
+                ],
+                "resource": "alicloud_oss_bucket.Create_Bucket",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.alicloud.OSSBucketEncryptedWithCMK",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.paloaltonetworks.com/content/techdocs/en_US/prisma/prisma-cloud/prisma-cloud-code-security-policy-reference/alibaba-policies/alibaba-general-policies/ensure-alibaba-cloud-oss-bucket-is-encrypted-with-customer-master-key.html",
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\aliyun\\oss\\bucket_object_traversal\\main.tf"
+            },
+            {
+                "check_id": "CKV_ALI_1",
+                "bc_check_id": "BC_ALI_GENERAL_5",
+                "check_name": "Alibaba Cloud OSS bucket accessible to public",
+                "check_result": {
+                    "result": "FAILED",
+                    "evaluated_keys": [
+                        "acl"
+                    ]
+                },
+                "code_block": [
+                    [
+                        13,
+                        "resource \"alicloud_oss_bucket\" \"Create_Bucket\" {\n"
+                    ],
+                    [
+                        14,
+                        "  bucket        = \"hx-cloud-security-${random_string.random_suffix.result}\"\n"
+                    ],
+                    [
+                        15,
+                        "  acl           = \"public-read\"\n"
+                    ],
+                    [
+                        16,
+                        "  force_destroy = true\n"
+                    ],
+                    [
+                        17,
+                        "  policy        = <<POLICY\n"
+                    ],
+                    [
+                        18,
+                        "{\n"
+                    ],
+                    [
+                        19,
+                        "\t\"Version\": \"1\",\n"
+                    ],
+                    [
+                        20,
+                        "\t\"Statement\": [{\n"
+                    ],
+                    [
+                        21,
+                        "\t\t\"Effect\": \"Allow\",\n"
+                    ],
+                    [
+                        22,
+                        "\t\t\"Action\": [\n"
+                    ],
+                    [
+                        23,
+                        "\t\t\t\"oss:GetObject\",\n"
+                    ],
+                    [
+                        24,
+                        "\t\t\t\"oss:PutObject\",\n"
+                    ],
+                    [
+                        25,
+                        "\t\t\t\"oss:GetObjectAcl\",\n"
+                    ],
+                    [
+                        26,
+                        "\t\t\t\"oss:PutObjectAcl\",\n"
+                    ],
+                    [
+                        27,
+                        "\t\t\t\"oss:ListObjects\",\n"
+                    ],
+                    [
+                        28,
+                        "\t\t\t\"oss:AbortMultipartUpload\",\n"
+                    ],
+                    [
+                        29,
+                        "\t\t\t\"oss:ListParts\",\n"
+                    ],
+                    [
+                        30,
+                        "\t\t\t\"oss:RestoreObject\",\n"
+                    ],
+                    [
+                        31,
+                        "\t\t\t\"oss:GetVodPlaylist\",\n"
+                    ],
+                    [
+                        32,
+                        "\t\t\t\"oss:PostVodPlaylist\",\n"
+                    ],
+                    [
+                        33,
+                        "\t\t\t\"oss:PublishRtmpStream\",\n"
+                    ],
+                    [
+                        34,
+                        "\t\t\t\"oss:ListObjectVersions\",\n"
+                    ],
+                    [
+                        35,
+                        "\t\t\t\"oss:GetObjectVersion\",\n"
+                    ],
+                    [
+                        36,
+                        "\t\t\t\"oss:GetObjectVersionAcl\",\n"
+                    ],
+                    [
+                        37,
+                        "\t\t\t\"oss:RestoreObjectVersion\"\n"
+                    ],
+                    [
+                        38,
+                        "\t\t],\n"
+                    ],
+                    [
+                        39,
+                        "\t\t\"Principal\": [\n"
+                    ],
+                    [
+                        40,
+                        "\t\t\t\"*\"\n"
+                    ],
+                    [
+                        41,
+                        "\t\t],\n"
+                    ],
+                    [
+                        42,
+                        "\t\t\"Resource\": [\n"
+                    ],
+                    [
+                        43,
+                        "\t\t\t\"acs:oss:*:*:*/*\"\n"
+                    ],
+                    [
+                        44,
+                        "\t\t]\n"
+                    ],
+                    [
+                        45,
+                        "\t}, {\n"
+                    ],
+                    [
+                        46,
+                        "\t\t\"Effect\": \"Allow\",\n"
+                    ],
+                    [
+                        47,
+                        "\t\t\"Action\": [\n"
+                    ],
+                    [
+                        48,
+                        "\t\t\t\"oss:ListObjects\",\n"
+                    ],
+                    [
+                        49,
+                        "\t\t\t\"oss:GetObject\"\n"
+                    ],
+                    [
+                        50,
+                        "\t\t],\n"
+                    ],
+                    [
+                        51,
+                        "\t\t\"Principal\": [\n"
+                    ],
+                    [
+                        52,
+                        "\t\t\t\"*\"\n"
+                    ],
+                    [
+                        53,
+                        "\t\t],\n"
+                    ],
+                    [
+                        54,
+                        "\t\t\"Resource\": [\n"
+                    ],
+                    [
+                        55,
+                        "\t\t\t\"acs:oss:*:*:*\"\n"
+                    ],
+                    [
+                        56,
+                        "\t\t],\n"
+                    ],
+                    [
+                        57,
+                        "\t\t\"Condition\": {\n"
+                    ],
+                    [
+                        58,
+                        "\t\t\t\"StringLike\": {\n"
+                    ],
+                    [
+                        59,
+                        "          \t\t\"oss:Prefix\": [\n"
+                    ],
+                    [
+                        60,
+                        "\t\t\t\t\t\"*\"\n"
+                    ],
+                    [
+                        61,
+                        "\t\t\t\t]\n"
+                    ],
+                    [
+                        62,
+                        "\t\t\t}\n"
+                    ],
+                    [
+                        63,
+                        "\t\t}\n"
+                    ],
+                    [
+                        64,
+                        "\t}]\n"
+                    ],
+                    [
+                        65,
+                        "}\n"
+                    ],
+                    [
+                        66,
+                        "POLICY\n"
+                    ],
+                    [
+                        67,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "\\main.tf",
+                "file_abs_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\aliyun\\oss\\bucket_object_traversal\\main.tf",
+                "repo_file_path": "/TerraformGoat/aliyun/oss/bucket_object_traversal/main.tf",
+                "file_line_range": [
+                    13,
+                    67
+                ],
+                "resource": "alicloud_oss_bucket.Create_Bucket",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.alicloud.OSSBucketPublic",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.paloaltonetworks.com/content/techdocs/en_US/prisma/prisma-cloud/prisma-cloud-code-security-policy-reference/alibaba-policies/alibaba-general-policies/ensure-alibaba-cloud-oss-bucket-is-not-accessible-to-public.html",
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\aliyun\\oss\\bucket_object_traversal\\main.tf"
+            },
+            {
+                "check_id": "CKV_ALI_11",
+                "bc_check_id": "BC_ALI_GENERAL_1",
+                "check_name": "Ensure OSS bucket has transfer Acceleration enabled",
+                "check_result": {
+                    "result": "FAILED",
+                    "evaluated_keys": [
+                        "transfer_acceleration/[0]/enabled"
+                    ]
+                },
+                "code_block": [
+                    [
+                        13,
+                        "resource \"alicloud_oss_bucket\" \"Create_Bucket\" {\n"
+                    ],
+                    [
+                        14,
+                        "  bucket        = \"hx-cloud-security-${random_string.random_suffix.result}\"\n"
+                    ],
+                    [
+                        15,
+                        "  acl           = \"public-read\"\n"
+                    ],
+                    [
+                        16,
+                        "  force_destroy = true\n"
+                    ],
+                    [
+                        17,
+                        "  policy        = <<POLICY\n"
+                    ],
+                    [
+                        18,
+                        "{\n"
+                    ],
+                    [
+                        19,
+                        "\t\"Version\": \"1\",\n"
+                    ],
+                    [
+                        20,
+                        "\t\"Statement\": [{\n"
+                    ],
+                    [
+                        21,
+                        "\t\t\"Effect\": \"Allow\",\n"
+                    ],
+                    [
+                        22,
+                        "\t\t\"Action\": [\n"
+                    ],
+                    [
+                        23,
+                        "\t\t\t\"oss:GetObject\",\n"
+                    ],
+                    [
+                        24,
+                        "\t\t\t\"oss:PutObject\",\n"
+                    ],
+                    [
+                        25,
+                        "\t\t\t\"oss:GetObjectAcl\",\n"
+                    ],
+                    [
+                        26,
+                        "\t\t\t\"oss:PutObjectAcl\",\n"
+                    ],
+                    [
+                        27,
+                        "\t\t\t\"oss:ListObjects\",\n"
+                    ],
+                    [
+                        28,
+                        "\t\t\t\"oss:AbortMultipartUpload\",\n"
+                    ],
+                    [
+                        29,
+                        "\t\t\t\"oss:ListParts\",\n"
+                    ],
+                    [
+                        30,
+                        "\t\t\t\"oss:RestoreObject\",\n"
+                    ],
+                    [
+                        31,
+                        "\t\t\t\"oss:GetVodPlaylist\",\n"
+                    ],
+                    [
+                        32,
+                        "\t\t\t\"oss:PostVodPlaylist\",\n"
+                    ],
+                    [
+                        33,
+                        "\t\t\t\"oss:PublishRtmpStream\",\n"
+                    ],
+                    [
+                        34,
+                        "\t\t\t\"oss:ListObjectVersions\",\n"
+                    ],
+                    [
+                        35,
+                        "\t\t\t\"oss:GetObjectVersion\",\n"
+                    ],
+                    [
+                        36,
+                        "\t\t\t\"oss:GetObjectVersionAcl\",\n"
+                    ],
+                    [
+                        37,
+                        "\t\t\t\"oss:RestoreObjectVersion\"\n"
+                    ],
+                    [
+                        38,
+                        "\t\t],\n"
+                    ],
+                    [
+                        39,
+                        "\t\t\"Principal\": [\n"
+                    ],
+                    [
+                        40,
+                        "\t\t\t\"*\"\n"
+                    ],
+                    [
+                        41,
+                        "\t\t],\n"
+                    ],
+                    [
+                        42,
+                        "\t\t\"Resource\": [\n"
+                    ],
+                    [
+                        43,
+                        "\t\t\t\"acs:oss:*:*:*/*\"\n"
+                    ],
+                    [
+                        44,
+                        "\t\t]\n"
+                    ],
+                    [
+                        45,
+                        "\t}, {\n"
+                    ],
+                    [
+                        46,
+                        "\t\t\"Effect\": \"Allow\",\n"
+                    ],
+                    [
+                        47,
+                        "\t\t\"Action\": [\n"
+                    ],
+                    [
+                        48,
+                        "\t\t\t\"oss:ListObjects\",\n"
+                    ],
+                    [
+                        49,
+                        "\t\t\t\"oss:GetObject\"\n"
+                    ],
+                    [
+                        50,
+                        "\t\t],\n"
+                    ],
+                    [
+                        51,
+                        "\t\t\"Principal\": [\n"
+                    ],
+                    [
+                        52,
+                        "\t\t\t\"*\"\n"
+                    ],
+                    [
+                        53,
+                        "\t\t],\n"
+                    ],
+                    [
+                        54,
+                        "\t\t\"Resource\": [\n"
+                    ],
+                    [
+                        55,
+                        "\t\t\t\"acs:oss:*:*:*\"\n"
+                    ],
+                    [
+                        56,
+                        "\t\t],\n"
+                    ],
+                    [
+                        57,
+                        "\t\t\"Condition\": {\n"
+                    ],
+                    [
+                        58,
+                        "\t\t\t\"StringLike\": {\n"
+                    ],
+                    [
+                        59,
+                        "          \t\t\"oss:Prefix\": [\n"
+                    ],
+                    [
+                        60,
+                        "\t\t\t\t\t\"*\"\n"
+                    ],
+                    [
+                        61,
+                        "\t\t\t\t]\n"
+                    ],
+                    [
+                        62,
+                        "\t\t\t}\n"
+                    ],
+                    [
+                        63,
+                        "\t\t}\n"
+                    ],
+                    [
+                        64,
+                        "\t}]\n"
+                    ],
+                    [
+                        65,
+                        "}\n"
+                    ],
+                    [
+                        66,
+                        "POLICY\n"
+                    ],
+                    [
+                        67,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "\\main.tf",
+                "file_abs_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\aliyun\\oss\\bucket_object_traversal\\main.tf",
+                "repo_file_path": "/TerraformGoat/aliyun/oss/bucket_object_traversal/main.tf",
+                "file_line_range": [
+                    13,
+                    67
+                ],
+                "resource": "alicloud_oss_bucket.Create_Bucket",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.alicloud.OSSBucketTransferAcceleration",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.paloaltonetworks.com/content/techdocs/en_US/prisma/prisma-cloud/prisma-cloud-code-security-policy-reference/alibaba-policies/alibaba-general-policies/ensure-alibaba-cloud-oss-bucket-has-transfer-acceleration-disabled.html",
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\aliyun\\oss\\bucket_object_traversal\\main.tf"
+            },
+            {
+                "check_id": "CKV_ALI_10",
+                "bc_check_id": "BC_ALI_GENERAL_3",
+                "check_name": "Ensure OSS bucket has versioning enabled",
+                "check_result": {
+                    "result": "FAILED",
+                    "evaluated_keys": [
+                        "versioning/[0]/status"
+                    ]
+                },
+                "code_block": [
+                    [
+                        13,
+                        "resource \"alicloud_oss_bucket\" \"Create_Bucket\" {\n"
+                    ],
+                    [
+                        14,
+                        "  bucket        = \"hx-cloud-security-${random_string.random_suffix.result}\"\n"
+                    ],
+                    [
+                        15,
+                        "  acl           = \"public-read\"\n"
+                    ],
+                    [
+                        16,
+                        "  force_destroy = true\n"
+                    ],
+                    [
+                        17,
+                        "  policy        = <<POLICY\n"
+                    ],
+                    [
+                        18,
+                        "{\n"
+                    ],
+                    [
+                        19,
+                        "\t\"Version\": \"1\",\n"
+                    ],
+                    [
+                        20,
+                        "\t\"Statement\": [{\n"
+                    ],
+                    [
+                        21,
+                        "\t\t\"Effect\": \"Allow\",\n"
+                    ],
+                    [
+                        22,
+                        "\t\t\"Action\": [\n"
+                    ],
+                    [
+                        23,
+                        "\t\t\t\"oss:GetObject\",\n"
+                    ],
+                    [
+                        24,
+                        "\t\t\t\"oss:PutObject\",\n"
+                    ],
+                    [
+                        25,
+                        "\t\t\t\"oss:GetObjectAcl\",\n"
+                    ],
+                    [
+                        26,
+                        "\t\t\t\"oss:PutObjectAcl\",\n"
+                    ],
+                    [
+                        27,
+                        "\t\t\t\"oss:ListObjects\",\n"
+                    ],
+                    [
+                        28,
+                        "\t\t\t\"oss:AbortMultipartUpload\",\n"
+                    ],
+                    [
+                        29,
+                        "\t\t\t\"oss:ListParts\",\n"
+                    ],
+                    [
+                        30,
+                        "\t\t\t\"oss:RestoreObject\",\n"
+                    ],
+                    [
+                        31,
+                        "\t\t\t\"oss:GetVodPlaylist\",\n"
+                    ],
+                    [
+                        32,
+                        "\t\t\t\"oss:PostVodPlaylist\",\n"
+                    ],
+                    [
+                        33,
+                        "\t\t\t\"oss:PublishRtmpStream\",\n"
+                    ],
+                    [
+                        34,
+                        "\t\t\t\"oss:ListObjectVersions\",\n"
+                    ],
+                    [
+                        35,
+                        "\t\t\t\"oss:GetObjectVersion\",\n"
+                    ],
+                    [
+                        36,
+                        "\t\t\t\"oss:GetObjectVersionAcl\",\n"
+                    ],
+                    [
+                        37,
+                        "\t\t\t\"oss:RestoreObjectVersion\"\n"
+                    ],
+                    [
+                        38,
+                        "\t\t],\n"
+                    ],
+                    [
+                        39,
+                        "\t\t\"Principal\": [\n"
+                    ],
+                    [
+                        40,
+                        "\t\t\t\"*\"\n"
+                    ],
+                    [
+                        41,
+                        "\t\t],\n"
+                    ],
+                    [
+                        42,
+                        "\t\t\"Resource\": [\n"
+                    ],
+                    [
+                        43,
+                        "\t\t\t\"acs:oss:*:*:*/*\"\n"
+                    ],
+                    [
+                        44,
+                        "\t\t]\n"
+                    ],
+                    [
+                        45,
+                        "\t}, {\n"
+                    ],
+                    [
+                        46,
+                        "\t\t\"Effect\": \"Allow\",\n"
+                    ],
+                    [
+                        47,
+                        "\t\t\"Action\": [\n"
+                    ],
+                    [
+                        48,
+                        "\t\t\t\"oss:ListObjects\",\n"
+                    ],
+                    [
+                        49,
+                        "\t\t\t\"oss:GetObject\"\n"
+                    ],
+                    [
+                        50,
+                        "\t\t],\n"
+                    ],
+                    [
+                        51,
+                        "\t\t\"Principal\": [\n"
+                    ],
+                    [
+                        52,
+                        "\t\t\t\"*\"\n"
+                    ],
+                    [
+                        53,
+                        "\t\t],\n"
+                    ],
+                    [
+                        54,
+                        "\t\t\"Resource\": [\n"
+                    ],
+                    [
+                        55,
+                        "\t\t\t\"acs:oss:*:*:*\"\n"
+                    ],
+                    [
+                        56,
+                        "\t\t],\n"
+                    ],
+                    [
+                        57,
+                        "\t\t\"Condition\": {\n"
+                    ],
+                    [
+                        58,
+                        "\t\t\t\"StringLike\": {\n"
+                    ],
+                    [
+                        59,
+                        "          \t\t\"oss:Prefix\": [\n"
+                    ],
+                    [
+                        60,
+                        "\t\t\t\t\t\"*\"\n"
+                    ],
+                    [
+                        61,
+                        "\t\t\t\t]\n"
+                    ],
+                    [
+                        62,
+                        "\t\t\t}\n"
+                    ],
+                    [
+                        63,
+                        "\t\t}\n"
+                    ],
+                    [
+                        64,
+                        "\t}]\n"
+                    ],
+                    [
+                        65,
+                        "}\n"
+                    ],
+                    [
+                        66,
+                        "POLICY\n"
+                    ],
+                    [
+                        67,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "\\main.tf",
+                "file_abs_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\aliyun\\oss\\bucket_object_traversal\\main.tf",
+                "repo_file_path": "/TerraformGoat/aliyun/oss/bucket_object_traversal/main.tf",
+                "file_line_range": [
+                    13,
+                    67
+                ],
+                "resource": "alicloud_oss_bucket.Create_Bucket",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.alicloud.OSSBucketVersioning",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.paloaltonetworks.com/content/techdocs/en_US/prisma/prisma-cloud/prisma-cloud-code-security-policy-reference/alibaba-policies/alibaba-general-policies/ensure-alibaba-cloud-oss-bucket-has-versioning-enabled.html",
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\aliyun\\oss\\bucket_object_traversal\\main.tf"
+            }
+        ],
+        "skipped_checks": [],
+        "parsing_errors": []
+    },
+    "summary": {
+        "passed": 0,
+        "failed": 5,
+        "skipped": 0,
+        "parsing_errors": 0,
+        "resource_count": 3,
+        "checkov_version": "2.4.14"
+    },
+    "url": "Add an api key '--bc-api-key <api-key>' to see more detailed insights via https://bridgecrew.cloud"
+}

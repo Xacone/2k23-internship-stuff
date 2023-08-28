@@ -1,0 +1,2736 @@
+{
+    "check_type": "terraform",
+    "results": {
+        "passed_checks": [
+            {
+                "check_id": "CKV_GCP_31",
+                "bc_check_id": "BC_GCP_IAM_2",
+                "check_name": "Ensure that instances are not configured to use the default service account with full access to all Cloud APIs",
+                "check_result": {
+                    "result": "PASSED",
+                    "evaluated_keys": []
+                },
+                "code_block": [
+                    [
+                        6,
+                        "resource \"google_compute_instance\" \"huoxian_terraform_goat_instance\" {\n"
+                    ],
+                    [
+                        7,
+                        "  name         = \"huoxian-terraform-goat-instance\"\n"
+                    ],
+                    [
+                        8,
+                        "  machine_type = \"f1-micro\"\n"
+                    ],
+                    [
+                        9,
+                        "  zone         = \"us-central1-a\"\n"
+                    ],
+                    [
+                        10,
+                        "  depends_on = [\n"
+                    ],
+                    [
+                        11,
+                        "    google_compute_network.huoxian_terraform_goat_vpc,\n"
+                    ],
+                    [
+                        12,
+                        "    google_compute_subnetwork.huoxian_terraform_goat_subnetwork\n"
+                    ],
+                    [
+                        13,
+                        "  ]\n"
+                    ],
+                    [
+                        14,
+                        "\n"
+                    ],
+                    [
+                        15,
+                        "  boot_disk {\n"
+                    ],
+                    [
+                        16,
+                        "    initialize_params {\n"
+                    ],
+                    [
+                        17,
+                        "      image = \"ubuntu-os-cloud/ubuntu-1804-lts\"\n"
+                    ],
+                    [
+                        18,
+                        "    }\n"
+                    ],
+                    [
+                        19,
+                        "  }\n"
+                    ],
+                    [
+                        20,
+                        "  network_interface {\n"
+                    ],
+                    [
+                        21,
+                        "    network    = google_compute_network.huoxian_terraform_goat_vpc.name\n"
+                    ],
+                    [
+                        22,
+                        "    subnetwork = google_compute_subnetwork.huoxian_terraform_goat_subnetwork.name\n"
+                    ],
+                    [
+                        23,
+                        "    access_config {\n"
+                    ],
+                    [
+                        24,
+                        "    }\n"
+                    ],
+                    [
+                        25,
+                        "  }\n"
+                    ],
+                    [
+                        26,
+                        "\n"
+                    ],
+                    [
+                        27,
+                        "  metadata = {\n"
+                    ],
+                    [
+                        28,
+                        "    startup-script = <<EOF\n"
+                    ],
+                    [
+                        29,
+                        "#!/bin/bash\n"
+                    ],
+                    [
+                        30,
+                        "sudo apt-get -y update\n"
+                    ],
+                    [
+                        31,
+                        "sudo apt-get -y install apache2\n"
+                    ],
+                    [
+                        32,
+                        "sudo apt-get -y install php\n"
+                    ],
+                    [
+                        33,
+                        "sudo apt-get -y install php-curl\n"
+                    ],
+                    [
+                        34,
+                        "sudo sed -i 's/Listen 80/Listen 8080/' /etc/apache2/ports.conf\n"
+                    ],
+                    [
+                        35,
+                        "sudo /etc/init.d/apache2 restart\n"
+                    ],
+                    [
+                        36,
+                        "cd /var/www/html\n"
+                    ],
+                    [
+                        37,
+                        "sudo apt-get -y install wget\n"
+                    ],
+                    [
+                        38,
+                        "sudo wget https://huocorp-oss.oss-cn-beijing.aliyuncs.com/terraform-goat-dependency-files/command-execution-lab.zip\n"
+                    ],
+                    [
+                        39,
+                        "sudo apt-get -y install unzip\n"
+                    ],
+                    [
+                        40,
+                        "sudo unzip command-execution-lab.zip\n"
+                    ],
+                    [
+                        41,
+                        "sudo mv ./command-execution-lab/static/flag69152201.txt /\n"
+                    ],
+                    [
+                        42,
+                        "EOF\n"
+                    ],
+                    [
+                        43,
+                        "  }\n"
+                    ],
+                    [
+                        44,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "\\main.tf",
+                "file_abs_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\gcp\\vm\\vm_command_execution\\main.tf",
+                "repo_file_path": "/TerraformGoat/gcp/vm/vm_command_execution/main.tf",
+                "file_line_range": [
+                    6,
+                    44
+                ],
+                "resource": "google_compute_instance.huoxian_terraform_goat_instance",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.gcp.GoogleComputeDefaultServiceAccountFullAccess",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.paloaltonetworks.com/content/techdocs/en_US/prisma/prisma-cloud/prisma-cloud-code-security-policy-reference/google-cloud-policies/google-cloud-iam-policies/bc-gcp-iam-2.html",
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\gcp\\vm\\vm_command_execution\\main.tf"
+            },
+            {
+                "check_id": "CKV_GCP_34",
+                "bc_check_id": "BC_GCP_NETWORKING_10",
+                "check_name": "Ensure that no instance in the project overrides the project setting for enabling OSLogin(OSLogin needs to be enabled in project metadata for all instances)",
+                "check_result": {
+                    "result": "PASSED",
+                    "evaluated_keys": [
+                        "metadata/[0]/enable-oslogin"
+                    ]
+                },
+                "code_block": [
+                    [
+                        6,
+                        "resource \"google_compute_instance\" \"huoxian_terraform_goat_instance\" {\n"
+                    ],
+                    [
+                        7,
+                        "  name         = \"huoxian-terraform-goat-instance\"\n"
+                    ],
+                    [
+                        8,
+                        "  machine_type = \"f1-micro\"\n"
+                    ],
+                    [
+                        9,
+                        "  zone         = \"us-central1-a\"\n"
+                    ],
+                    [
+                        10,
+                        "  depends_on = [\n"
+                    ],
+                    [
+                        11,
+                        "    google_compute_network.huoxian_terraform_goat_vpc,\n"
+                    ],
+                    [
+                        12,
+                        "    google_compute_subnetwork.huoxian_terraform_goat_subnetwork\n"
+                    ],
+                    [
+                        13,
+                        "  ]\n"
+                    ],
+                    [
+                        14,
+                        "\n"
+                    ],
+                    [
+                        15,
+                        "  boot_disk {\n"
+                    ],
+                    [
+                        16,
+                        "    initialize_params {\n"
+                    ],
+                    [
+                        17,
+                        "      image = \"ubuntu-os-cloud/ubuntu-1804-lts\"\n"
+                    ],
+                    [
+                        18,
+                        "    }\n"
+                    ],
+                    [
+                        19,
+                        "  }\n"
+                    ],
+                    [
+                        20,
+                        "  network_interface {\n"
+                    ],
+                    [
+                        21,
+                        "    network    = google_compute_network.huoxian_terraform_goat_vpc.name\n"
+                    ],
+                    [
+                        22,
+                        "    subnetwork = google_compute_subnetwork.huoxian_terraform_goat_subnetwork.name\n"
+                    ],
+                    [
+                        23,
+                        "    access_config {\n"
+                    ],
+                    [
+                        24,
+                        "    }\n"
+                    ],
+                    [
+                        25,
+                        "  }\n"
+                    ],
+                    [
+                        26,
+                        "\n"
+                    ],
+                    [
+                        27,
+                        "  metadata = {\n"
+                    ],
+                    [
+                        28,
+                        "    startup-script = <<EOF\n"
+                    ],
+                    [
+                        29,
+                        "#!/bin/bash\n"
+                    ],
+                    [
+                        30,
+                        "sudo apt-get -y update\n"
+                    ],
+                    [
+                        31,
+                        "sudo apt-get -y install apache2\n"
+                    ],
+                    [
+                        32,
+                        "sudo apt-get -y install php\n"
+                    ],
+                    [
+                        33,
+                        "sudo apt-get -y install php-curl\n"
+                    ],
+                    [
+                        34,
+                        "sudo sed -i 's/Listen 80/Listen 8080/' /etc/apache2/ports.conf\n"
+                    ],
+                    [
+                        35,
+                        "sudo /etc/init.d/apache2 restart\n"
+                    ],
+                    [
+                        36,
+                        "cd /var/www/html\n"
+                    ],
+                    [
+                        37,
+                        "sudo apt-get -y install wget\n"
+                    ],
+                    [
+                        38,
+                        "sudo wget https://huocorp-oss.oss-cn-beijing.aliyuncs.com/terraform-goat-dependency-files/command-execution-lab.zip\n"
+                    ],
+                    [
+                        39,
+                        "sudo apt-get -y install unzip\n"
+                    ],
+                    [
+                        40,
+                        "sudo unzip command-execution-lab.zip\n"
+                    ],
+                    [
+                        41,
+                        "sudo mv ./command-execution-lab/static/flag69152201.txt /\n"
+                    ],
+                    [
+                        42,
+                        "EOF\n"
+                    ],
+                    [
+                        43,
+                        "  }\n"
+                    ],
+                    [
+                        44,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "\\main.tf",
+                "file_abs_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\gcp\\vm\\vm_command_execution\\main.tf",
+                "repo_file_path": "/TerraformGoat/gcp/vm/vm_command_execution/main.tf",
+                "file_line_range": [
+                    6,
+                    44
+                ],
+                "resource": "google_compute_instance.huoxian_terraform_goat_instance",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.gcp.GoogleComputeInstanceOSLogin",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.paloaltonetworks.com/content/techdocs/en_US/prisma/prisma-cloud/prisma-cloud-code-security-policy-reference/google-cloud-policies/google-cloud-networking-policies/bc-gcp-networking-10.html",
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\gcp\\vm\\vm_command_execution\\main.tf"
+            },
+            {
+                "check_id": "CKV_GCP_36",
+                "bc_check_id": "BC_GCP_NETWORKING_12",
+                "check_name": "Ensure that IP forwarding is not enabled on Instances",
+                "check_result": {
+                    "result": "PASSED",
+                    "evaluated_keys": [
+                        "can_ip_forward"
+                    ]
+                },
+                "code_block": [
+                    [
+                        6,
+                        "resource \"google_compute_instance\" \"huoxian_terraform_goat_instance\" {\n"
+                    ],
+                    [
+                        7,
+                        "  name         = \"huoxian-terraform-goat-instance\"\n"
+                    ],
+                    [
+                        8,
+                        "  machine_type = \"f1-micro\"\n"
+                    ],
+                    [
+                        9,
+                        "  zone         = \"us-central1-a\"\n"
+                    ],
+                    [
+                        10,
+                        "  depends_on = [\n"
+                    ],
+                    [
+                        11,
+                        "    google_compute_network.huoxian_terraform_goat_vpc,\n"
+                    ],
+                    [
+                        12,
+                        "    google_compute_subnetwork.huoxian_terraform_goat_subnetwork\n"
+                    ],
+                    [
+                        13,
+                        "  ]\n"
+                    ],
+                    [
+                        14,
+                        "\n"
+                    ],
+                    [
+                        15,
+                        "  boot_disk {\n"
+                    ],
+                    [
+                        16,
+                        "    initialize_params {\n"
+                    ],
+                    [
+                        17,
+                        "      image = \"ubuntu-os-cloud/ubuntu-1804-lts\"\n"
+                    ],
+                    [
+                        18,
+                        "    }\n"
+                    ],
+                    [
+                        19,
+                        "  }\n"
+                    ],
+                    [
+                        20,
+                        "  network_interface {\n"
+                    ],
+                    [
+                        21,
+                        "    network    = google_compute_network.huoxian_terraform_goat_vpc.name\n"
+                    ],
+                    [
+                        22,
+                        "    subnetwork = google_compute_subnetwork.huoxian_terraform_goat_subnetwork.name\n"
+                    ],
+                    [
+                        23,
+                        "    access_config {\n"
+                    ],
+                    [
+                        24,
+                        "    }\n"
+                    ],
+                    [
+                        25,
+                        "  }\n"
+                    ],
+                    [
+                        26,
+                        "\n"
+                    ],
+                    [
+                        27,
+                        "  metadata = {\n"
+                    ],
+                    [
+                        28,
+                        "    startup-script = <<EOF\n"
+                    ],
+                    [
+                        29,
+                        "#!/bin/bash\n"
+                    ],
+                    [
+                        30,
+                        "sudo apt-get -y update\n"
+                    ],
+                    [
+                        31,
+                        "sudo apt-get -y install apache2\n"
+                    ],
+                    [
+                        32,
+                        "sudo apt-get -y install php\n"
+                    ],
+                    [
+                        33,
+                        "sudo apt-get -y install php-curl\n"
+                    ],
+                    [
+                        34,
+                        "sudo sed -i 's/Listen 80/Listen 8080/' /etc/apache2/ports.conf\n"
+                    ],
+                    [
+                        35,
+                        "sudo /etc/init.d/apache2 restart\n"
+                    ],
+                    [
+                        36,
+                        "cd /var/www/html\n"
+                    ],
+                    [
+                        37,
+                        "sudo apt-get -y install wget\n"
+                    ],
+                    [
+                        38,
+                        "sudo wget https://huocorp-oss.oss-cn-beijing.aliyuncs.com/terraform-goat-dependency-files/command-execution-lab.zip\n"
+                    ],
+                    [
+                        39,
+                        "sudo apt-get -y install unzip\n"
+                    ],
+                    [
+                        40,
+                        "sudo unzip command-execution-lab.zip\n"
+                    ],
+                    [
+                        41,
+                        "sudo mv ./command-execution-lab/static/flag69152201.txt /\n"
+                    ],
+                    [
+                        42,
+                        "EOF\n"
+                    ],
+                    [
+                        43,
+                        "  }\n"
+                    ],
+                    [
+                        44,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "\\main.tf",
+                "file_abs_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\gcp\\vm\\vm_command_execution\\main.tf",
+                "repo_file_path": "/TerraformGoat/gcp/vm/vm_command_execution/main.tf",
+                "file_line_range": [
+                    6,
+                    44
+                ],
+                "resource": "google_compute_instance.huoxian_terraform_goat_instance",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.gcp.GoogleComputeIPForward",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.paloaltonetworks.com/content/techdocs/en_US/prisma/prisma-cloud/prisma-cloud-code-security-policy-reference/google-cloud-policies/google-cloud-networking-policies/bc-gcp-networking-12.html",
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\gcp\\vm\\vm_command_execution\\main.tf"
+            },
+            {
+                "check_id": "CKV_GCP_35",
+                "bc_check_id": "BC_GCP_NETWORKING_11",
+                "check_name": "Ensure 'Enable connecting to serial ports' is not enabled for VM Instance",
+                "check_result": {
+                    "result": "PASSED",
+                    "evaluated_keys": [
+                        "metadata/[0]/serial-port-enable"
+                    ]
+                },
+                "code_block": [
+                    [
+                        6,
+                        "resource \"google_compute_instance\" \"huoxian_terraform_goat_instance\" {\n"
+                    ],
+                    [
+                        7,
+                        "  name         = \"huoxian-terraform-goat-instance\"\n"
+                    ],
+                    [
+                        8,
+                        "  machine_type = \"f1-micro\"\n"
+                    ],
+                    [
+                        9,
+                        "  zone         = \"us-central1-a\"\n"
+                    ],
+                    [
+                        10,
+                        "  depends_on = [\n"
+                    ],
+                    [
+                        11,
+                        "    google_compute_network.huoxian_terraform_goat_vpc,\n"
+                    ],
+                    [
+                        12,
+                        "    google_compute_subnetwork.huoxian_terraform_goat_subnetwork\n"
+                    ],
+                    [
+                        13,
+                        "  ]\n"
+                    ],
+                    [
+                        14,
+                        "\n"
+                    ],
+                    [
+                        15,
+                        "  boot_disk {\n"
+                    ],
+                    [
+                        16,
+                        "    initialize_params {\n"
+                    ],
+                    [
+                        17,
+                        "      image = \"ubuntu-os-cloud/ubuntu-1804-lts\"\n"
+                    ],
+                    [
+                        18,
+                        "    }\n"
+                    ],
+                    [
+                        19,
+                        "  }\n"
+                    ],
+                    [
+                        20,
+                        "  network_interface {\n"
+                    ],
+                    [
+                        21,
+                        "    network    = google_compute_network.huoxian_terraform_goat_vpc.name\n"
+                    ],
+                    [
+                        22,
+                        "    subnetwork = google_compute_subnetwork.huoxian_terraform_goat_subnetwork.name\n"
+                    ],
+                    [
+                        23,
+                        "    access_config {\n"
+                    ],
+                    [
+                        24,
+                        "    }\n"
+                    ],
+                    [
+                        25,
+                        "  }\n"
+                    ],
+                    [
+                        26,
+                        "\n"
+                    ],
+                    [
+                        27,
+                        "  metadata = {\n"
+                    ],
+                    [
+                        28,
+                        "    startup-script = <<EOF\n"
+                    ],
+                    [
+                        29,
+                        "#!/bin/bash\n"
+                    ],
+                    [
+                        30,
+                        "sudo apt-get -y update\n"
+                    ],
+                    [
+                        31,
+                        "sudo apt-get -y install apache2\n"
+                    ],
+                    [
+                        32,
+                        "sudo apt-get -y install php\n"
+                    ],
+                    [
+                        33,
+                        "sudo apt-get -y install php-curl\n"
+                    ],
+                    [
+                        34,
+                        "sudo sed -i 's/Listen 80/Listen 8080/' /etc/apache2/ports.conf\n"
+                    ],
+                    [
+                        35,
+                        "sudo /etc/init.d/apache2 restart\n"
+                    ],
+                    [
+                        36,
+                        "cd /var/www/html\n"
+                    ],
+                    [
+                        37,
+                        "sudo apt-get -y install wget\n"
+                    ],
+                    [
+                        38,
+                        "sudo wget https://huocorp-oss.oss-cn-beijing.aliyuncs.com/terraform-goat-dependency-files/command-execution-lab.zip\n"
+                    ],
+                    [
+                        39,
+                        "sudo apt-get -y install unzip\n"
+                    ],
+                    [
+                        40,
+                        "sudo unzip command-execution-lab.zip\n"
+                    ],
+                    [
+                        41,
+                        "sudo mv ./command-execution-lab/static/flag69152201.txt /\n"
+                    ],
+                    [
+                        42,
+                        "EOF\n"
+                    ],
+                    [
+                        43,
+                        "  }\n"
+                    ],
+                    [
+                        44,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "\\main.tf",
+                "file_abs_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\gcp\\vm\\vm_command_execution\\main.tf",
+                "repo_file_path": "/TerraformGoat/gcp/vm/vm_command_execution/main.tf",
+                "file_line_range": [
+                    6,
+                    44
+                ],
+                "resource": "google_compute_instance.huoxian_terraform_goat_instance",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.gcp.GoogleComputeSerialPorts",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.paloaltonetworks.com/content/techdocs/en_US/prisma/prisma-cloud/prisma-cloud-code-security-policy-reference/google-cloud-policies/google-cloud-networking-policies/bc-gcp-networking-11.html",
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\gcp\\vm\\vm_command_execution\\main.tf"
+            },
+            {
+                "check_id": "CKV_GCP_77",
+                "bc_check_id": "BC_GCP_NETWORKING_18",
+                "check_name": "Ensure Google compute firewall ingress does not allow on ftp port",
+                "check_result": {
+                    "result": "PASSED",
+                    "evaluated_keys": [
+                        "allow"
+                    ]
+                },
+                "code_block": [
+                    [
+                        60,
+                        "resource \"google_compute_firewall\" \"huoxian_terraform_goat_firewall\" {\n"
+                    ],
+                    [
+                        61,
+                        "  name       = \"huoxian-terraform-goat-firewall\"\n"
+                    ],
+                    [
+                        62,
+                        "  network    = google_compute_network.huoxian_terraform_goat_vpc.name\n"
+                    ],
+                    [
+                        63,
+                        "  depends_on = [google_compute_network.huoxian_terraform_goat_vpc]\n"
+                    ],
+                    [
+                        64,
+                        "\n"
+                    ],
+                    [
+                        65,
+                        "  allow {\n"
+                    ],
+                    [
+                        66,
+                        "    protocol = \"tcp\"\n"
+                    ],
+                    [
+                        67,
+                        "    ports    = [\"8080\"]\n"
+                    ],
+                    [
+                        68,
+                        "  }\n"
+                    ],
+                    [
+                        69,
+                        "  source_ranges = [\"0.0.0.0/0\"]\n"
+                    ],
+                    [
+                        70,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "\\main.tf",
+                "file_abs_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\gcp\\vm\\vm_command_execution\\main.tf",
+                "repo_file_path": "/TerraformGoat/gcp/vm/vm_command_execution/main.tf",
+                "file_line_range": [
+                    60,
+                    70
+                ],
+                "resource": "google_compute_firewall.huoxian_terraform_goat_firewall",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.gcp.GoogleComputeFirewallUnrestrictedIngress20",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.paloaltonetworks.com/content/techdocs/en_US/prisma/prisma-cloud/prisma-cloud-code-security-policy-reference/google-cloud-policies/google-cloud-networking-policies/ensure-gcp-google-compute-firewall-ingress-does-not-allow-ftp-port-20-access.html",
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\gcp\\vm\\vm_command_execution\\main.tf"
+            },
+            {
+                "check_id": "CKV_GCP_75",
+                "bc_check_id": "BC_GCP_NETWORKING_19",
+                "check_name": "Ensure Google compute firewall ingress does not allow unrestricted FTP access",
+                "check_result": {
+                    "result": "PASSED",
+                    "evaluated_keys": [
+                        "allow"
+                    ]
+                },
+                "code_block": [
+                    [
+                        60,
+                        "resource \"google_compute_firewall\" \"huoxian_terraform_goat_firewall\" {\n"
+                    ],
+                    [
+                        61,
+                        "  name       = \"huoxian-terraform-goat-firewall\"\n"
+                    ],
+                    [
+                        62,
+                        "  network    = google_compute_network.huoxian_terraform_goat_vpc.name\n"
+                    ],
+                    [
+                        63,
+                        "  depends_on = [google_compute_network.huoxian_terraform_goat_vpc]\n"
+                    ],
+                    [
+                        64,
+                        "\n"
+                    ],
+                    [
+                        65,
+                        "  allow {\n"
+                    ],
+                    [
+                        66,
+                        "    protocol = \"tcp\"\n"
+                    ],
+                    [
+                        67,
+                        "    ports    = [\"8080\"]\n"
+                    ],
+                    [
+                        68,
+                        "  }\n"
+                    ],
+                    [
+                        69,
+                        "  source_ranges = [\"0.0.0.0/0\"]\n"
+                    ],
+                    [
+                        70,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "\\main.tf",
+                "file_abs_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\gcp\\vm\\vm_command_execution\\main.tf",
+                "repo_file_path": "/TerraformGoat/gcp/vm/vm_command_execution/main.tf",
+                "file_line_range": [
+                    60,
+                    70
+                ],
+                "resource": "google_compute_firewall.huoxian_terraform_goat_firewall",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.gcp.GoogleComputeFirewallUnrestrictedIngress21",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.paloaltonetworks.com/content/techdocs/en_US/prisma/prisma-cloud/prisma-cloud-code-security-policy-reference/google-cloud-policies/google-cloud-networking-policies/ensure-gcp-google-compute-firewall-ingress-does-not-allow-unrestricted-ftp-access.html",
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\gcp\\vm\\vm_command_execution\\main.tf"
+            },
+            {
+                "check_id": "CKV_GCP_2",
+                "bc_check_id": "BC_GCP_NETWORKING_1",
+                "check_name": "Ensure Google compute firewall ingress does not allow unrestricted ssh access",
+                "check_result": {
+                    "result": "PASSED",
+                    "evaluated_keys": [
+                        "allow"
+                    ]
+                },
+                "code_block": [
+                    [
+                        60,
+                        "resource \"google_compute_firewall\" \"huoxian_terraform_goat_firewall\" {\n"
+                    ],
+                    [
+                        61,
+                        "  name       = \"huoxian-terraform-goat-firewall\"\n"
+                    ],
+                    [
+                        62,
+                        "  network    = google_compute_network.huoxian_terraform_goat_vpc.name\n"
+                    ],
+                    [
+                        63,
+                        "  depends_on = [google_compute_network.huoxian_terraform_goat_vpc]\n"
+                    ],
+                    [
+                        64,
+                        "\n"
+                    ],
+                    [
+                        65,
+                        "  allow {\n"
+                    ],
+                    [
+                        66,
+                        "    protocol = \"tcp\"\n"
+                    ],
+                    [
+                        67,
+                        "    ports    = [\"8080\"]\n"
+                    ],
+                    [
+                        68,
+                        "  }\n"
+                    ],
+                    [
+                        69,
+                        "  source_ranges = [\"0.0.0.0/0\"]\n"
+                    ],
+                    [
+                        70,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "\\main.tf",
+                "file_abs_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\gcp\\vm\\vm_command_execution\\main.tf",
+                "repo_file_path": "/TerraformGoat/gcp/vm/vm_command_execution/main.tf",
+                "file_line_range": [
+                    60,
+                    70
+                ],
+                "resource": "google_compute_firewall.huoxian_terraform_goat_firewall",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.gcp.GoogleComputeFirewallUnrestrictedIngress22",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.paloaltonetworks.com/content/techdocs/en_US/prisma/prisma-cloud/prisma-cloud-code-security-policy-reference/google-cloud-policies/google-cloud-networking-policies/bc-gcp-networking-1.html",
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\gcp\\vm\\vm_command_execution\\main.tf"
+            },
+            {
+                "check_id": "CKV_GCP_88",
+                "bc_check_id": "BC_GCP_NETWORKING_15",
+                "check_name": "Ensure Google compute firewall ingress does not allow unrestricted mysql access",
+                "check_result": {
+                    "result": "PASSED",
+                    "evaluated_keys": [
+                        "allow"
+                    ]
+                },
+                "code_block": [
+                    [
+                        60,
+                        "resource \"google_compute_firewall\" \"huoxian_terraform_goat_firewall\" {\n"
+                    ],
+                    [
+                        61,
+                        "  name       = \"huoxian-terraform-goat-firewall\"\n"
+                    ],
+                    [
+                        62,
+                        "  network    = google_compute_network.huoxian_terraform_goat_vpc.name\n"
+                    ],
+                    [
+                        63,
+                        "  depends_on = [google_compute_network.huoxian_terraform_goat_vpc]\n"
+                    ],
+                    [
+                        64,
+                        "\n"
+                    ],
+                    [
+                        65,
+                        "  allow {\n"
+                    ],
+                    [
+                        66,
+                        "    protocol = \"tcp\"\n"
+                    ],
+                    [
+                        67,
+                        "    ports    = [\"8080\"]\n"
+                    ],
+                    [
+                        68,
+                        "  }\n"
+                    ],
+                    [
+                        69,
+                        "  source_ranges = [\"0.0.0.0/0\"]\n"
+                    ],
+                    [
+                        70,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "\\main.tf",
+                "file_abs_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\gcp\\vm\\vm_command_execution\\main.tf",
+                "repo_file_path": "/TerraformGoat/gcp/vm/vm_command_execution/main.tf",
+                "file_line_range": [
+                    60,
+                    70
+                ],
+                "resource": "google_compute_firewall.huoxian_terraform_goat_firewall",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.gcp.GoogleComputeFirewallUnrestrictedIngress3306",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.paloaltonetworks.com/content/techdocs/en_US/prisma/prisma-cloud/prisma-cloud-code-security-policy-reference/google-cloud-policies/google-cloud-networking-policies/ensure-gcp-compute-firewall-ingress-does-not-allow-unrestricted-mysql-access.html",
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\gcp\\vm\\vm_command_execution\\main.tf"
+            },
+            {
+                "check_id": "CKV_GCP_3",
+                "bc_check_id": "BC_GCP_NETWORKING_2",
+                "check_name": "Ensure Google compute firewall ingress does not allow unrestricted rdp access",
+                "check_result": {
+                    "result": "PASSED",
+                    "evaluated_keys": [
+                        "allow"
+                    ]
+                },
+                "code_block": [
+                    [
+                        60,
+                        "resource \"google_compute_firewall\" \"huoxian_terraform_goat_firewall\" {\n"
+                    ],
+                    [
+                        61,
+                        "  name       = \"huoxian-terraform-goat-firewall\"\n"
+                    ],
+                    [
+                        62,
+                        "  network    = google_compute_network.huoxian_terraform_goat_vpc.name\n"
+                    ],
+                    [
+                        63,
+                        "  depends_on = [google_compute_network.huoxian_terraform_goat_vpc]\n"
+                    ],
+                    [
+                        64,
+                        "\n"
+                    ],
+                    [
+                        65,
+                        "  allow {\n"
+                    ],
+                    [
+                        66,
+                        "    protocol = \"tcp\"\n"
+                    ],
+                    [
+                        67,
+                        "    ports    = [\"8080\"]\n"
+                    ],
+                    [
+                        68,
+                        "  }\n"
+                    ],
+                    [
+                        69,
+                        "  source_ranges = [\"0.0.0.0/0\"]\n"
+                    ],
+                    [
+                        70,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "\\main.tf",
+                "file_abs_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\gcp\\vm\\vm_command_execution\\main.tf",
+                "repo_file_path": "/TerraformGoat/gcp/vm/vm_command_execution/main.tf",
+                "file_line_range": [
+                    60,
+                    70
+                ],
+                "resource": "google_compute_firewall.huoxian_terraform_goat_firewall",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.gcp.GoogleComputeFirewallUnrestrictedIngress3389",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.paloaltonetworks.com/content/techdocs/en_US/prisma/prisma-cloud/prisma-cloud-code-security-policy-reference/google-cloud-policies/google-cloud-networking-policies/bc-gcp-networking-2.html",
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\gcp\\vm\\vm_command_execution\\main.tf"
+            },
+            {
+                "check_id": "CKV_GCP_106",
+                "bc_check_id": "BC_GCP_NETWORKING_17",
+                "check_name": "Ensure Google compute firewall ingress does not allow unrestricted http port 80 access",
+                "check_result": {
+                    "result": "PASSED",
+                    "evaluated_keys": [
+                        "allow"
+                    ]
+                },
+                "code_block": [
+                    [
+                        60,
+                        "resource \"google_compute_firewall\" \"huoxian_terraform_goat_firewall\" {\n"
+                    ],
+                    [
+                        61,
+                        "  name       = \"huoxian-terraform-goat-firewall\"\n"
+                    ],
+                    [
+                        62,
+                        "  network    = google_compute_network.huoxian_terraform_goat_vpc.name\n"
+                    ],
+                    [
+                        63,
+                        "  depends_on = [google_compute_network.huoxian_terraform_goat_vpc]\n"
+                    ],
+                    [
+                        64,
+                        "\n"
+                    ],
+                    [
+                        65,
+                        "  allow {\n"
+                    ],
+                    [
+                        66,
+                        "    protocol = \"tcp\"\n"
+                    ],
+                    [
+                        67,
+                        "    ports    = [\"8080\"]\n"
+                    ],
+                    [
+                        68,
+                        "  }\n"
+                    ],
+                    [
+                        69,
+                        "  source_ranges = [\"0.0.0.0/0\"]\n"
+                    ],
+                    [
+                        70,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "\\main.tf",
+                "file_abs_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\gcp\\vm\\vm_command_execution\\main.tf",
+                "repo_file_path": "/TerraformGoat/gcp/vm/vm_command_execution/main.tf",
+                "file_line_range": [
+                    60,
+                    70
+                ],
+                "resource": "google_compute_firewall.huoxian_terraform_goat_firewall",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.gcp.GoogleComputeFirewallUnrestrictedIngress80",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.paloaltonetworks.com/content/techdocs/en_US/prisma/prisma-cloud/prisma-cloud-code-security-policy-reference/google-cloud-policies/google-cloud-networking-policies/ensure-gcp-google-compute-firewall-ingress-does-not-allow-unrestricted-http-port-80-access.html",
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\gcp\\vm\\vm_command_execution\\main.tf"
+            },
+            {
+                "check_id": "CKV2_GCP_12",
+                "bc_check_id": "BC_GCP_NETWORKING_20",
+                "check_name": "Ensure GCP compute firewall ingress does not allow unrestricted access to all ports",
+                "check_result": {
+                    "result": "PASSED",
+                    "entity": {
+                        "google_compute_firewall": {
+                            "huoxian_terraform_goat_firewall": {
+                                "__end_line__": 70,
+                                "__start_line__": 60,
+                                "allow": [
+                                    {
+                                        "ports": [
+                                            [
+                                                "8080"
+                                            ]
+                                        ],
+                                        "protocol": [
+                                            "tcp"
+                                        ]
+                                    }
+                                ],
+                                "depends_on": [
+                                    [
+                                        "google_compute_network.huoxian_terraform_goat_vpc"
+                                    ]
+                                ],
+                                "name": [
+                                    "huoxian-terraform-goat-firewall"
+                                ],
+                                "network": [
+                                    "huoxian-terraform-goat-vpc"
+                                ],
+                                "source_ranges": [
+                                    [
+                                        "0.0.0.0/0"
+                                    ]
+                                ],
+                                "__address__": "google_compute_firewall.huoxian_terraform_goat_firewall"
+                            }
+                        }
+                    },
+                    "evaluated_keys": [
+                        "allow/protocol",
+                        "direction",
+                        "disabled",
+                        "source_ranges"
+                    ]
+                },
+                "code_block": [
+                    [
+                        60,
+                        "resource \"google_compute_firewall\" \"huoxian_terraform_goat_firewall\" {\n"
+                    ],
+                    [
+                        61,
+                        "  name       = \"huoxian-terraform-goat-firewall\"\n"
+                    ],
+                    [
+                        62,
+                        "  network    = google_compute_network.huoxian_terraform_goat_vpc.name\n"
+                    ],
+                    [
+                        63,
+                        "  depends_on = [google_compute_network.huoxian_terraform_goat_vpc]\n"
+                    ],
+                    [
+                        64,
+                        "\n"
+                    ],
+                    [
+                        65,
+                        "  allow {\n"
+                    ],
+                    [
+                        66,
+                        "    protocol = \"tcp\"\n"
+                    ],
+                    [
+                        67,
+                        "    ports    = [\"8080\"]\n"
+                    ],
+                    [
+                        68,
+                        "  }\n"
+                    ],
+                    [
+                        69,
+                        "  source_ranges = [\"0.0.0.0/0\"]\n"
+                    ],
+                    [
+                        70,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "\\main.tf",
+                "file_abs_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\gcp\\vm\\vm_command_execution\\main.tf",
+                "repo_file_path": "/TerraformGoat/gcp/vm/vm_command_execution/main.tf",
+                "file_line_range": [
+                    60,
+                    70
+                ],
+                "resource": "google_compute_firewall.huoxian_terraform_goat_firewall",
+                "evaluations": null,
+                "check_class": "checkov.common.graph.checks_infra.base_check",
+                "fixed_definition": null,
+                "entity_tags": {},
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.paloaltonetworks.com/content/techdocs/en_US/prisma/prisma-cloud/prisma-cloud-code-security-policy-reference/google-cloud-policies/google-cloud-networking-policies/ensure-gcp-google-compute-firewall-ingress-does-not-allow-unrestricted-access-to-all-ports.html",
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\gcp\\vm\\vm_command_execution\\main.tf"
+            },
+            {
+                "check_id": "CKV2_GCP_18",
+                "bc_check_id": null,
+                "check_name": "Ensure GCP network defines a firewall and does not use the default firewall",
+                "check_result": {
+                    "result": "PASSED",
+                    "entity": {
+                        "google_compute_network": {
+                            "huoxian_terraform_goat_vpc": {
+                                "__end_line__": 50,
+                                "__start_line__": 46,
+                                "auto_create_subnetworks": [
+                                    false
+                                ],
+                                "name": [
+                                    "huoxian-terraform-goat-vpc"
+                                ],
+                                "routing_mode": [
+                                    "GLOBAL"
+                                ],
+                                "__address__": "google_compute_network.huoxian_terraform_goat_vpc"
+                            }
+                        }
+                    },
+                    "evaluated_keys": [
+                        "resource_type"
+                    ]
+                },
+                "code_block": [
+                    [
+                        46,
+                        "resource \"google_compute_network\" \"huoxian_terraform_goat_vpc\" {\n"
+                    ],
+                    [
+                        47,
+                        "  name                    = \"huoxian-terraform-goat-vpc\"\n"
+                    ],
+                    [
+                        48,
+                        "  auto_create_subnetworks = \"false\"\n"
+                    ],
+                    [
+                        49,
+                        "  routing_mode            = \"GLOBAL\"\n"
+                    ],
+                    [
+                        50,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "\\main.tf",
+                "file_abs_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\gcp\\vm\\vm_command_execution\\main.tf",
+                "repo_file_path": "/TerraformGoat/gcp/vm/vm_command_execution/main.tf",
+                "file_line_range": [
+                    46,
+                    50
+                ],
+                "resource": "google_compute_network.huoxian_terraform_goat_vpc",
+                "evaluations": null,
+                "check_class": "checkov.common.graph.checks_infra.base_check",
+                "fixed_definition": null,
+                "entity_tags": {},
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": {},
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": null,
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\gcp\\vm\\vm_command_execution\\main.tf"
+            }
+        ],
+        "failed_checks": [
+            {
+                "check_id": "CKV_GCP_32",
+                "bc_check_id": "BC_GCP_NETWORKING_8",
+                "check_name": "Ensure 'Block Project-wide SSH keys' is enabled for VM instances",
+                "check_result": {
+                    "result": "FAILED",
+                    "evaluated_keys": [
+                        "metadata/block-project-ssh-keys"
+                    ]
+                },
+                "code_block": [
+                    [
+                        6,
+                        "resource \"google_compute_instance\" \"huoxian_terraform_goat_instance\" {\n"
+                    ],
+                    [
+                        7,
+                        "  name         = \"huoxian-terraform-goat-instance\"\n"
+                    ],
+                    [
+                        8,
+                        "  machine_type = \"f1-micro\"\n"
+                    ],
+                    [
+                        9,
+                        "  zone         = \"us-central1-a\"\n"
+                    ],
+                    [
+                        10,
+                        "  depends_on = [\n"
+                    ],
+                    [
+                        11,
+                        "    google_compute_network.huoxian_terraform_goat_vpc,\n"
+                    ],
+                    [
+                        12,
+                        "    google_compute_subnetwork.huoxian_terraform_goat_subnetwork\n"
+                    ],
+                    [
+                        13,
+                        "  ]\n"
+                    ],
+                    [
+                        14,
+                        "\n"
+                    ],
+                    [
+                        15,
+                        "  boot_disk {\n"
+                    ],
+                    [
+                        16,
+                        "    initialize_params {\n"
+                    ],
+                    [
+                        17,
+                        "      image = \"ubuntu-os-cloud/ubuntu-1804-lts\"\n"
+                    ],
+                    [
+                        18,
+                        "    }\n"
+                    ],
+                    [
+                        19,
+                        "  }\n"
+                    ],
+                    [
+                        20,
+                        "  network_interface {\n"
+                    ],
+                    [
+                        21,
+                        "    network    = google_compute_network.huoxian_terraform_goat_vpc.name\n"
+                    ],
+                    [
+                        22,
+                        "    subnetwork = google_compute_subnetwork.huoxian_terraform_goat_subnetwork.name\n"
+                    ],
+                    [
+                        23,
+                        "    access_config {\n"
+                    ],
+                    [
+                        24,
+                        "    }\n"
+                    ],
+                    [
+                        25,
+                        "  }\n"
+                    ],
+                    [
+                        26,
+                        "\n"
+                    ],
+                    [
+                        27,
+                        "  metadata = {\n"
+                    ],
+                    [
+                        28,
+                        "    startup-script = <<EOF\n"
+                    ],
+                    [
+                        29,
+                        "#!/bin/bash\n"
+                    ],
+                    [
+                        30,
+                        "sudo apt-get -y update\n"
+                    ],
+                    [
+                        31,
+                        "sudo apt-get -y install apache2\n"
+                    ],
+                    [
+                        32,
+                        "sudo apt-get -y install php\n"
+                    ],
+                    [
+                        33,
+                        "sudo apt-get -y install php-curl\n"
+                    ],
+                    [
+                        34,
+                        "sudo sed -i 's/Listen 80/Listen 8080/' /etc/apache2/ports.conf\n"
+                    ],
+                    [
+                        35,
+                        "sudo /etc/init.d/apache2 restart\n"
+                    ],
+                    [
+                        36,
+                        "cd /var/www/html\n"
+                    ],
+                    [
+                        37,
+                        "sudo apt-get -y install wget\n"
+                    ],
+                    [
+                        38,
+                        "sudo wget https://huocorp-oss.oss-cn-beijing.aliyuncs.com/terraform-goat-dependency-files/command-execution-lab.zip\n"
+                    ],
+                    [
+                        39,
+                        "sudo apt-get -y install unzip\n"
+                    ],
+                    [
+                        40,
+                        "sudo unzip command-execution-lab.zip\n"
+                    ],
+                    [
+                        41,
+                        "sudo mv ./command-execution-lab/static/flag69152201.txt /\n"
+                    ],
+                    [
+                        42,
+                        "EOF\n"
+                    ],
+                    [
+                        43,
+                        "  }\n"
+                    ],
+                    [
+                        44,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "\\main.tf",
+                "file_abs_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\gcp\\vm\\vm_command_execution\\main.tf",
+                "repo_file_path": "/TerraformGoat/gcp/vm/vm_command_execution/main.tf",
+                "file_line_range": [
+                    6,
+                    44
+                ],
+                "resource": "google_compute_instance.huoxian_terraform_goat_instance",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.gcp.GoogleComputeBlockProjectSSH",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.paloaltonetworks.com/content/techdocs/en_US/prisma/prisma-cloud/prisma-cloud-code-security-policy-reference/google-cloud-policies/google-cloud-networking-policies/bc-gcp-networking-8.html",
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\gcp\\vm\\vm_command_execution\\main.tf"
+            },
+            {
+                "check_id": "CKV_GCP_38",
+                "bc_check_id": "BC_GCP_GENERAL_2",
+                "check_name": "Ensure VM disks for critical VMs are encrypted with Customer Supplied Encryption Keys (CSEK)",
+                "check_result": {
+                    "result": "FAILED",
+                    "evaluated_keys": [
+                        "boot_disk",
+                        "boot_disk/[0]/disk_encryption_key_raw",
+                        "boot_disk/[0]/kms_key_self_link"
+                    ]
+                },
+                "code_block": [
+                    [
+                        6,
+                        "resource \"google_compute_instance\" \"huoxian_terraform_goat_instance\" {\n"
+                    ],
+                    [
+                        7,
+                        "  name         = \"huoxian-terraform-goat-instance\"\n"
+                    ],
+                    [
+                        8,
+                        "  machine_type = \"f1-micro\"\n"
+                    ],
+                    [
+                        9,
+                        "  zone         = \"us-central1-a\"\n"
+                    ],
+                    [
+                        10,
+                        "  depends_on = [\n"
+                    ],
+                    [
+                        11,
+                        "    google_compute_network.huoxian_terraform_goat_vpc,\n"
+                    ],
+                    [
+                        12,
+                        "    google_compute_subnetwork.huoxian_terraform_goat_subnetwork\n"
+                    ],
+                    [
+                        13,
+                        "  ]\n"
+                    ],
+                    [
+                        14,
+                        "\n"
+                    ],
+                    [
+                        15,
+                        "  boot_disk {\n"
+                    ],
+                    [
+                        16,
+                        "    initialize_params {\n"
+                    ],
+                    [
+                        17,
+                        "      image = \"ubuntu-os-cloud/ubuntu-1804-lts\"\n"
+                    ],
+                    [
+                        18,
+                        "    }\n"
+                    ],
+                    [
+                        19,
+                        "  }\n"
+                    ],
+                    [
+                        20,
+                        "  network_interface {\n"
+                    ],
+                    [
+                        21,
+                        "    network    = google_compute_network.huoxian_terraform_goat_vpc.name\n"
+                    ],
+                    [
+                        22,
+                        "    subnetwork = google_compute_subnetwork.huoxian_terraform_goat_subnetwork.name\n"
+                    ],
+                    [
+                        23,
+                        "    access_config {\n"
+                    ],
+                    [
+                        24,
+                        "    }\n"
+                    ],
+                    [
+                        25,
+                        "  }\n"
+                    ],
+                    [
+                        26,
+                        "\n"
+                    ],
+                    [
+                        27,
+                        "  metadata = {\n"
+                    ],
+                    [
+                        28,
+                        "    startup-script = <<EOF\n"
+                    ],
+                    [
+                        29,
+                        "#!/bin/bash\n"
+                    ],
+                    [
+                        30,
+                        "sudo apt-get -y update\n"
+                    ],
+                    [
+                        31,
+                        "sudo apt-get -y install apache2\n"
+                    ],
+                    [
+                        32,
+                        "sudo apt-get -y install php\n"
+                    ],
+                    [
+                        33,
+                        "sudo apt-get -y install php-curl\n"
+                    ],
+                    [
+                        34,
+                        "sudo sed -i 's/Listen 80/Listen 8080/' /etc/apache2/ports.conf\n"
+                    ],
+                    [
+                        35,
+                        "sudo /etc/init.d/apache2 restart\n"
+                    ],
+                    [
+                        36,
+                        "cd /var/www/html\n"
+                    ],
+                    [
+                        37,
+                        "sudo apt-get -y install wget\n"
+                    ],
+                    [
+                        38,
+                        "sudo wget https://huocorp-oss.oss-cn-beijing.aliyuncs.com/terraform-goat-dependency-files/command-execution-lab.zip\n"
+                    ],
+                    [
+                        39,
+                        "sudo apt-get -y install unzip\n"
+                    ],
+                    [
+                        40,
+                        "sudo unzip command-execution-lab.zip\n"
+                    ],
+                    [
+                        41,
+                        "sudo mv ./command-execution-lab/static/flag69152201.txt /\n"
+                    ],
+                    [
+                        42,
+                        "EOF\n"
+                    ],
+                    [
+                        43,
+                        "  }\n"
+                    ],
+                    [
+                        44,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "\\main.tf",
+                "file_abs_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\gcp\\vm\\vm_command_execution\\main.tf",
+                "repo_file_path": "/TerraformGoat/gcp/vm/vm_command_execution/main.tf",
+                "file_line_range": [
+                    6,
+                    44
+                ],
+                "resource": "google_compute_instance.huoxian_terraform_goat_instance",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.gcp.GoogleComputeBootDiskEncryption",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.paloaltonetworks.com/content/techdocs/en_US/prisma/prisma-cloud/prisma-cloud-code-security-policy-reference/google-cloud-policies/google-cloud-general-policies/encrypt-boot-disks-for-instances-with-cseks.html",
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\gcp\\vm\\vm_command_execution\\main.tf"
+            },
+            {
+                "check_id": "CKV_GCP_30",
+                "bc_check_id": "BC_GCP_IAM_1",
+                "check_name": "Ensure that instances are not configured to use the default service account",
+                "check_result": {
+                    "result": "FAILED",
+                    "evaluated_keys": [
+                        "service_account/[0]/email",
+                        "name"
+                    ]
+                },
+                "code_block": [
+                    [
+                        6,
+                        "resource \"google_compute_instance\" \"huoxian_terraform_goat_instance\" {\n"
+                    ],
+                    [
+                        7,
+                        "  name         = \"huoxian-terraform-goat-instance\"\n"
+                    ],
+                    [
+                        8,
+                        "  machine_type = \"f1-micro\"\n"
+                    ],
+                    [
+                        9,
+                        "  zone         = \"us-central1-a\"\n"
+                    ],
+                    [
+                        10,
+                        "  depends_on = [\n"
+                    ],
+                    [
+                        11,
+                        "    google_compute_network.huoxian_terraform_goat_vpc,\n"
+                    ],
+                    [
+                        12,
+                        "    google_compute_subnetwork.huoxian_terraform_goat_subnetwork\n"
+                    ],
+                    [
+                        13,
+                        "  ]\n"
+                    ],
+                    [
+                        14,
+                        "\n"
+                    ],
+                    [
+                        15,
+                        "  boot_disk {\n"
+                    ],
+                    [
+                        16,
+                        "    initialize_params {\n"
+                    ],
+                    [
+                        17,
+                        "      image = \"ubuntu-os-cloud/ubuntu-1804-lts\"\n"
+                    ],
+                    [
+                        18,
+                        "    }\n"
+                    ],
+                    [
+                        19,
+                        "  }\n"
+                    ],
+                    [
+                        20,
+                        "  network_interface {\n"
+                    ],
+                    [
+                        21,
+                        "    network    = google_compute_network.huoxian_terraform_goat_vpc.name\n"
+                    ],
+                    [
+                        22,
+                        "    subnetwork = google_compute_subnetwork.huoxian_terraform_goat_subnetwork.name\n"
+                    ],
+                    [
+                        23,
+                        "    access_config {\n"
+                    ],
+                    [
+                        24,
+                        "    }\n"
+                    ],
+                    [
+                        25,
+                        "  }\n"
+                    ],
+                    [
+                        26,
+                        "\n"
+                    ],
+                    [
+                        27,
+                        "  metadata = {\n"
+                    ],
+                    [
+                        28,
+                        "    startup-script = <<EOF\n"
+                    ],
+                    [
+                        29,
+                        "#!/bin/bash\n"
+                    ],
+                    [
+                        30,
+                        "sudo apt-get -y update\n"
+                    ],
+                    [
+                        31,
+                        "sudo apt-get -y install apache2\n"
+                    ],
+                    [
+                        32,
+                        "sudo apt-get -y install php\n"
+                    ],
+                    [
+                        33,
+                        "sudo apt-get -y install php-curl\n"
+                    ],
+                    [
+                        34,
+                        "sudo sed -i 's/Listen 80/Listen 8080/' /etc/apache2/ports.conf\n"
+                    ],
+                    [
+                        35,
+                        "sudo /etc/init.d/apache2 restart\n"
+                    ],
+                    [
+                        36,
+                        "cd /var/www/html\n"
+                    ],
+                    [
+                        37,
+                        "sudo apt-get -y install wget\n"
+                    ],
+                    [
+                        38,
+                        "sudo wget https://huocorp-oss.oss-cn-beijing.aliyuncs.com/terraform-goat-dependency-files/command-execution-lab.zip\n"
+                    ],
+                    [
+                        39,
+                        "sudo apt-get -y install unzip\n"
+                    ],
+                    [
+                        40,
+                        "sudo unzip command-execution-lab.zip\n"
+                    ],
+                    [
+                        41,
+                        "sudo mv ./command-execution-lab/static/flag69152201.txt /\n"
+                    ],
+                    [
+                        42,
+                        "EOF\n"
+                    ],
+                    [
+                        43,
+                        "  }\n"
+                    ],
+                    [
+                        44,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "\\main.tf",
+                "file_abs_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\gcp\\vm\\vm_command_execution\\main.tf",
+                "repo_file_path": "/TerraformGoat/gcp/vm/vm_command_execution/main.tf",
+                "file_line_range": [
+                    6,
+                    44
+                ],
+                "resource": "google_compute_instance.huoxian_terraform_goat_instance",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.gcp.GoogleComputeDefaultServiceAccount",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.paloaltonetworks.com/content/techdocs/en_US/prisma/prisma-cloud/prisma-cloud-code-security-policy-reference/google-cloud-policies/google-cloud-iam-policies/bc-gcp-iam-1.html",
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\gcp\\vm\\vm_command_execution\\main.tf"
+            },
+            {
+                "check_id": "CKV_GCP_40",
+                "bc_check_id": "BC_GCP_PUBLIC_2",
+                "check_name": "Ensure that Compute instances do not have public IP addresses",
+                "check_result": {
+                    "result": "FAILED",
+                    "evaluated_keys": [
+                        "network_interface/[0]/access_config"
+                    ]
+                },
+                "code_block": [
+                    [
+                        6,
+                        "resource \"google_compute_instance\" \"huoxian_terraform_goat_instance\" {\n"
+                    ],
+                    [
+                        7,
+                        "  name         = \"huoxian-terraform-goat-instance\"\n"
+                    ],
+                    [
+                        8,
+                        "  machine_type = \"f1-micro\"\n"
+                    ],
+                    [
+                        9,
+                        "  zone         = \"us-central1-a\"\n"
+                    ],
+                    [
+                        10,
+                        "  depends_on = [\n"
+                    ],
+                    [
+                        11,
+                        "    google_compute_network.huoxian_terraform_goat_vpc,\n"
+                    ],
+                    [
+                        12,
+                        "    google_compute_subnetwork.huoxian_terraform_goat_subnetwork\n"
+                    ],
+                    [
+                        13,
+                        "  ]\n"
+                    ],
+                    [
+                        14,
+                        "\n"
+                    ],
+                    [
+                        15,
+                        "  boot_disk {\n"
+                    ],
+                    [
+                        16,
+                        "    initialize_params {\n"
+                    ],
+                    [
+                        17,
+                        "      image = \"ubuntu-os-cloud/ubuntu-1804-lts\"\n"
+                    ],
+                    [
+                        18,
+                        "    }\n"
+                    ],
+                    [
+                        19,
+                        "  }\n"
+                    ],
+                    [
+                        20,
+                        "  network_interface {\n"
+                    ],
+                    [
+                        21,
+                        "    network    = google_compute_network.huoxian_terraform_goat_vpc.name\n"
+                    ],
+                    [
+                        22,
+                        "    subnetwork = google_compute_subnetwork.huoxian_terraform_goat_subnetwork.name\n"
+                    ],
+                    [
+                        23,
+                        "    access_config {\n"
+                    ],
+                    [
+                        24,
+                        "    }\n"
+                    ],
+                    [
+                        25,
+                        "  }\n"
+                    ],
+                    [
+                        26,
+                        "\n"
+                    ],
+                    [
+                        27,
+                        "  metadata = {\n"
+                    ],
+                    [
+                        28,
+                        "    startup-script = <<EOF\n"
+                    ],
+                    [
+                        29,
+                        "#!/bin/bash\n"
+                    ],
+                    [
+                        30,
+                        "sudo apt-get -y update\n"
+                    ],
+                    [
+                        31,
+                        "sudo apt-get -y install apache2\n"
+                    ],
+                    [
+                        32,
+                        "sudo apt-get -y install php\n"
+                    ],
+                    [
+                        33,
+                        "sudo apt-get -y install php-curl\n"
+                    ],
+                    [
+                        34,
+                        "sudo sed -i 's/Listen 80/Listen 8080/' /etc/apache2/ports.conf\n"
+                    ],
+                    [
+                        35,
+                        "sudo /etc/init.d/apache2 restart\n"
+                    ],
+                    [
+                        36,
+                        "cd /var/www/html\n"
+                    ],
+                    [
+                        37,
+                        "sudo apt-get -y install wget\n"
+                    ],
+                    [
+                        38,
+                        "sudo wget https://huocorp-oss.oss-cn-beijing.aliyuncs.com/terraform-goat-dependency-files/command-execution-lab.zip\n"
+                    ],
+                    [
+                        39,
+                        "sudo apt-get -y install unzip\n"
+                    ],
+                    [
+                        40,
+                        "sudo unzip command-execution-lab.zip\n"
+                    ],
+                    [
+                        41,
+                        "sudo mv ./command-execution-lab/static/flag69152201.txt /\n"
+                    ],
+                    [
+                        42,
+                        "EOF\n"
+                    ],
+                    [
+                        43,
+                        "  }\n"
+                    ],
+                    [
+                        44,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "\\main.tf",
+                "file_abs_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\gcp\\vm\\vm_command_execution\\main.tf",
+                "repo_file_path": "/TerraformGoat/gcp/vm/vm_command_execution/main.tf",
+                "file_line_range": [
+                    6,
+                    44
+                ],
+                "resource": "google_compute_instance.huoxian_terraform_goat_instance",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.gcp.GoogleComputeExternalIP",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.paloaltonetworks.com/content/techdocs/en_US/prisma/prisma-cloud/prisma-cloud-code-security-policy-reference/google-cloud-policies/google-cloud-public-policies/bc-gcp-public-2.html",
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\gcp\\vm\\vm_command_execution\\main.tf"
+            },
+            {
+                "check_id": "CKV_GCP_39",
+                "bc_check_id": "BC_GCP_GENERAL_3",
+                "check_name": "Ensure Compute instances are launched with Shielded VM enabled",
+                "check_result": {
+                    "result": "FAILED",
+                    "evaluated_keys": []
+                },
+                "code_block": [
+                    [
+                        6,
+                        "resource \"google_compute_instance\" \"huoxian_terraform_goat_instance\" {\n"
+                    ],
+                    [
+                        7,
+                        "  name         = \"huoxian-terraform-goat-instance\"\n"
+                    ],
+                    [
+                        8,
+                        "  machine_type = \"f1-micro\"\n"
+                    ],
+                    [
+                        9,
+                        "  zone         = \"us-central1-a\"\n"
+                    ],
+                    [
+                        10,
+                        "  depends_on = [\n"
+                    ],
+                    [
+                        11,
+                        "    google_compute_network.huoxian_terraform_goat_vpc,\n"
+                    ],
+                    [
+                        12,
+                        "    google_compute_subnetwork.huoxian_terraform_goat_subnetwork\n"
+                    ],
+                    [
+                        13,
+                        "  ]\n"
+                    ],
+                    [
+                        14,
+                        "\n"
+                    ],
+                    [
+                        15,
+                        "  boot_disk {\n"
+                    ],
+                    [
+                        16,
+                        "    initialize_params {\n"
+                    ],
+                    [
+                        17,
+                        "      image = \"ubuntu-os-cloud/ubuntu-1804-lts\"\n"
+                    ],
+                    [
+                        18,
+                        "    }\n"
+                    ],
+                    [
+                        19,
+                        "  }\n"
+                    ],
+                    [
+                        20,
+                        "  network_interface {\n"
+                    ],
+                    [
+                        21,
+                        "    network    = google_compute_network.huoxian_terraform_goat_vpc.name\n"
+                    ],
+                    [
+                        22,
+                        "    subnetwork = google_compute_subnetwork.huoxian_terraform_goat_subnetwork.name\n"
+                    ],
+                    [
+                        23,
+                        "    access_config {\n"
+                    ],
+                    [
+                        24,
+                        "    }\n"
+                    ],
+                    [
+                        25,
+                        "  }\n"
+                    ],
+                    [
+                        26,
+                        "\n"
+                    ],
+                    [
+                        27,
+                        "  metadata = {\n"
+                    ],
+                    [
+                        28,
+                        "    startup-script = <<EOF\n"
+                    ],
+                    [
+                        29,
+                        "#!/bin/bash\n"
+                    ],
+                    [
+                        30,
+                        "sudo apt-get -y update\n"
+                    ],
+                    [
+                        31,
+                        "sudo apt-get -y install apache2\n"
+                    ],
+                    [
+                        32,
+                        "sudo apt-get -y install php\n"
+                    ],
+                    [
+                        33,
+                        "sudo apt-get -y install php-curl\n"
+                    ],
+                    [
+                        34,
+                        "sudo sed -i 's/Listen 80/Listen 8080/' /etc/apache2/ports.conf\n"
+                    ],
+                    [
+                        35,
+                        "sudo /etc/init.d/apache2 restart\n"
+                    ],
+                    [
+                        36,
+                        "cd /var/www/html\n"
+                    ],
+                    [
+                        37,
+                        "sudo apt-get -y install wget\n"
+                    ],
+                    [
+                        38,
+                        "sudo wget https://huocorp-oss.oss-cn-beijing.aliyuncs.com/terraform-goat-dependency-files/command-execution-lab.zip\n"
+                    ],
+                    [
+                        39,
+                        "sudo apt-get -y install unzip\n"
+                    ],
+                    [
+                        40,
+                        "sudo unzip command-execution-lab.zip\n"
+                    ],
+                    [
+                        41,
+                        "sudo mv ./command-execution-lab/static/flag69152201.txt /\n"
+                    ],
+                    [
+                        42,
+                        "EOF\n"
+                    ],
+                    [
+                        43,
+                        "  }\n"
+                    ],
+                    [
+                        44,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "\\main.tf",
+                "file_abs_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\gcp\\vm\\vm_command_execution\\main.tf",
+                "repo_file_path": "/TerraformGoat/gcp/vm/vm_command_execution/main.tf",
+                "file_line_range": [
+                    6,
+                    44
+                ],
+                "resource": "google_compute_instance.huoxian_terraform_goat_instance",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.gcp.GoogleComputeShieldedVM",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.paloaltonetworks.com/content/techdocs/en_US/prisma/prisma-cloud/prisma-cloud-code-security-policy-reference/google-cloud-policies/google-cloud-general-policies/bc-gcp-general-y.html",
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\gcp\\vm\\vm_command_execution\\main.tf"
+            },
+            {
+                "check_id": "CKV_GCP_76",
+                "bc_check_id": "BC_GCP_NETWORKING_16",
+                "check_name": "Ensure that Private google access is enabled for IPV6",
+                "check_result": {
+                    "result": "FAILED",
+                    "evaluated_keys": [
+                        "private_ipv6_google_access"
+                    ]
+                },
+                "code_block": [
+                    [
+                        52,
+                        "resource \"google_compute_subnetwork\" \"huoxian_terraform_goat_subnetwork\" {\n"
+                    ],
+                    [
+                        53,
+                        "  name          = \"huoxian-terraform-goat-subnetwork\"\n"
+                    ],
+                    [
+                        54,
+                        "  ip_cidr_range = \"10.77.0.0/20\"\n"
+                    ],
+                    [
+                        55,
+                        "  network       = google_compute_network.huoxian_terraform_goat_vpc.name\n"
+                    ],
+                    [
+                        56,
+                        "  region        = \"us-central1\"\n"
+                    ],
+                    [
+                        57,
+                        "  depends_on    = [google_compute_network.huoxian_terraform_goat_vpc]\n"
+                    ],
+                    [
+                        58,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "\\main.tf",
+                "file_abs_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\gcp\\vm\\vm_command_execution\\main.tf",
+                "repo_file_path": "/TerraformGoat/gcp/vm/vm_command_execution/main.tf",
+                "file_line_range": [
+                    52,
+                    58
+                ],
+                "resource": "google_compute_subnetwork.huoxian_terraform_goat_subnetwork",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.gcp.GoogleSubnetworkIPV6PrivateGoogleEnabled",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.paloaltonetworks.com/content/techdocs/en_US/prisma/prisma-cloud/prisma-cloud-code-security-policy-reference/google-cloud-policies/google-cloud-networking-policies/ensure-gcp-private-google-access-is-enabled-for-ipv6.html",
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\gcp\\vm\\vm_command_execution\\main.tf"
+            },
+            {
+                "check_id": "CKV_GCP_26",
+                "bc_check_id": "BC_GCP_LOGGING_1",
+                "check_name": "Ensure that VPC Flow Logs is enabled for every subnet in a VPC Network",
+                "check_result": {
+                    "result": "FAILED",
+                    "evaluated_keys": [
+                        "log_config"
+                    ]
+                },
+                "code_block": [
+                    [
+                        52,
+                        "resource \"google_compute_subnetwork\" \"huoxian_terraform_goat_subnetwork\" {\n"
+                    ],
+                    [
+                        53,
+                        "  name          = \"huoxian-terraform-goat-subnetwork\"\n"
+                    ],
+                    [
+                        54,
+                        "  ip_cidr_range = \"10.77.0.0/20\"\n"
+                    ],
+                    [
+                        55,
+                        "  network       = google_compute_network.huoxian_terraform_goat_vpc.name\n"
+                    ],
+                    [
+                        56,
+                        "  region        = \"us-central1\"\n"
+                    ],
+                    [
+                        57,
+                        "  depends_on    = [google_compute_network.huoxian_terraform_goat_vpc]\n"
+                    ],
+                    [
+                        58,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "\\main.tf",
+                "file_abs_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\gcp\\vm\\vm_command_execution\\main.tf",
+                "repo_file_path": "/TerraformGoat/gcp/vm/vm_command_execution/main.tf",
+                "file_line_range": [
+                    52,
+                    58
+                ],
+                "resource": "google_compute_subnetwork.huoxian_terraform_goat_subnetwork",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.gcp.GoogleSubnetworkLoggingEnabled",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.paloaltonetworks.com/content/techdocs/en_US/prisma/prisma-cloud/prisma-cloud-code-security-policy-reference/google-cloud-policies/logging-policies-1/bc-gcp-logging-1.html",
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\gcp\\vm\\vm_command_execution\\main.tf"
+            },
+            {
+                "check_id": "CKV_GCP_74",
+                "bc_check_id": "BC_GCP_GENERAL_31",
+                "check_name": "Ensure that private_ip_google_access is enabled for Subnet",
+                "check_result": {
+                    "result": "FAILED",
+                    "evaluated_keys": [
+                        "private_ip_google_access"
+                    ]
+                },
+                "code_block": [
+                    [
+                        52,
+                        "resource \"google_compute_subnetwork\" \"huoxian_terraform_goat_subnetwork\" {\n"
+                    ],
+                    [
+                        53,
+                        "  name          = \"huoxian-terraform-goat-subnetwork\"\n"
+                    ],
+                    [
+                        54,
+                        "  ip_cidr_range = \"10.77.0.0/20\"\n"
+                    ],
+                    [
+                        55,
+                        "  network       = google_compute_network.huoxian_terraform_goat_vpc.name\n"
+                    ],
+                    [
+                        56,
+                        "  region        = \"us-central1\"\n"
+                    ],
+                    [
+                        57,
+                        "  depends_on    = [google_compute_network.huoxian_terraform_goat_vpc]\n"
+                    ],
+                    [
+                        58,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "\\main.tf",
+                "file_abs_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\gcp\\vm\\vm_command_execution\\main.tf",
+                "repo_file_path": "/TerraformGoat/gcp/vm/vm_command_execution/main.tf",
+                "file_line_range": [
+                    52,
+                    58
+                ],
+                "resource": "google_compute_subnetwork.huoxian_terraform_goat_subnetwork",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.gcp.GoogleSubnetworkPrivateGoogleEnabled",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.paloaltonetworks.com/content/techdocs/en_US/prisma/prisma-cloud/prisma-cloud-code-security-policy-reference/google-cloud-policies/google-cloud-general-policies/ensure-gcp-subnet-has-a-private-ip-google-access.html",
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\gcp\\vm\\vm_command_execution\\main.tf"
+            },
+            {
+                "check_id": "CKV2_GCP_18",
+                "bc_check_id": null,
+                "check_name": "Ensure GCP network defines a firewall and does not use the default firewall",
+                "check_result": {
+                    "result": "FAILED",
+                    "entity": {
+                        "google_compute_network": {
+                            "huoxian_terraform_goat_network": {
+                                "__end_line__": 74,
+                                "__start_line__": 72,
+                                "name": [
+                                    "huoxian-terraform-goat-network"
+                                ],
+                                "__address__": "google_compute_network.huoxian_terraform_goat_network"
+                            }
+                        }
+                    },
+                    "evaluated_keys": [
+                        "resource_type"
+                    ]
+                },
+                "code_block": [
+                    [
+                        72,
+                        "resource \"google_compute_network\" \"huoxian_terraform_goat_network\" {\n"
+                    ],
+                    [
+                        73,
+                        "  name = \"huoxian-terraform-goat-network\"\n"
+                    ],
+                    [
+                        74,
+                        "}"
+                    ]
+                ],
+                "file_path": "\\main.tf",
+                "file_abs_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\gcp\\vm\\vm_command_execution\\main.tf",
+                "repo_file_path": "/TerraformGoat/gcp/vm/vm_command_execution/main.tf",
+                "file_line_range": [
+                    72,
+                    74
+                ],
+                "resource": "google_compute_network.huoxian_terraform_goat_network",
+                "evaluations": null,
+                "check_class": "checkov.common.graph.checks_infra.base_check",
+                "fixed_definition": null,
+                "entity_tags": {},
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": {},
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": null,
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\gcp\\vm\\vm_command_execution\\main.tf"
+            }
+        ],
+        "skipped_checks": [],
+        "parsing_errors": []
+    },
+    "summary": {
+        "passed": 12,
+        "failed": 9,
+        "skipped": 0,
+        "parsing_errors": 0,
+        "resource_count": 5,
+        "checkov_version": "2.4.14"
+    },
+    "url": "Add an api key '--bc-api-key <api-key>' to see more detailed insights via https://bridgecrew.cloud"
+}

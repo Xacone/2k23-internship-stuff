@@ -1,0 +1,1822 @@
+{
+    "check_type": "terraform",
+    "results": {
+        "passed_checks": [
+            {
+                "check_id": "CKV_AWS_348",
+                "bc_check_id": null,
+                "check_name": "Ensure IAM root user doesnt have Access keys",
+                "check_result": {
+                    "result": "PASSED",
+                    "evaluated_keys": [
+                        "user"
+                    ]
+                },
+                "code_block": [
+                    [
+                        9,
+                        "resource \"aws_iam_access_key\" \"huoxian_terraform_access_key\" {\n"
+                    ],
+                    [
+                        10,
+                        "  user       = aws_iam_user.huoxian_terraform_user.name\n"
+                    ],
+                    [
+                        11,
+                        "  depends_on = [aws_iam_user.huoxian_terraform_user]\n"
+                    ],
+                    [
+                        12,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "\\main.tf",
+                "file_abs_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\aws\\iam\\privilege_escalation\\main.tf",
+                "repo_file_path": "/TerraformGoat/aws/iam/privilege_escalation/main.tf",
+                "file_line_range": [
+                    9,
+                    12
+                ],
+                "resource": "aws_iam_access_key.huoxian_terraform_access_key",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.aws.IAMUserRootAccessKeys",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": {},
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": null,
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\aws\\iam\\privilege_escalation\\main.tf"
+            },
+            {
+                "check_id": "CKV_AWS_62",
+                "bc_check_id": "BC_AWS_IAM_47",
+                "check_name": "Ensure IAM policies that allow full \"*-*\" administrative privileges are not created",
+                "check_result": {
+                    "result": "PASSED",
+                    "evaluated_keys": [
+                        "policy",
+                        "inline_policy"
+                    ]
+                },
+                "code_block": [
+                    [
+                        14,
+                        "resource \"aws_iam_user_policy\" \"huoxian_terraform_policy\" {\n"
+                    ],
+                    [
+                        15,
+                        "  name       = \"IAMFullAccess\"\n"
+                    ],
+                    [
+                        16,
+                        "  user       = aws_iam_user.huoxian_terraform_user.name\n"
+                    ],
+                    [
+                        17,
+                        "  depends_on = [aws_iam_user.huoxian_terraform_user]\n"
+                    ],
+                    [
+                        18,
+                        "  policy     = <<EOF\n"
+                    ],
+                    [
+                        19,
+                        "{\n"
+                    ],
+                    [
+                        20,
+                        "  \"Version\": \"2012-10-17\",\n"
+                    ],
+                    [
+                        21,
+                        "  \"Statement\": [\n"
+                    ],
+                    [
+                        22,
+                        "    {\n"
+                    ],
+                    [
+                        23,
+                        "      \"Action\": [\n"
+                    ],
+                    [
+                        24,
+                        "        \"iam:*\",\n"
+                    ],
+                    [
+                        25,
+                        "        \"organizations:DescribeAccount\",\n"
+                    ],
+                    [
+                        26,
+                        "        \"organizations:DescribeOrganization\",\n"
+                    ],
+                    [
+                        27,
+                        "        \"organizations:DescribeOrganizationalUnit\",\n"
+                    ],
+                    [
+                        28,
+                        "        \"organizations:DescribePolicy\",\n"
+                    ],
+                    [
+                        29,
+                        "        \"organizations:ListChildren\",\n"
+                    ],
+                    [
+                        30,
+                        "        \"organizations:ListParents\",\n"
+                    ],
+                    [
+                        31,
+                        "        \"organizations:ListPoliciesForTarget\",\n"
+                    ],
+                    [
+                        32,
+                        "        \"organizations:ListRoots\",\n"
+                    ],
+                    [
+                        33,
+                        "        \"organizations:ListPolicies\",\n"
+                    ],
+                    [
+                        34,
+                        "        \"organizations:ListTargetsForPolicy\"\n"
+                    ],
+                    [
+                        35,
+                        "      ],\n"
+                    ],
+                    [
+                        36,
+                        "      \"Effect\": \"Allow\",\n"
+                    ],
+                    [
+                        37,
+                        "      \"Resource\": \"*\"\n"
+                    ],
+                    [
+                        38,
+                        "    }\n"
+                    ],
+                    [
+                        39,
+                        "  ]\n"
+                    ],
+                    [
+                        40,
+                        "}\n"
+                    ],
+                    [
+                        41,
+                        "EOF\n"
+                    ],
+                    [
+                        42,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "\\main.tf",
+                "file_abs_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\aws\\iam\\privilege_escalation\\main.tf",
+                "repo_file_path": "/TerraformGoat/aws/iam/privilege_escalation/main.tf",
+                "file_line_range": [
+                    14,
+                    42
+                ],
+                "resource": "aws_iam_user_policy.huoxian_terraform_policy",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.aws.IAMAdminPolicyDocument",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.bridgecrew.io/docs/iam_47",
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\aws\\iam\\privilege_escalation\\main.tf"
+            },
+            {
+                "check_id": "CKV_AWS_288",
+                "bc_check_id": null,
+                "check_name": "Ensure IAM policies does not allow data exfiltration",
+                "check_result": {
+                    "result": "PASSED",
+                    "evaluated_keys": []
+                },
+                "code_block": [
+                    [
+                        14,
+                        "resource \"aws_iam_user_policy\" \"huoxian_terraform_policy\" {\n"
+                    ],
+                    [
+                        15,
+                        "  name       = \"IAMFullAccess\"\n"
+                    ],
+                    [
+                        16,
+                        "  user       = aws_iam_user.huoxian_terraform_user.name\n"
+                    ],
+                    [
+                        17,
+                        "  depends_on = [aws_iam_user.huoxian_terraform_user]\n"
+                    ],
+                    [
+                        18,
+                        "  policy     = <<EOF\n"
+                    ],
+                    [
+                        19,
+                        "{\n"
+                    ],
+                    [
+                        20,
+                        "  \"Version\": \"2012-10-17\",\n"
+                    ],
+                    [
+                        21,
+                        "  \"Statement\": [\n"
+                    ],
+                    [
+                        22,
+                        "    {\n"
+                    ],
+                    [
+                        23,
+                        "      \"Action\": [\n"
+                    ],
+                    [
+                        24,
+                        "        \"iam:*\",\n"
+                    ],
+                    [
+                        25,
+                        "        \"organizations:DescribeAccount\",\n"
+                    ],
+                    [
+                        26,
+                        "        \"organizations:DescribeOrganization\",\n"
+                    ],
+                    [
+                        27,
+                        "        \"organizations:DescribeOrganizationalUnit\",\n"
+                    ],
+                    [
+                        28,
+                        "        \"organizations:DescribePolicy\",\n"
+                    ],
+                    [
+                        29,
+                        "        \"organizations:ListChildren\",\n"
+                    ],
+                    [
+                        30,
+                        "        \"organizations:ListParents\",\n"
+                    ],
+                    [
+                        31,
+                        "        \"organizations:ListPoliciesForTarget\",\n"
+                    ],
+                    [
+                        32,
+                        "        \"organizations:ListRoots\",\n"
+                    ],
+                    [
+                        33,
+                        "        \"organizations:ListPolicies\",\n"
+                    ],
+                    [
+                        34,
+                        "        \"organizations:ListTargetsForPolicy\"\n"
+                    ],
+                    [
+                        35,
+                        "      ],\n"
+                    ],
+                    [
+                        36,
+                        "      \"Effect\": \"Allow\",\n"
+                    ],
+                    [
+                        37,
+                        "      \"Resource\": \"*\"\n"
+                    ],
+                    [
+                        38,
+                        "    }\n"
+                    ],
+                    [
+                        39,
+                        "  ]\n"
+                    ],
+                    [
+                        40,
+                        "}\n"
+                    ],
+                    [
+                        41,
+                        "EOF\n"
+                    ],
+                    [
+                        42,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "\\main.tf",
+                "file_abs_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\aws\\iam\\privilege_escalation\\main.tf",
+                "repo_file_path": "/TerraformGoat/aws/iam/privilege_escalation/main.tf",
+                "file_line_range": [
+                    14,
+                    42
+                ],
+                "resource": "aws_iam_user_policy.huoxian_terraform_policy",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.aws.IAMDataExfiltration",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": {},
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": null,
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\aws\\iam\\privilege_escalation\\main.tf"
+            },
+            {
+                "check_id": "CKV_AWS_63",
+                "bc_check_id": "BC_AWS_IAM_48",
+                "check_name": "Ensure no IAM policies documents allow \"*\" as a statement's actions",
+                "check_result": {
+                    "result": "PASSED",
+                    "evaluated_keys": [
+                        "policy",
+                        "inline_policy"
+                    ]
+                },
+                "code_block": [
+                    [
+                        14,
+                        "resource \"aws_iam_user_policy\" \"huoxian_terraform_policy\" {\n"
+                    ],
+                    [
+                        15,
+                        "  name       = \"IAMFullAccess\"\n"
+                    ],
+                    [
+                        16,
+                        "  user       = aws_iam_user.huoxian_terraform_user.name\n"
+                    ],
+                    [
+                        17,
+                        "  depends_on = [aws_iam_user.huoxian_terraform_user]\n"
+                    ],
+                    [
+                        18,
+                        "  policy     = <<EOF\n"
+                    ],
+                    [
+                        19,
+                        "{\n"
+                    ],
+                    [
+                        20,
+                        "  \"Version\": \"2012-10-17\",\n"
+                    ],
+                    [
+                        21,
+                        "  \"Statement\": [\n"
+                    ],
+                    [
+                        22,
+                        "    {\n"
+                    ],
+                    [
+                        23,
+                        "      \"Action\": [\n"
+                    ],
+                    [
+                        24,
+                        "        \"iam:*\",\n"
+                    ],
+                    [
+                        25,
+                        "        \"organizations:DescribeAccount\",\n"
+                    ],
+                    [
+                        26,
+                        "        \"organizations:DescribeOrganization\",\n"
+                    ],
+                    [
+                        27,
+                        "        \"organizations:DescribeOrganizationalUnit\",\n"
+                    ],
+                    [
+                        28,
+                        "        \"organizations:DescribePolicy\",\n"
+                    ],
+                    [
+                        29,
+                        "        \"organizations:ListChildren\",\n"
+                    ],
+                    [
+                        30,
+                        "        \"organizations:ListParents\",\n"
+                    ],
+                    [
+                        31,
+                        "        \"organizations:ListPoliciesForTarget\",\n"
+                    ],
+                    [
+                        32,
+                        "        \"organizations:ListRoots\",\n"
+                    ],
+                    [
+                        33,
+                        "        \"organizations:ListPolicies\",\n"
+                    ],
+                    [
+                        34,
+                        "        \"organizations:ListTargetsForPolicy\"\n"
+                    ],
+                    [
+                        35,
+                        "      ],\n"
+                    ],
+                    [
+                        36,
+                        "      \"Effect\": \"Allow\",\n"
+                    ],
+                    [
+                        37,
+                        "      \"Resource\": \"*\"\n"
+                    ],
+                    [
+                        38,
+                        "    }\n"
+                    ],
+                    [
+                        39,
+                        "  ]\n"
+                    ],
+                    [
+                        40,
+                        "}\n"
+                    ],
+                    [
+                        41,
+                        "EOF\n"
+                    ],
+                    [
+                        42,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "\\main.tf",
+                "file_abs_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\aws\\iam\\privilege_escalation\\main.tf",
+                "repo_file_path": "/TerraformGoat/aws/iam/privilege_escalation/main.tf",
+                "file_line_range": [
+                    14,
+                    42
+                ],
+                "resource": "aws_iam_user_policy.huoxian_terraform_policy",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.aws.IAMStarActionPolicyDocument",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.paloaltonetworks.com/content/techdocs/en_US/prisma/prisma-cloud/prisma-cloud-code-security-policy-reference/aws-policies/aws-iam-policies/iam-48.html",
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\aws\\iam\\privilege_escalation\\main.tf"
+            },
+            {
+                "check_id": "CKV_AWS_290",
+                "bc_check_id": null,
+                "check_name": "Ensure IAM policies does not allow write access without constraints",
+                "check_result": {
+                    "result": "PASSED",
+                    "evaluated_keys": []
+                },
+                "code_block": [
+                    [
+                        14,
+                        "resource \"aws_iam_user_policy\" \"huoxian_terraform_policy\" {\n"
+                    ],
+                    [
+                        15,
+                        "  name       = \"IAMFullAccess\"\n"
+                    ],
+                    [
+                        16,
+                        "  user       = aws_iam_user.huoxian_terraform_user.name\n"
+                    ],
+                    [
+                        17,
+                        "  depends_on = [aws_iam_user.huoxian_terraform_user]\n"
+                    ],
+                    [
+                        18,
+                        "  policy     = <<EOF\n"
+                    ],
+                    [
+                        19,
+                        "{\n"
+                    ],
+                    [
+                        20,
+                        "  \"Version\": \"2012-10-17\",\n"
+                    ],
+                    [
+                        21,
+                        "  \"Statement\": [\n"
+                    ],
+                    [
+                        22,
+                        "    {\n"
+                    ],
+                    [
+                        23,
+                        "      \"Action\": [\n"
+                    ],
+                    [
+                        24,
+                        "        \"iam:*\",\n"
+                    ],
+                    [
+                        25,
+                        "        \"organizations:DescribeAccount\",\n"
+                    ],
+                    [
+                        26,
+                        "        \"organizations:DescribeOrganization\",\n"
+                    ],
+                    [
+                        27,
+                        "        \"organizations:DescribeOrganizationalUnit\",\n"
+                    ],
+                    [
+                        28,
+                        "        \"organizations:DescribePolicy\",\n"
+                    ],
+                    [
+                        29,
+                        "        \"organizations:ListChildren\",\n"
+                    ],
+                    [
+                        30,
+                        "        \"organizations:ListParents\",\n"
+                    ],
+                    [
+                        31,
+                        "        \"organizations:ListPoliciesForTarget\",\n"
+                    ],
+                    [
+                        32,
+                        "        \"organizations:ListRoots\",\n"
+                    ],
+                    [
+                        33,
+                        "        \"organizations:ListPolicies\",\n"
+                    ],
+                    [
+                        34,
+                        "        \"organizations:ListTargetsForPolicy\"\n"
+                    ],
+                    [
+                        35,
+                        "      ],\n"
+                    ],
+                    [
+                        36,
+                        "      \"Effect\": \"Allow\",\n"
+                    ],
+                    [
+                        37,
+                        "      \"Resource\": \"*\"\n"
+                    ],
+                    [
+                        38,
+                        "    }\n"
+                    ],
+                    [
+                        39,
+                        "  ]\n"
+                    ],
+                    [
+                        40,
+                        "}\n"
+                    ],
+                    [
+                        41,
+                        "EOF\n"
+                    ],
+                    [
+                        42,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "\\main.tf",
+                "file_abs_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\aws\\iam\\privilege_escalation\\main.tf",
+                "repo_file_path": "/TerraformGoat/aws/iam/privilege_escalation/main.tf",
+                "file_line_range": [
+                    14,
+                    42
+                ],
+                "resource": "aws_iam_user_policy.huoxian_terraform_policy",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.aws.IAMWriteAccess",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": {},
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": null,
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\aws\\iam\\privilege_escalation\\main.tf"
+            },
+            {
+                "check_id": "CKV_AWS_41",
+                "bc_check_id": "BC_AWS_SECRETS_5",
+                "check_name": "Ensure no hard coded AWS access key and secret key exists in provider",
+                "check_result": {
+                    "result": "PASSED",
+                    "evaluated_keys": []
+                },
+                "code_block": [
+                    [
+                        1,
+                        "provider \"aws\" {\n"
+                    ],
+                    [
+                        2,
+                        "  region = \"us-east-1\"\n"
+                    ],
+                    [
+                        3,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "\\main.tf",
+                "file_abs_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\aws\\iam\\privilege_escalation\\main.tf",
+                "repo_file_path": "/TerraformGoat/aws/iam/privilege_escalation/main.tf",
+                "file_line_range": [
+                    1,
+                    3
+                ],
+                "resource": "aws.default",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.provider.aws.credentials",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.paloaltonetworks.com/content/techdocs/en_US/prisma/prisma-cloud/prisma-cloud-code-security-policy-reference/aws-policies/secrets-policies/bc-aws-secrets-5.html",
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\aws\\iam\\privilege_escalation\\main.tf"
+            },
+            {
+                "check_id": "CKV2_AWS_22",
+                "bc_check_id": "BC_AWS_IAM_67",
+                "check_name": "Ensure an IAM User does not have access to the console",
+                "check_result": {
+                    "result": "PASSED",
+                    "entity": {
+                        "aws_iam_user": {
+                            "huoxian_terraform_user": {
+                                "__end_line__": 7,
+                                "__start_line__": 5,
+                                "name": [
+                                    "huoxian_terraform_test"
+                                ],
+                                "__address__": "aws_iam_user.huoxian_terraform_user"
+                            }
+                        }
+                    },
+                    "evaluated_keys": [
+                        "resource_type"
+                    ]
+                },
+                "code_block": [
+                    [
+                        5,
+                        "resource \"aws_iam_user\" \"huoxian_terraform_user\" {\n"
+                    ],
+                    [
+                        6,
+                        "  name = \"huoxian_terraform_test\"\n"
+                    ],
+                    [
+                        7,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "\\main.tf",
+                "file_abs_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\aws\\iam\\privilege_escalation\\main.tf",
+                "repo_file_path": "/TerraformGoat/aws/iam/privilege_escalation/main.tf",
+                "file_line_range": [
+                    5,
+                    7
+                ],
+                "resource": "aws_iam_user.huoxian_terraform_user",
+                "evaluations": null,
+                "check_class": "checkov.common.graph.checks_infra.base_check",
+                "fixed_definition": null,
+                "entity_tags": {},
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.paloaltonetworks.com/content/techdocs/en_US/prisma/prisma-cloud/prisma-cloud-code-security-policy-reference/aws-policies/aws-iam-policies/ensure-an-iam-user-does-not-have-access-to-the-console-group.html",
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\aws\\iam\\privilege_escalation\\main.tf"
+            }
+        ],
+        "failed_checks": [
+            {
+                "check_id": "CKV_AWS_273",
+                "bc_check_id": null,
+                "check_name": "Ensure access is controlled through SSO and not AWS IAM defined users",
+                "check_result": {
+                    "result": "FAILED",
+                    "evaluated_keys": []
+                },
+                "code_block": [
+                    [
+                        5,
+                        "resource \"aws_iam_user\" \"huoxian_terraform_user\" {\n"
+                    ],
+                    [
+                        6,
+                        "  name = \"huoxian_terraform_test\"\n"
+                    ],
+                    [
+                        7,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "\\main.tf",
+                "file_abs_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\aws\\iam\\privilege_escalation\\main.tf",
+                "repo_file_path": "/TerraformGoat/aws/iam/privilege_escalation/main.tf",
+                "file_line_range": [
+                    5,
+                    7
+                ],
+                "resource": "aws_iam_user.huoxian_terraform_user",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.aws.IAMUserNotUsedForAccess",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": {},
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": null,
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\aws\\iam\\privilege_escalation\\main.tf"
+            },
+            {
+                "check_id": "CKV_AWS_287",
+                "bc_check_id": null,
+                "check_name": "Ensure IAM policies does not allow credentials exposure",
+                "check_result": {
+                    "result": "FAILED",
+                    "evaluated_keys": []
+                },
+                "code_block": [
+                    [
+                        14,
+                        "resource \"aws_iam_user_policy\" \"huoxian_terraform_policy\" {\n"
+                    ],
+                    [
+                        15,
+                        "  name       = \"IAMFullAccess\"\n"
+                    ],
+                    [
+                        16,
+                        "  user       = aws_iam_user.huoxian_terraform_user.name\n"
+                    ],
+                    [
+                        17,
+                        "  depends_on = [aws_iam_user.huoxian_terraform_user]\n"
+                    ],
+                    [
+                        18,
+                        "  policy     = <<EOF\n"
+                    ],
+                    [
+                        19,
+                        "{\n"
+                    ],
+                    [
+                        20,
+                        "  \"Version\": \"2012-10-17\",\n"
+                    ],
+                    [
+                        21,
+                        "  \"Statement\": [\n"
+                    ],
+                    [
+                        22,
+                        "    {\n"
+                    ],
+                    [
+                        23,
+                        "      \"Action\": [\n"
+                    ],
+                    [
+                        24,
+                        "        \"iam:*\",\n"
+                    ],
+                    [
+                        25,
+                        "        \"organizations:DescribeAccount\",\n"
+                    ],
+                    [
+                        26,
+                        "        \"organizations:DescribeOrganization\",\n"
+                    ],
+                    [
+                        27,
+                        "        \"organizations:DescribeOrganizationalUnit\",\n"
+                    ],
+                    [
+                        28,
+                        "        \"organizations:DescribePolicy\",\n"
+                    ],
+                    [
+                        29,
+                        "        \"organizations:ListChildren\",\n"
+                    ],
+                    [
+                        30,
+                        "        \"organizations:ListParents\",\n"
+                    ],
+                    [
+                        31,
+                        "        \"organizations:ListPoliciesForTarget\",\n"
+                    ],
+                    [
+                        32,
+                        "        \"organizations:ListRoots\",\n"
+                    ],
+                    [
+                        33,
+                        "        \"organizations:ListPolicies\",\n"
+                    ],
+                    [
+                        34,
+                        "        \"organizations:ListTargetsForPolicy\"\n"
+                    ],
+                    [
+                        35,
+                        "      ],\n"
+                    ],
+                    [
+                        36,
+                        "      \"Effect\": \"Allow\",\n"
+                    ],
+                    [
+                        37,
+                        "      \"Resource\": \"*\"\n"
+                    ],
+                    [
+                        38,
+                        "    }\n"
+                    ],
+                    [
+                        39,
+                        "  ]\n"
+                    ],
+                    [
+                        40,
+                        "}\n"
+                    ],
+                    [
+                        41,
+                        "EOF\n"
+                    ],
+                    [
+                        42,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "\\main.tf",
+                "file_abs_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\aws\\iam\\privilege_escalation\\main.tf",
+                "repo_file_path": "/TerraformGoat/aws/iam/privilege_escalation/main.tf",
+                "file_line_range": [
+                    14,
+                    42
+                ],
+                "resource": "aws_iam_user_policy.huoxian_terraform_policy",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.aws.IAMCredentialsExposure",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": {},
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": null,
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\aws\\iam\\privilege_escalation\\main.tf"
+            },
+            {
+                "check_id": "CKV_AWS_289",
+                "bc_check_id": null,
+                "check_name": "Ensure IAM policies does not allow permissions management / resource exposure without constraints",
+                "check_result": {
+                    "result": "FAILED",
+                    "evaluated_keys": []
+                },
+                "code_block": [
+                    [
+                        14,
+                        "resource \"aws_iam_user_policy\" \"huoxian_terraform_policy\" {\n"
+                    ],
+                    [
+                        15,
+                        "  name       = \"IAMFullAccess\"\n"
+                    ],
+                    [
+                        16,
+                        "  user       = aws_iam_user.huoxian_terraform_user.name\n"
+                    ],
+                    [
+                        17,
+                        "  depends_on = [aws_iam_user.huoxian_terraform_user]\n"
+                    ],
+                    [
+                        18,
+                        "  policy     = <<EOF\n"
+                    ],
+                    [
+                        19,
+                        "{\n"
+                    ],
+                    [
+                        20,
+                        "  \"Version\": \"2012-10-17\",\n"
+                    ],
+                    [
+                        21,
+                        "  \"Statement\": [\n"
+                    ],
+                    [
+                        22,
+                        "    {\n"
+                    ],
+                    [
+                        23,
+                        "      \"Action\": [\n"
+                    ],
+                    [
+                        24,
+                        "        \"iam:*\",\n"
+                    ],
+                    [
+                        25,
+                        "        \"organizations:DescribeAccount\",\n"
+                    ],
+                    [
+                        26,
+                        "        \"organizations:DescribeOrganization\",\n"
+                    ],
+                    [
+                        27,
+                        "        \"organizations:DescribeOrganizationalUnit\",\n"
+                    ],
+                    [
+                        28,
+                        "        \"organizations:DescribePolicy\",\n"
+                    ],
+                    [
+                        29,
+                        "        \"organizations:ListChildren\",\n"
+                    ],
+                    [
+                        30,
+                        "        \"organizations:ListParents\",\n"
+                    ],
+                    [
+                        31,
+                        "        \"organizations:ListPoliciesForTarget\",\n"
+                    ],
+                    [
+                        32,
+                        "        \"organizations:ListRoots\",\n"
+                    ],
+                    [
+                        33,
+                        "        \"organizations:ListPolicies\",\n"
+                    ],
+                    [
+                        34,
+                        "        \"organizations:ListTargetsForPolicy\"\n"
+                    ],
+                    [
+                        35,
+                        "      ],\n"
+                    ],
+                    [
+                        36,
+                        "      \"Effect\": \"Allow\",\n"
+                    ],
+                    [
+                        37,
+                        "      \"Resource\": \"*\"\n"
+                    ],
+                    [
+                        38,
+                        "    }\n"
+                    ],
+                    [
+                        39,
+                        "  ]\n"
+                    ],
+                    [
+                        40,
+                        "}\n"
+                    ],
+                    [
+                        41,
+                        "EOF\n"
+                    ],
+                    [
+                        42,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "\\main.tf",
+                "file_abs_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\aws\\iam\\privilege_escalation\\main.tf",
+                "repo_file_path": "/TerraformGoat/aws/iam/privilege_escalation/main.tf",
+                "file_line_range": [
+                    14,
+                    42
+                ],
+                "resource": "aws_iam_user_policy.huoxian_terraform_policy",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.aws.IAMPermissionsManagement",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": {},
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": null,
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\aws\\iam\\privilege_escalation\\main.tf"
+            },
+            {
+                "check_id": "CKV_AWS_40",
+                "bc_check_id": "BC_AWS_IAM_16",
+                "check_name": "Ensure IAM policies are attached only to groups or roles (Reducing access management complexity may in-turn reduce opportunity for a principal to inadvertently receive or retain excessive privileges.)",
+                "check_result": {
+                    "result": "FAILED",
+                    "evaluated_keys": [
+                        "user"
+                    ]
+                },
+                "code_block": [
+                    [
+                        14,
+                        "resource \"aws_iam_user_policy\" \"huoxian_terraform_policy\" {\n"
+                    ],
+                    [
+                        15,
+                        "  name       = \"IAMFullAccess\"\n"
+                    ],
+                    [
+                        16,
+                        "  user       = aws_iam_user.huoxian_terraform_user.name\n"
+                    ],
+                    [
+                        17,
+                        "  depends_on = [aws_iam_user.huoxian_terraform_user]\n"
+                    ],
+                    [
+                        18,
+                        "  policy     = <<EOF\n"
+                    ],
+                    [
+                        19,
+                        "{\n"
+                    ],
+                    [
+                        20,
+                        "  \"Version\": \"2012-10-17\",\n"
+                    ],
+                    [
+                        21,
+                        "  \"Statement\": [\n"
+                    ],
+                    [
+                        22,
+                        "    {\n"
+                    ],
+                    [
+                        23,
+                        "      \"Action\": [\n"
+                    ],
+                    [
+                        24,
+                        "        \"iam:*\",\n"
+                    ],
+                    [
+                        25,
+                        "        \"organizations:DescribeAccount\",\n"
+                    ],
+                    [
+                        26,
+                        "        \"organizations:DescribeOrganization\",\n"
+                    ],
+                    [
+                        27,
+                        "        \"organizations:DescribeOrganizationalUnit\",\n"
+                    ],
+                    [
+                        28,
+                        "        \"organizations:DescribePolicy\",\n"
+                    ],
+                    [
+                        29,
+                        "        \"organizations:ListChildren\",\n"
+                    ],
+                    [
+                        30,
+                        "        \"organizations:ListParents\",\n"
+                    ],
+                    [
+                        31,
+                        "        \"organizations:ListPoliciesForTarget\",\n"
+                    ],
+                    [
+                        32,
+                        "        \"organizations:ListRoots\",\n"
+                    ],
+                    [
+                        33,
+                        "        \"organizations:ListPolicies\",\n"
+                    ],
+                    [
+                        34,
+                        "        \"organizations:ListTargetsForPolicy\"\n"
+                    ],
+                    [
+                        35,
+                        "      ],\n"
+                    ],
+                    [
+                        36,
+                        "      \"Effect\": \"Allow\",\n"
+                    ],
+                    [
+                        37,
+                        "      \"Resource\": \"*\"\n"
+                    ],
+                    [
+                        38,
+                        "    }\n"
+                    ],
+                    [
+                        39,
+                        "  ]\n"
+                    ],
+                    [
+                        40,
+                        "}\n"
+                    ],
+                    [
+                        41,
+                        "EOF\n"
+                    ],
+                    [
+                        42,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "\\main.tf",
+                "file_abs_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\aws\\iam\\privilege_escalation\\main.tf",
+                "repo_file_path": "/TerraformGoat/aws/iam/privilege_escalation/main.tf",
+                "file_line_range": [
+                    14,
+                    42
+                ],
+                "resource": "aws_iam_user_policy.huoxian_terraform_policy",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.aws.IAMPolicyAttachedToGroupOrRoles",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.paloaltonetworks.com/content/techdocs/en_US/prisma/prisma-cloud/prisma-cloud-code-security-policy-reference/aws-policies/aws-iam-policies/iam-16-iam-policy-privileges-1.html",
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\aws\\iam\\privilege_escalation\\main.tf"
+            },
+            {
+                "check_id": "CKV_AWS_286",
+                "bc_check_id": null,
+                "check_name": "Ensure IAM policies does not allow privilege escalation",
+                "check_result": {
+                    "result": "FAILED",
+                    "evaluated_keys": []
+                },
+                "code_block": [
+                    [
+                        14,
+                        "resource \"aws_iam_user_policy\" \"huoxian_terraform_policy\" {\n"
+                    ],
+                    [
+                        15,
+                        "  name       = \"IAMFullAccess\"\n"
+                    ],
+                    [
+                        16,
+                        "  user       = aws_iam_user.huoxian_terraform_user.name\n"
+                    ],
+                    [
+                        17,
+                        "  depends_on = [aws_iam_user.huoxian_terraform_user]\n"
+                    ],
+                    [
+                        18,
+                        "  policy     = <<EOF\n"
+                    ],
+                    [
+                        19,
+                        "{\n"
+                    ],
+                    [
+                        20,
+                        "  \"Version\": \"2012-10-17\",\n"
+                    ],
+                    [
+                        21,
+                        "  \"Statement\": [\n"
+                    ],
+                    [
+                        22,
+                        "    {\n"
+                    ],
+                    [
+                        23,
+                        "      \"Action\": [\n"
+                    ],
+                    [
+                        24,
+                        "        \"iam:*\",\n"
+                    ],
+                    [
+                        25,
+                        "        \"organizations:DescribeAccount\",\n"
+                    ],
+                    [
+                        26,
+                        "        \"organizations:DescribeOrganization\",\n"
+                    ],
+                    [
+                        27,
+                        "        \"organizations:DescribeOrganizationalUnit\",\n"
+                    ],
+                    [
+                        28,
+                        "        \"organizations:DescribePolicy\",\n"
+                    ],
+                    [
+                        29,
+                        "        \"organizations:ListChildren\",\n"
+                    ],
+                    [
+                        30,
+                        "        \"organizations:ListParents\",\n"
+                    ],
+                    [
+                        31,
+                        "        \"organizations:ListPoliciesForTarget\",\n"
+                    ],
+                    [
+                        32,
+                        "        \"organizations:ListRoots\",\n"
+                    ],
+                    [
+                        33,
+                        "        \"organizations:ListPolicies\",\n"
+                    ],
+                    [
+                        34,
+                        "        \"organizations:ListTargetsForPolicy\"\n"
+                    ],
+                    [
+                        35,
+                        "      ],\n"
+                    ],
+                    [
+                        36,
+                        "      \"Effect\": \"Allow\",\n"
+                    ],
+                    [
+                        37,
+                        "      \"Resource\": \"*\"\n"
+                    ],
+                    [
+                        38,
+                        "    }\n"
+                    ],
+                    [
+                        39,
+                        "  ]\n"
+                    ],
+                    [
+                        40,
+                        "}\n"
+                    ],
+                    [
+                        41,
+                        "EOF\n"
+                    ],
+                    [
+                        42,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "\\main.tf",
+                "file_abs_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\aws\\iam\\privilege_escalation\\main.tf",
+                "repo_file_path": "/TerraformGoat/aws/iam/privilege_escalation/main.tf",
+                "file_line_range": [
+                    14,
+                    42
+                ],
+                "resource": "aws_iam_user_policy.huoxian_terraform_policy",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.aws.IAMPrivilegeEscalation",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": {},
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": null,
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\aws\\iam\\privilege_escalation\\main.tf"
+            },
+            {
+                "check_id": "CKV_AWS_355",
+                "bc_check_id": null,
+                "check_name": "Ensure no IAM policies documents allow \"*\" as a statement's resource for restrictable actions",
+                "check_result": {
+                    "result": "FAILED",
+                    "evaluated_keys": []
+                },
+                "code_block": [
+                    [
+                        14,
+                        "resource \"aws_iam_user_policy\" \"huoxian_terraform_policy\" {\n"
+                    ],
+                    [
+                        15,
+                        "  name       = \"IAMFullAccess\"\n"
+                    ],
+                    [
+                        16,
+                        "  user       = aws_iam_user.huoxian_terraform_user.name\n"
+                    ],
+                    [
+                        17,
+                        "  depends_on = [aws_iam_user.huoxian_terraform_user]\n"
+                    ],
+                    [
+                        18,
+                        "  policy     = <<EOF\n"
+                    ],
+                    [
+                        19,
+                        "{\n"
+                    ],
+                    [
+                        20,
+                        "  \"Version\": \"2012-10-17\",\n"
+                    ],
+                    [
+                        21,
+                        "  \"Statement\": [\n"
+                    ],
+                    [
+                        22,
+                        "    {\n"
+                    ],
+                    [
+                        23,
+                        "      \"Action\": [\n"
+                    ],
+                    [
+                        24,
+                        "        \"iam:*\",\n"
+                    ],
+                    [
+                        25,
+                        "        \"organizations:DescribeAccount\",\n"
+                    ],
+                    [
+                        26,
+                        "        \"organizations:DescribeOrganization\",\n"
+                    ],
+                    [
+                        27,
+                        "        \"organizations:DescribeOrganizationalUnit\",\n"
+                    ],
+                    [
+                        28,
+                        "        \"organizations:DescribePolicy\",\n"
+                    ],
+                    [
+                        29,
+                        "        \"organizations:ListChildren\",\n"
+                    ],
+                    [
+                        30,
+                        "        \"organizations:ListParents\",\n"
+                    ],
+                    [
+                        31,
+                        "        \"organizations:ListPoliciesForTarget\",\n"
+                    ],
+                    [
+                        32,
+                        "        \"organizations:ListRoots\",\n"
+                    ],
+                    [
+                        33,
+                        "        \"organizations:ListPolicies\",\n"
+                    ],
+                    [
+                        34,
+                        "        \"organizations:ListTargetsForPolicy\"\n"
+                    ],
+                    [
+                        35,
+                        "      ],\n"
+                    ],
+                    [
+                        36,
+                        "      \"Effect\": \"Allow\",\n"
+                    ],
+                    [
+                        37,
+                        "      \"Resource\": \"*\"\n"
+                    ],
+                    [
+                        38,
+                        "    }\n"
+                    ],
+                    [
+                        39,
+                        "  ]\n"
+                    ],
+                    [
+                        40,
+                        "}\n"
+                    ],
+                    [
+                        41,
+                        "EOF\n"
+                    ],
+                    [
+                        42,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "\\main.tf",
+                "file_abs_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\aws\\iam\\privilege_escalation\\main.tf",
+                "repo_file_path": "/TerraformGoat/aws/iam/privilege_escalation/main.tf",
+                "file_line_range": [
+                    14,
+                    42
+                ],
+                "resource": "aws_iam_user_policy.huoxian_terraform_policy",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.aws.IAMStarResourcePolicyDocument",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": {},
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": null,
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\aws\\iam\\privilege_escalation\\main.tf"
+            },
+            {
+                "check_id": "CKV2_AWS_40",
+                "bc_check_id": null,
+                "check_name": "Ensure AWS IAM policy does not allow full IAM privileges",
+                "check_result": {
+                    "result": "FAILED",
+                    "entity": {
+                        "aws_iam_user_policy": {
+                            "huoxian_terraform_policy": {
+                                "__end_line__": 42,
+                                "__start_line__": 14,
+                                "depends_on": [
+                                    [
+                                        "aws_iam_user.huoxian_terraform_user"
+                                    ]
+                                ],
+                                "name": [
+                                    "IAMFullAccess"
+                                ],
+                                "policy": [
+                                    {
+                                        "Version": "2012-10-17",
+                                        "Statement": [
+                                            {
+                                                "Action": [
+                                                    "iam:*",
+                                                    "organizations:DescribeAccount",
+                                                    "organizations:DescribeOrganization",
+                                                    "organizations:DescribeOrganizationalUnit",
+                                                    "organizations:DescribePolicy",
+                                                    "organizations:ListChildren",
+                                                    "organizations:ListParents",
+                                                    "organizations:ListPoliciesForTarget",
+                                                    "organizations:ListRoots",
+                                                    "organizations:ListPolicies",
+                                                    "organizations:ListTargetsForPolicy"
+                                                ],
+                                                "Effect": "Allow",
+                                                "Resource": "*"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "user": [
+                                    "huoxian_terraform_test"
+                                ],
+                                "__address__": "aws_iam_user_policy.huoxian_terraform_policy"
+                            }
+                        }
+                    },
+                    "evaluated_keys": [
+                        "policy/Statement[?(@/Effect == Allow)]/Action[*]",
+                        "inline_policy/Statement[?(@/Effect == Allow)]/Action[*]",
+                        "statement[?(@/effect == Allow)]/actions[*]"
+                    ]
+                },
+                "code_block": [
+                    [
+                        14,
+                        "resource \"aws_iam_user_policy\" \"huoxian_terraform_policy\" {\n"
+                    ],
+                    [
+                        15,
+                        "  name       = \"IAMFullAccess\"\n"
+                    ],
+                    [
+                        16,
+                        "  user       = aws_iam_user.huoxian_terraform_user.name\n"
+                    ],
+                    [
+                        17,
+                        "  depends_on = [aws_iam_user.huoxian_terraform_user]\n"
+                    ],
+                    [
+                        18,
+                        "  policy     = <<EOF\n"
+                    ],
+                    [
+                        19,
+                        "{\n"
+                    ],
+                    [
+                        20,
+                        "  \"Version\": \"2012-10-17\",\n"
+                    ],
+                    [
+                        21,
+                        "  \"Statement\": [\n"
+                    ],
+                    [
+                        22,
+                        "    {\n"
+                    ],
+                    [
+                        23,
+                        "      \"Action\": [\n"
+                    ],
+                    [
+                        24,
+                        "        \"iam:*\",\n"
+                    ],
+                    [
+                        25,
+                        "        \"organizations:DescribeAccount\",\n"
+                    ],
+                    [
+                        26,
+                        "        \"organizations:DescribeOrganization\",\n"
+                    ],
+                    [
+                        27,
+                        "        \"organizations:DescribeOrganizationalUnit\",\n"
+                    ],
+                    [
+                        28,
+                        "        \"organizations:DescribePolicy\",\n"
+                    ],
+                    [
+                        29,
+                        "        \"organizations:ListChildren\",\n"
+                    ],
+                    [
+                        30,
+                        "        \"organizations:ListParents\",\n"
+                    ],
+                    [
+                        31,
+                        "        \"organizations:ListPoliciesForTarget\",\n"
+                    ],
+                    [
+                        32,
+                        "        \"organizations:ListRoots\",\n"
+                    ],
+                    [
+                        33,
+                        "        \"organizations:ListPolicies\",\n"
+                    ],
+                    [
+                        34,
+                        "        \"organizations:ListTargetsForPolicy\"\n"
+                    ],
+                    [
+                        35,
+                        "      ],\n"
+                    ],
+                    [
+                        36,
+                        "      \"Effect\": \"Allow\",\n"
+                    ],
+                    [
+                        37,
+                        "      \"Resource\": \"*\"\n"
+                    ],
+                    [
+                        38,
+                        "    }\n"
+                    ],
+                    [
+                        39,
+                        "  ]\n"
+                    ],
+                    [
+                        40,
+                        "}\n"
+                    ],
+                    [
+                        41,
+                        "EOF\n"
+                    ],
+                    [
+                        42,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "\\main.tf",
+                "file_abs_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\aws\\iam\\privilege_escalation\\main.tf",
+                "repo_file_path": "/TerraformGoat/aws/iam/privilege_escalation/main.tf",
+                "file_line_range": [
+                    14,
+                    42
+                ],
+                "resource": "aws_iam_user_policy.huoxian_terraform_policy",
+                "evaluations": null,
+                "check_class": "checkov.common.graph.checks_infra.base_check",
+                "fixed_definition": null,
+                "entity_tags": {},
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": {},
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": null,
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\aws\\iam\\privilege_escalation\\main.tf"
+            }
+        ],
+        "skipped_checks": [],
+        "parsing_errors": []
+    },
+    "summary": {
+        "passed": 7,
+        "failed": 7,
+        "skipped": 0,
+        "parsing_errors": 0,
+        "resource_count": 3,
+        "checkov_version": "2.4.14"
+    },
+    "url": "Add an api key '--bc-api-key <api-key>' to see more detailed insights via https://bridgecrew.cloud"
+}

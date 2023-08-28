@@ -1,0 +1,1953 @@
+{
+    "check_type": "terraform",
+    "results": {
+        "passed_checks": [
+            {
+                "check_id": "CKV_AZURE_77",
+                "bc_check_id": "BC_AZR_NETWORKING_22",
+                "check_name": "Ensure that UDP Services are restricted from the Internet ",
+                "check_result": {
+                    "result": "PASSED",
+                    "evaluated_keys": [
+                        "security_rule"
+                    ]
+                },
+                "code_block": [
+                    [
+                        17,
+                        "resource \"azurerm_network_security_group\" \"terraformgoat\" {\n"
+                    ],
+                    [
+                        18,
+                        "  name                = \"huoxian-terraform-goat-security-group\"\n"
+                    ],
+                    [
+                        19,
+                        "  location            = azurerm_resource_group.terraformgoat.location\n"
+                    ],
+                    [
+                        20,
+                        "  resource_group_name = azurerm_resource_group.terraformgoat.name\n"
+                    ],
+                    [
+                        21,
+                        "  depends_on = [\n"
+                    ],
+                    [
+                        22,
+                        "    azurerm_resource_group.terraformgoat,\n"
+                    ],
+                    [
+                        23,
+                        "  ]\n"
+                    ],
+                    [
+                        24,
+                        "\n"
+                    ],
+                    [
+                        25,
+                        "  security_rule {\n"
+                    ],
+                    [
+                        26,
+                        "    name                       = \"huoxian-terraform-goat-security-group-rule\"\n"
+                    ],
+                    [
+                        27,
+                        "    priority                   = 100\n"
+                    ],
+                    [
+                        28,
+                        "    direction                  = \"Inbound\"\n"
+                    ],
+                    [
+                        29,
+                        "    access                     = \"Allow\"\n"
+                    ],
+                    [
+                        30,
+                        "    protocol                   = \"Tcp\"\n"
+                    ],
+                    [
+                        31,
+                        "    source_port_range          = \"8080\"\n"
+                    ],
+                    [
+                        32,
+                        "    destination_port_range     = \"*\"\n"
+                    ],
+                    [
+                        33,
+                        "    source_address_prefix      = \"*\"\n"
+                    ],
+                    [
+                        34,
+                        "    destination_address_prefix = \"*\"\n"
+                    ],
+                    [
+                        35,
+                        "  }\n"
+                    ],
+                    [
+                        36,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "\\main.tf",
+                "file_abs_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\azure\\vm\\vm_command_execution\\main.tf",
+                "repo_file_path": "/TerraformGoat/azure/vm/vm_command_execution/main.tf",
+                "file_line_range": [
+                    17,
+                    36
+                ],
+                "resource": "azurerm_network_security_group.terraformgoat",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.azure.NSGRuleUDPAccessRestricted",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.paloaltonetworks.com/content/techdocs/en_US/prisma/prisma-cloud/prisma-cloud-code-security-policy-reference/azure-policies/azure-networking-policies/ensure-that-udp-services-are-restricted-from-the-internet.html",
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\azure\\vm\\vm_command_execution\\main.tf"
+            },
+            {
+                "check_id": "CKV_AZURE_183",
+                "bc_check_id": null,
+                "check_name": "Ensure that VNET uses local DNS addresses",
+                "check_result": {
+                    "result": "PASSED",
+                    "evaluated_keys": []
+                },
+                "code_block": [
+                    [
+                        38,
+                        "resource \"azurerm_virtual_network\" \"terraformgoat\" {\n"
+                    ],
+                    [
+                        39,
+                        "  name                = \"huoxian-terraform-goat-network\"\n"
+                    ],
+                    [
+                        40,
+                        "  address_space       = [\"10.0.0.0/16\"]\n"
+                    ],
+                    [
+                        41,
+                        "  location            = azurerm_resource_group.terraformgoat.location\n"
+                    ],
+                    [
+                        42,
+                        "  resource_group_name = azurerm_resource_group.terraformgoat.name\n"
+                    ],
+                    [
+                        43,
+                        "  depends_on = [\n"
+                    ],
+                    [
+                        44,
+                        "    azurerm_resource_group.terraformgoat,\n"
+                    ],
+                    [
+                        45,
+                        "  ]\n"
+                    ],
+                    [
+                        46,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "\\main.tf",
+                "file_abs_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\azure\\vm\\vm_command_execution\\main.tf",
+                "repo_file_path": "/TerraformGoat/azure/vm/vm_command_execution/main.tf",
+                "file_line_range": [
+                    38,
+                    46
+                ],
+                "resource": "azurerm_virtual_network.terraformgoat",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.azure.VnetLocalDNS",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": {},
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": null,
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\azure\\vm\\vm_command_execution\\main.tf"
+            },
+            {
+                "check_id": "CKV_AZURE_182",
+                "bc_check_id": null,
+                "check_name": "Ensure that VNET has at least 2 connected DNS Endpoints",
+                "check_result": {
+                    "result": "PASSED",
+                    "evaluated_keys": []
+                },
+                "code_block": [
+                    [
+                        38,
+                        "resource \"azurerm_virtual_network\" \"terraformgoat\" {\n"
+                    ],
+                    [
+                        39,
+                        "  name                = \"huoxian-terraform-goat-network\"\n"
+                    ],
+                    [
+                        40,
+                        "  address_space       = [\"10.0.0.0/16\"]\n"
+                    ],
+                    [
+                        41,
+                        "  location            = azurerm_resource_group.terraformgoat.location\n"
+                    ],
+                    [
+                        42,
+                        "  resource_group_name = azurerm_resource_group.terraformgoat.name\n"
+                    ],
+                    [
+                        43,
+                        "  depends_on = [\n"
+                    ],
+                    [
+                        44,
+                        "    azurerm_resource_group.terraformgoat,\n"
+                    ],
+                    [
+                        45,
+                        "  ]\n"
+                    ],
+                    [
+                        46,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "\\main.tf",
+                "file_abs_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\azure\\vm\\vm_command_execution\\main.tf",
+                "repo_file_path": "/TerraformGoat/azure/vm/vm_command_execution/main.tf",
+                "file_line_range": [
+                    38,
+                    46
+                ],
+                "resource": "azurerm_virtual_network.terraformgoat",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.azure.VnetSingleDNSServer",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": {},
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": null,
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\azure\\vm\\vm_command_execution\\main.tf"
+            },
+            {
+                "check_id": "CKV_AZURE_118",
+                "bc_check_id": "BC_AZR_NETWORKING_35",
+                "check_name": "Ensure that Network Interfaces disable IP forwarding",
+                "check_result": {
+                    "result": "PASSED",
+                    "evaluated_keys": [
+                        "enable_ip_forwarding"
+                    ]
+                },
+                "code_block": [
+                    [
+                        59,
+                        "resource \"azurerm_network_interface\" \"terraformgoat\" {\n"
+                    ],
+                    [
+                        60,
+                        "  name                = \"huoxian-terraform-goat-nic\"\n"
+                    ],
+                    [
+                        61,
+                        "  location            = azurerm_resource_group.terraformgoat.location\n"
+                    ],
+                    [
+                        62,
+                        "  resource_group_name = azurerm_resource_group.terraformgoat.name\n"
+                    ],
+                    [
+                        63,
+                        "  depends_on = [\n"
+                    ],
+                    [
+                        64,
+                        "    azurerm_resource_group.terraformgoat,\n"
+                    ],
+                    [
+                        65,
+                        "    azurerm_public_ip.terraformgoat,\n"
+                    ],
+                    [
+                        66,
+                        "    azurerm_subnet.terraformgoat\n"
+                    ],
+                    [
+                        67,
+                        "  ]\n"
+                    ],
+                    [
+                        68,
+                        "\n"
+                    ],
+                    [
+                        69,
+                        "  ip_configuration {\n"
+                    ],
+                    [
+                        70,
+                        "    name                          = \"huoxian-terraform-goat-internal\"\n"
+                    ],
+                    [
+                        71,
+                        "    subnet_id                     = azurerm_subnet.terraformgoat.id\n"
+                    ],
+                    [
+                        72,
+                        "    private_ip_address_allocation = \"Dynamic\"\n"
+                    ],
+                    [
+                        73,
+                        "    public_ip_address_id          = azurerm_public_ip.terraformgoat.id\n"
+                    ],
+                    [
+                        74,
+                        "  }\n"
+                    ],
+                    [
+                        75,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "\\main.tf",
+                "file_abs_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\azure\\vm\\vm_command_execution\\main.tf",
+                "repo_file_path": "/TerraformGoat/azure/vm/vm_command_execution/main.tf",
+                "file_line_range": [
+                    59,
+                    75
+                ],
+                "resource": "azurerm_network_interface.terraformgoat",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.azure.NetworkInterfaceEnableIPForwarding",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.paloaltonetworks.com/content/techdocs/en_US/prisma/prisma-cloud/prisma-cloud-code-security-policy-reference/azure-policies/azure-networking-policies/ensure-that-network-interfaces-disable-ip-forwarding.html",
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\azure\\vm\\vm_command_execution\\main.tf"
+            },
+            {
+                "check_id": "CKV_AZURE_179",
+                "bc_check_id": null,
+                "check_name": "Ensure VM agent is installed",
+                "check_result": {
+                    "result": "PASSED",
+                    "evaluated_keys": [
+                        "provision_vm_agent"
+                    ]
+                },
+                "code_block": [
+                    [
+                        77,
+                        "resource \"azurerm_linux_virtual_machine\" \"terraformgoat\" {\n"
+                    ],
+                    [
+                        78,
+                        "  name                            = \"huoxian-terraform-goat-machine\"\n"
+                    ],
+                    [
+                        79,
+                        "  resource_group_name             = azurerm_resource_group.terraformgoat.name\n"
+                    ],
+                    [
+                        80,
+                        "  location                        = azurerm_resource_group.terraformgoat.location\n"
+                    ],
+                    [
+                        81,
+                        "  size                            = \"Standard_B1ls\"\n"
+                    ],
+                    [
+                        82,
+                        "  admin_username                  = \"huoxian\"\n"
+                    ],
+                    [
+                        83,
+                        "  admin_password                  = \"HuoXia***************************************\"\n"
+                    ],
+                    [
+                        84,
+                        "  disable_password_authentication = false\n"
+                    ],
+                    [
+                        85,
+                        "  user_data                       = \"IyEvYmluL2Jhc2gKc3VkbyBhcHQtZ2V0IC15IHVwZGF0ZQpzdWRvIGFwdC1nZXQgLXkgaW5zdGFsbCBhcGFjaGUyCnN1ZG8gYXB0LWdldCAteSBpbnN0YWxsIHBocApzdWRvIGFwdC1nZXQgLXkgaW5zdGFsbCBwaHAtY3VybApzdWRvIHNlZCAtaSAncy9MaXN0ZW4gODAvTGlzdGVuIDgwODAvJyAvZXRjL2FwYWNoZTIvcG9ydHMuY29uZgpzdWRvIC9ldGMvaW5pdC5kL2FwYWNoZTIgcmVzdGFydApjZCAvdmFyL3d3dy9odG1sCnN1ZG8gYXB0LWdldCAteSBpbnN0YWxsIHdnZXQKc3VkbyB3Z2V0IGh0dHBzOi8vaHVvY29ycC1vc3Mub3NzLWNuLWJlaWppbmcuYWxpeXVuY3MuY29tL3RlcnJhZm9ybS1nb2F0LWRlcGVuZGVuY3ktZmlsZXMvY29tbWFuZC1leGVjdXRpb24tbGFiLnppcApzdWRvIGFwdC1nZXQgLXkgaW5zdGFsbCB1bnppcApzdWRvIHVuemlwIGNvbW1hbmQtZXhlY3V0aW9uLWxhYi56aXAKc3VkbyBtdiAuL2NvbW1hbmQtZXhlY3V0aW9uLWxhYi9zdGF0aWMvZmxhZzY5MTUyMjAxLnR4dCAv\"\n"
+                    ],
+                    [
+                        86,
+                        "  network_interface_ids = [\n"
+                    ],
+                    [
+                        87,
+                        "    azurerm_network_interface.terraformgoat.id,\n"
+                    ],
+                    [
+                        88,
+                        "  ]\n"
+                    ],
+                    [
+                        89,
+                        "  depends_on = [\n"
+                    ],
+                    [
+                        90,
+                        "    azurerm_resource_group.terraformgoat,\n"
+                    ],
+                    [
+                        91,
+                        "    azurerm_network_interface.terraformgoat\n"
+                    ],
+                    [
+                        92,
+                        "  ]\n"
+                    ],
+                    [
+                        93,
+                        "\n"
+                    ],
+                    [
+                        94,
+                        "  os_disk {\n"
+                    ],
+                    [
+                        95,
+                        "    caching              = \"ReadWrite\"\n"
+                    ],
+                    [
+                        96,
+                        "    storage_account_type = \"Standard_LRS\"\n"
+                    ],
+                    [
+                        97,
+                        "  }\n"
+                    ],
+                    [
+                        98,
+                        "\n"
+                    ],
+                    [
+                        99,
+                        "  source_image_reference {\n"
+                    ],
+                    [
+                        100,
+                        "    publisher = \"Canonical\"\n"
+                    ],
+                    [
+                        101,
+                        "    offer     = \"UbuntuServer\"\n"
+                    ],
+                    [
+                        102,
+                        "    sku       = \"18.04-LTS\"\n"
+                    ],
+                    [
+                        103,
+                        "    version   = \"latest\"\n"
+                    ],
+                    [
+                        104,
+                        "  }\n"
+                    ],
+                    [
+                        105,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "\\main.tf",
+                "file_abs_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\azure\\vm\\vm_command_execution\\main.tf",
+                "repo_file_path": "/TerraformGoat/azure/vm/vm_command_execution/main.tf",
+                "file_line_range": [
+                    77,
+                    105
+                ],
+                "resource": "azurerm_linux_virtual_machine.terraformgoat",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.azure.VMAgentIsInstalled",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": {},
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": null,
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\azure\\vm\\vm_command_execution\\main.tf"
+            },
+            {
+                "check_id": "CKV_AZURE_92",
+                "bc_check_id": "BC_AZR_GENERAL_66",
+                "check_name": "Ensure that Virtual Machines use managed disks",
+                "check_result": {
+                    "result": "PASSED",
+                    "evaluated_keys": []
+                },
+                "code_block": [
+                    [
+                        77,
+                        "resource \"azurerm_linux_virtual_machine\" \"terraformgoat\" {\n"
+                    ],
+                    [
+                        78,
+                        "  name                            = \"huoxian-terraform-goat-machine\"\n"
+                    ],
+                    [
+                        79,
+                        "  resource_group_name             = azurerm_resource_group.terraformgoat.name\n"
+                    ],
+                    [
+                        80,
+                        "  location                        = azurerm_resource_group.terraformgoat.location\n"
+                    ],
+                    [
+                        81,
+                        "  size                            = \"Standard_B1ls\"\n"
+                    ],
+                    [
+                        82,
+                        "  admin_username                  = \"huoxian\"\n"
+                    ],
+                    [
+                        83,
+                        "  admin_password                  = \"HuoXia***************************************\"\n"
+                    ],
+                    [
+                        84,
+                        "  disable_password_authentication = false\n"
+                    ],
+                    [
+                        85,
+                        "  user_data                       = \"IyEvYmluL2Jhc2gKc3VkbyBhcHQtZ2V0IC15IHVwZGF0ZQpzdWRvIGFwdC1nZXQgLXkgaW5zdGFsbCBhcGFjaGUyCnN1ZG8gYXB0LWdldCAteSBpbnN0YWxsIHBocApzdWRvIGFwdC1nZXQgLXkgaW5zdGFsbCBwaHAtY3VybApzdWRvIHNlZCAtaSAncy9MaXN0ZW4gODAvTGlzdGVuIDgwODAvJyAvZXRjL2FwYWNoZTIvcG9ydHMuY29uZgpzdWRvIC9ldGMvaW5pdC5kL2FwYWNoZTIgcmVzdGFydApjZCAvdmFyL3d3dy9odG1sCnN1ZG8gYXB0LWdldCAteSBpbnN0YWxsIHdnZXQKc3VkbyB3Z2V0IGh0dHBzOi8vaHVvY29ycC1vc3Mub3NzLWNuLWJlaWppbmcuYWxpeXVuY3MuY29tL3RlcnJhZm9ybS1nb2F0LWRlcGVuZGVuY3ktZmlsZXMvY29tbWFuZC1leGVjdXRpb24tbGFiLnppcApzdWRvIGFwdC1nZXQgLXkgaW5zdGFsbCB1bnppcApzdWRvIHVuemlwIGNvbW1hbmQtZXhlY3V0aW9uLWxhYi56aXAKc3VkbyBtdiAuL2NvbW1hbmQtZXhlY3V0aW9uLWxhYi9zdGF0aWMvZmxhZzY5MTUyMjAxLnR4dCAv\"\n"
+                    ],
+                    [
+                        86,
+                        "  network_interface_ids = [\n"
+                    ],
+                    [
+                        87,
+                        "    azurerm_network_interface.terraformgoat.id,\n"
+                    ],
+                    [
+                        88,
+                        "  ]\n"
+                    ],
+                    [
+                        89,
+                        "  depends_on = [\n"
+                    ],
+                    [
+                        90,
+                        "    azurerm_resource_group.terraformgoat,\n"
+                    ],
+                    [
+                        91,
+                        "    azurerm_network_interface.terraformgoat\n"
+                    ],
+                    [
+                        92,
+                        "  ]\n"
+                    ],
+                    [
+                        93,
+                        "\n"
+                    ],
+                    [
+                        94,
+                        "  os_disk {\n"
+                    ],
+                    [
+                        95,
+                        "    caching              = \"ReadWrite\"\n"
+                    ],
+                    [
+                        96,
+                        "    storage_account_type = \"Standard_LRS\"\n"
+                    ],
+                    [
+                        97,
+                        "  }\n"
+                    ],
+                    [
+                        98,
+                        "\n"
+                    ],
+                    [
+                        99,
+                        "  source_image_reference {\n"
+                    ],
+                    [
+                        100,
+                        "    publisher = \"Canonical\"\n"
+                    ],
+                    [
+                        101,
+                        "    offer     = \"UbuntuServer\"\n"
+                    ],
+                    [
+                        102,
+                        "    sku       = \"18.04-LTS\"\n"
+                    ],
+                    [
+                        103,
+                        "    version   = \"latest\"\n"
+                    ],
+                    [
+                        104,
+                        "  }\n"
+                    ],
+                    [
+                        105,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "\\main.tf",
+                "file_abs_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\azure\\vm\\vm_command_execution\\main.tf",
+                "repo_file_path": "/TerraformGoat/azure/vm/vm_command_execution/main.tf",
+                "file_line_range": [
+                    77,
+                    105
+                ],
+                "resource": "azurerm_linux_virtual_machine.terraformgoat",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.azure.VMStorageOsDisk",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.paloaltonetworks.com/content/techdocs/en_US/prisma/prisma-cloud/prisma-cloud-code-security-policy-reference/azure-policies/azure-general-policies/ensure-that-virtual-machines-use-managed-disks.html",
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\azure\\vm\\vm_command_execution\\main.tf"
+            }
+        ],
+        "failed_checks": [
+            {
+                "check_id": "CKV_AZURE_160",
+                "bc_check_id": "BC_AZR_NETWORKING_57",
+                "check_name": "Ensure that HTTP (port 80) access is restricted from the internet",
+                "check_result": {
+                    "result": "FAILED",
+                    "evaluated_keys": [
+                        "security_rule/[0]/access",
+                        "security_rule/[0]/direction",
+                        "security_rule/[0]/protocol",
+                        "security_rule/[0]/destination_port_range",
+                        "security_rule/[0]/destination_port_ranges",
+                        "security_rule/[0]/source_address_prefix",
+                        "security_rule/[0]/source_address_prefixes"
+                    ]
+                },
+                "code_block": [
+                    [
+                        17,
+                        "resource \"azurerm_network_security_group\" \"terraformgoat\" {\n"
+                    ],
+                    [
+                        18,
+                        "  name                = \"huoxian-terraform-goat-security-group\"\n"
+                    ],
+                    [
+                        19,
+                        "  location            = azurerm_resource_group.terraformgoat.location\n"
+                    ],
+                    [
+                        20,
+                        "  resource_group_name = azurerm_resource_group.terraformgoat.name\n"
+                    ],
+                    [
+                        21,
+                        "  depends_on = [\n"
+                    ],
+                    [
+                        22,
+                        "    azurerm_resource_group.terraformgoat,\n"
+                    ],
+                    [
+                        23,
+                        "  ]\n"
+                    ],
+                    [
+                        24,
+                        "\n"
+                    ],
+                    [
+                        25,
+                        "  security_rule {\n"
+                    ],
+                    [
+                        26,
+                        "    name                       = \"huoxian-terraform-goat-security-group-rule\"\n"
+                    ],
+                    [
+                        27,
+                        "    priority                   = 100\n"
+                    ],
+                    [
+                        28,
+                        "    direction                  = \"Inbound\"\n"
+                    ],
+                    [
+                        29,
+                        "    access                     = \"Allow\"\n"
+                    ],
+                    [
+                        30,
+                        "    protocol                   = \"Tcp\"\n"
+                    ],
+                    [
+                        31,
+                        "    source_port_range          = \"8080\"\n"
+                    ],
+                    [
+                        32,
+                        "    destination_port_range     = \"*\"\n"
+                    ],
+                    [
+                        33,
+                        "    source_address_prefix      = \"*\"\n"
+                    ],
+                    [
+                        34,
+                        "    destination_address_prefix = \"*\"\n"
+                    ],
+                    [
+                        35,
+                        "  }\n"
+                    ],
+                    [
+                        36,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "\\main.tf",
+                "file_abs_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\azure\\vm\\vm_command_execution\\main.tf",
+                "repo_file_path": "/TerraformGoat/azure/vm/vm_command_execution/main.tf",
+                "file_line_range": [
+                    17,
+                    36
+                ],
+                "resource": "azurerm_network_security_group.terraformgoat",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.azure.NSGRuleHTTPAccessRestricted",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.paloaltonetworks.com/content/techdocs/en_US/prisma/prisma-cloud/prisma-cloud-code-security-policy-reference/azure-policies/azure-networking-policies/ensure-azure-http-port-80-access-from-the-internet-is-restricted.html",
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\azure\\vm\\vm_command_execution\\main.tf"
+            },
+            {
+                "check_id": "CKV_AZURE_9",
+                "bc_check_id": "BC_AZR_NETWORKING_2",
+                "check_name": "Ensure that RDP access is restricted from the internet",
+                "check_result": {
+                    "result": "FAILED",
+                    "evaluated_keys": [
+                        "security_rule/[0]/access",
+                        "security_rule/[0]/direction",
+                        "security_rule/[0]/protocol",
+                        "security_rule/[0]/destination_port_range",
+                        "security_rule/[0]/destination_port_ranges",
+                        "security_rule/[0]/source_address_prefix",
+                        "security_rule/[0]/source_address_prefixes"
+                    ]
+                },
+                "code_block": [
+                    [
+                        17,
+                        "resource \"azurerm_network_security_group\" \"terraformgoat\" {\n"
+                    ],
+                    [
+                        18,
+                        "  name                = \"huoxian-terraform-goat-security-group\"\n"
+                    ],
+                    [
+                        19,
+                        "  location            = azurerm_resource_group.terraformgoat.location\n"
+                    ],
+                    [
+                        20,
+                        "  resource_group_name = azurerm_resource_group.terraformgoat.name\n"
+                    ],
+                    [
+                        21,
+                        "  depends_on = [\n"
+                    ],
+                    [
+                        22,
+                        "    azurerm_resource_group.terraformgoat,\n"
+                    ],
+                    [
+                        23,
+                        "  ]\n"
+                    ],
+                    [
+                        24,
+                        "\n"
+                    ],
+                    [
+                        25,
+                        "  security_rule {\n"
+                    ],
+                    [
+                        26,
+                        "    name                       = \"huoxian-terraform-goat-security-group-rule\"\n"
+                    ],
+                    [
+                        27,
+                        "    priority                   = 100\n"
+                    ],
+                    [
+                        28,
+                        "    direction                  = \"Inbound\"\n"
+                    ],
+                    [
+                        29,
+                        "    access                     = \"Allow\"\n"
+                    ],
+                    [
+                        30,
+                        "    protocol                   = \"Tcp\"\n"
+                    ],
+                    [
+                        31,
+                        "    source_port_range          = \"8080\"\n"
+                    ],
+                    [
+                        32,
+                        "    destination_port_range     = \"*\"\n"
+                    ],
+                    [
+                        33,
+                        "    source_address_prefix      = \"*\"\n"
+                    ],
+                    [
+                        34,
+                        "    destination_address_prefix = \"*\"\n"
+                    ],
+                    [
+                        35,
+                        "  }\n"
+                    ],
+                    [
+                        36,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "\\main.tf",
+                "file_abs_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\azure\\vm\\vm_command_execution\\main.tf",
+                "repo_file_path": "/TerraformGoat/azure/vm/vm_command_execution/main.tf",
+                "file_line_range": [
+                    17,
+                    36
+                ],
+                "resource": "azurerm_network_security_group.terraformgoat",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.azure.NSGRuleRDPAccessRestricted",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.paloaltonetworks.com/content/techdocs/en_US/prisma/prisma-cloud/prisma-cloud-code-security-policy-reference/azure-policies/azure-networking-policies/bc-azr-networking-2.html",
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\azure\\vm\\vm_command_execution\\main.tf"
+            },
+            {
+                "check_id": "CKV_AZURE_10",
+                "bc_check_id": "BC_AZR_NETWORKING_3",
+                "check_name": "Ensure that SSH access is restricted from the internet",
+                "check_result": {
+                    "result": "FAILED",
+                    "evaluated_keys": [
+                        "security_rule/[0]/access",
+                        "security_rule/[0]/direction",
+                        "security_rule/[0]/protocol",
+                        "security_rule/[0]/destination_port_range",
+                        "security_rule/[0]/destination_port_ranges",
+                        "security_rule/[0]/source_address_prefix",
+                        "security_rule/[0]/source_address_prefixes"
+                    ]
+                },
+                "code_block": [
+                    [
+                        17,
+                        "resource \"azurerm_network_security_group\" \"terraformgoat\" {\n"
+                    ],
+                    [
+                        18,
+                        "  name                = \"huoxian-terraform-goat-security-group\"\n"
+                    ],
+                    [
+                        19,
+                        "  location            = azurerm_resource_group.terraformgoat.location\n"
+                    ],
+                    [
+                        20,
+                        "  resource_group_name = azurerm_resource_group.terraformgoat.name\n"
+                    ],
+                    [
+                        21,
+                        "  depends_on = [\n"
+                    ],
+                    [
+                        22,
+                        "    azurerm_resource_group.terraformgoat,\n"
+                    ],
+                    [
+                        23,
+                        "  ]\n"
+                    ],
+                    [
+                        24,
+                        "\n"
+                    ],
+                    [
+                        25,
+                        "  security_rule {\n"
+                    ],
+                    [
+                        26,
+                        "    name                       = \"huoxian-terraform-goat-security-group-rule\"\n"
+                    ],
+                    [
+                        27,
+                        "    priority                   = 100\n"
+                    ],
+                    [
+                        28,
+                        "    direction                  = \"Inbound\"\n"
+                    ],
+                    [
+                        29,
+                        "    access                     = \"Allow\"\n"
+                    ],
+                    [
+                        30,
+                        "    protocol                   = \"Tcp\"\n"
+                    ],
+                    [
+                        31,
+                        "    source_port_range          = \"8080\"\n"
+                    ],
+                    [
+                        32,
+                        "    destination_port_range     = \"*\"\n"
+                    ],
+                    [
+                        33,
+                        "    source_address_prefix      = \"*\"\n"
+                    ],
+                    [
+                        34,
+                        "    destination_address_prefix = \"*\"\n"
+                    ],
+                    [
+                        35,
+                        "  }\n"
+                    ],
+                    [
+                        36,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "\\main.tf",
+                "file_abs_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\azure\\vm\\vm_command_execution\\main.tf",
+                "repo_file_path": "/TerraformGoat/azure/vm/vm_command_execution/main.tf",
+                "file_line_range": [
+                    17,
+                    36
+                ],
+                "resource": "azurerm_network_security_group.terraformgoat",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.azure.NSGRuleSSHAccessRestricted",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.paloaltonetworks.com/content/techdocs/en_US/prisma/prisma-cloud/prisma-cloud-code-security-policy-reference/azure-policies/azure-networking-policies/bc-azr-networking-3.html",
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\azure\\vm\\vm_command_execution\\main.tf"
+            },
+            {
+                "check_id": "CKV_AZURE_50",
+                "bc_check_id": "BC_AZR_GENERAL_14",
+                "check_name": "Ensure Virtual Machine Extensions are not Installed",
+                "check_result": {
+                    "result": "FAILED",
+                    "evaluated_keys": [
+                        "allow_extension_operations"
+                    ]
+                },
+                "code_block": [
+                    [
+                        77,
+                        "resource \"azurerm_linux_virtual_machine\" \"terraformgoat\" {\n"
+                    ],
+                    [
+                        78,
+                        "  name                            = \"huoxian-terraform-goat-machine\"\n"
+                    ],
+                    [
+                        79,
+                        "  resource_group_name             = azurerm_resource_group.terraformgoat.name\n"
+                    ],
+                    [
+                        80,
+                        "  location                        = azurerm_resource_group.terraformgoat.location\n"
+                    ],
+                    [
+                        81,
+                        "  size                            = \"Standard_B1ls\"\n"
+                    ],
+                    [
+                        82,
+                        "  admin_username                  = \"huoxian\"\n"
+                    ],
+                    [
+                        83,
+                        "  admin_password                  = \"HuoXia***************************************\"\n"
+                    ],
+                    [
+                        84,
+                        "  disable_password_authentication = false\n"
+                    ],
+                    [
+                        85,
+                        "  user_data                       = \"IyEvYmluL2Jhc2gKc3VkbyBhcHQtZ2V0IC15IHVwZGF0ZQpzdWRvIGFwdC1nZXQgLXkgaW5zdGFsbCBhcGFjaGUyCnN1ZG8gYXB0LWdldCAteSBpbnN0YWxsIHBocApzdWRvIGFwdC1nZXQgLXkgaW5zdGFsbCBwaHAtY3VybApzdWRvIHNlZCAtaSAncy9MaXN0ZW4gODAvTGlzdGVuIDgwODAvJyAvZXRjL2FwYWNoZTIvcG9ydHMuY29uZgpzdWRvIC9ldGMvaW5pdC5kL2FwYWNoZTIgcmVzdGFydApjZCAvdmFyL3d3dy9odG1sCnN1ZG8gYXB0LWdldCAteSBpbnN0YWxsIHdnZXQKc3VkbyB3Z2V0IGh0dHBzOi8vaHVvY29ycC1vc3Mub3NzLWNuLWJlaWppbmcuYWxpeXVuY3MuY29tL3RlcnJhZm9ybS1nb2F0LWRlcGVuZGVuY3ktZmlsZXMvY29tbWFuZC1leGVjdXRpb24tbGFiLnppcApzdWRvIGFwdC1nZXQgLXkgaW5zdGFsbCB1bnppcApzdWRvIHVuemlwIGNvbW1hbmQtZXhlY3V0aW9uLWxhYi56aXAKc3VkbyBtdiAuL2NvbW1hbmQtZXhlY3V0aW9uLWxhYi9zdGF0aWMvZmxhZzY5MTUyMjAxLnR4dCAv\"\n"
+                    ],
+                    [
+                        86,
+                        "  network_interface_ids = [\n"
+                    ],
+                    [
+                        87,
+                        "    azurerm_network_interface.terraformgoat.id,\n"
+                    ],
+                    [
+                        88,
+                        "  ]\n"
+                    ],
+                    [
+                        89,
+                        "  depends_on = [\n"
+                    ],
+                    [
+                        90,
+                        "    azurerm_resource_group.terraformgoat,\n"
+                    ],
+                    [
+                        91,
+                        "    azurerm_network_interface.terraformgoat\n"
+                    ],
+                    [
+                        92,
+                        "  ]\n"
+                    ],
+                    [
+                        93,
+                        "\n"
+                    ],
+                    [
+                        94,
+                        "  os_disk {\n"
+                    ],
+                    [
+                        95,
+                        "    caching              = \"ReadWrite\"\n"
+                    ],
+                    [
+                        96,
+                        "    storage_account_type = \"Standard_LRS\"\n"
+                    ],
+                    [
+                        97,
+                        "  }\n"
+                    ],
+                    [
+                        98,
+                        "\n"
+                    ],
+                    [
+                        99,
+                        "  source_image_reference {\n"
+                    ],
+                    [
+                        100,
+                        "    publisher = \"Canonical\"\n"
+                    ],
+                    [
+                        101,
+                        "    offer     = \"UbuntuServer\"\n"
+                    ],
+                    [
+                        102,
+                        "    sku       = \"18.04-LTS\"\n"
+                    ],
+                    [
+                        103,
+                        "    version   = \"latest\"\n"
+                    ],
+                    [
+                        104,
+                        "  }\n"
+                    ],
+                    [
+                        105,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "\\main.tf",
+                "file_abs_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\azure\\vm\\vm_command_execution\\main.tf",
+                "repo_file_path": "/TerraformGoat/azure/vm/vm_command_execution/main.tf",
+                "file_line_range": [
+                    77,
+                    105
+                ],
+                "resource": "azurerm_linux_virtual_machine.terraformgoat",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.azure.AzureInstanceExtensions",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.paloaltonetworks.com/content/techdocs/en_US/prisma/prisma-cloud/prisma-cloud-code-security-policy-reference/azure-policies/azure-general-policies/bc-azr-general-14.html",
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\azure\\vm\\vm_command_execution\\main.tf"
+            },
+            {
+                "check_id": "CKV_AZURE_1",
+                "bc_check_id": "BC_AZR_NETWORKING_1",
+                "check_name": "Ensure Azure Instance does not use basic authentication(Use SSH Key Instead)",
+                "check_result": {
+                    "result": "FAILED",
+                    "evaluated_keys": [
+                        "disable_password_authentication"
+                    ]
+                },
+                "code_block": [
+                    [
+                        77,
+                        "resource \"azurerm_linux_virtual_machine\" \"terraformgoat\" {\n"
+                    ],
+                    [
+                        78,
+                        "  name                            = \"huoxian-terraform-goat-machine\"\n"
+                    ],
+                    [
+                        79,
+                        "  resource_group_name             = azurerm_resource_group.terraformgoat.name\n"
+                    ],
+                    [
+                        80,
+                        "  location                        = azurerm_resource_group.terraformgoat.location\n"
+                    ],
+                    [
+                        81,
+                        "  size                            = \"Standard_B1ls\"\n"
+                    ],
+                    [
+                        82,
+                        "  admin_username                  = \"huoxian\"\n"
+                    ],
+                    [
+                        83,
+                        "  admin_password                  = \"HuoXia***************************************\"\n"
+                    ],
+                    [
+                        84,
+                        "  disable_password_authentication = false\n"
+                    ],
+                    [
+                        85,
+                        "  user_data                       = \"IyEvYmluL2Jhc2gKc3VkbyBhcHQtZ2V0IC15IHVwZGF0ZQpzdWRvIGFwdC1nZXQgLXkgaW5zdGFsbCBhcGFjaGUyCnN1ZG8gYXB0LWdldCAteSBpbnN0YWxsIHBocApzdWRvIGFwdC1nZXQgLXkgaW5zdGFsbCBwaHAtY3VybApzdWRvIHNlZCAtaSAncy9MaXN0ZW4gODAvTGlzdGVuIDgwODAvJyAvZXRjL2FwYWNoZTIvcG9ydHMuY29uZgpzdWRvIC9ldGMvaW5pdC5kL2FwYWNoZTIgcmVzdGFydApjZCAvdmFyL3d3dy9odG1sCnN1ZG8gYXB0LWdldCAteSBpbnN0YWxsIHdnZXQKc3VkbyB3Z2V0IGh0dHBzOi8vaHVvY29ycC1vc3Mub3NzLWNuLWJlaWppbmcuYWxpeXVuY3MuY29tL3RlcnJhZm9ybS1nb2F0LWRlcGVuZGVuY3ktZmlsZXMvY29tbWFuZC1leGVjdXRpb24tbGFiLnppcApzdWRvIGFwdC1nZXQgLXkgaW5zdGFsbCB1bnppcApzdWRvIHVuemlwIGNvbW1hbmQtZXhlY3V0aW9uLWxhYi56aXAKc3VkbyBtdiAuL2NvbW1hbmQtZXhlY3V0aW9uLWxhYi9zdGF0aWMvZmxhZzY5MTUyMjAxLnR4dCAv\"\n"
+                    ],
+                    [
+                        86,
+                        "  network_interface_ids = [\n"
+                    ],
+                    [
+                        87,
+                        "    azurerm_network_interface.terraformgoat.id,\n"
+                    ],
+                    [
+                        88,
+                        "  ]\n"
+                    ],
+                    [
+                        89,
+                        "  depends_on = [\n"
+                    ],
+                    [
+                        90,
+                        "    azurerm_resource_group.terraformgoat,\n"
+                    ],
+                    [
+                        91,
+                        "    azurerm_network_interface.terraformgoat\n"
+                    ],
+                    [
+                        92,
+                        "  ]\n"
+                    ],
+                    [
+                        93,
+                        "\n"
+                    ],
+                    [
+                        94,
+                        "  os_disk {\n"
+                    ],
+                    [
+                        95,
+                        "    caching              = \"ReadWrite\"\n"
+                    ],
+                    [
+                        96,
+                        "    storage_account_type = \"Standard_LRS\"\n"
+                    ],
+                    [
+                        97,
+                        "  }\n"
+                    ],
+                    [
+                        98,
+                        "\n"
+                    ],
+                    [
+                        99,
+                        "  source_image_reference {\n"
+                    ],
+                    [
+                        100,
+                        "    publisher = \"Canonical\"\n"
+                    ],
+                    [
+                        101,
+                        "    offer     = \"UbuntuServer\"\n"
+                    ],
+                    [
+                        102,
+                        "    sku       = \"18.04-LTS\"\n"
+                    ],
+                    [
+                        103,
+                        "    version   = \"latest\"\n"
+                    ],
+                    [
+                        104,
+                        "  }\n"
+                    ],
+                    [
+                        105,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "\\main.tf",
+                "file_abs_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\azure\\vm\\vm_command_execution\\main.tf",
+                "repo_file_path": "/TerraformGoat/azure/vm/vm_command_execution/main.tf",
+                "file_line_range": [
+                    77,
+                    105
+                ],
+                "resource": "azurerm_linux_virtual_machine.terraformgoat",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.azure.AzureInstancePassword",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.paloaltonetworks.com/content/techdocs/en_US/prisma/prisma-cloud/prisma-cloud-code-security-policy-reference/azure-policies/azure-networking-policies/bc-azr-networking-1.html",
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\azure\\vm\\vm_command_execution\\main.tf"
+            },
+            {
+                "check_id": "CKV_AZURE_178",
+                "bc_check_id": null,
+                "check_name": "Ensure linux VM enables SSH with keys for secure communication",
+                "check_result": {
+                    "result": "FAILED",
+                    "evaluated_keys": [
+                        "admin_ssh_key/[0]/public_key"
+                    ]
+                },
+                "code_block": [
+                    [
+                        77,
+                        "resource \"azurerm_linux_virtual_machine\" \"terraformgoat\" {\n"
+                    ],
+                    [
+                        78,
+                        "  name                            = \"huoxian-terraform-goat-machine\"\n"
+                    ],
+                    [
+                        79,
+                        "  resource_group_name             = azurerm_resource_group.terraformgoat.name\n"
+                    ],
+                    [
+                        80,
+                        "  location                        = azurerm_resource_group.terraformgoat.location\n"
+                    ],
+                    [
+                        81,
+                        "  size                            = \"Standard_B1ls\"\n"
+                    ],
+                    [
+                        82,
+                        "  admin_username                  = \"huoxian\"\n"
+                    ],
+                    [
+                        83,
+                        "  admin_password                  = \"HuoXia***************************************\"\n"
+                    ],
+                    [
+                        84,
+                        "  disable_password_authentication = false\n"
+                    ],
+                    [
+                        85,
+                        "  user_data                       = \"IyEvYmluL2Jhc2gKc3VkbyBhcHQtZ2V0IC15IHVwZGF0ZQpzdWRvIGFwdC1nZXQgLXkgaW5zdGFsbCBhcGFjaGUyCnN1ZG8gYXB0LWdldCAteSBpbnN0YWxsIHBocApzdWRvIGFwdC1nZXQgLXkgaW5zdGFsbCBwaHAtY3VybApzdWRvIHNlZCAtaSAncy9MaXN0ZW4gODAvTGlzdGVuIDgwODAvJyAvZXRjL2FwYWNoZTIvcG9ydHMuY29uZgpzdWRvIC9ldGMvaW5pdC5kL2FwYWNoZTIgcmVzdGFydApjZCAvdmFyL3d3dy9odG1sCnN1ZG8gYXB0LWdldCAteSBpbnN0YWxsIHdnZXQKc3VkbyB3Z2V0IGh0dHBzOi8vaHVvY29ycC1vc3Mub3NzLWNuLWJlaWppbmcuYWxpeXVuY3MuY29tL3RlcnJhZm9ybS1nb2F0LWRlcGVuZGVuY3ktZmlsZXMvY29tbWFuZC1leGVjdXRpb24tbGFiLnppcApzdWRvIGFwdC1nZXQgLXkgaW5zdGFsbCB1bnppcApzdWRvIHVuemlwIGNvbW1hbmQtZXhlY3V0aW9uLWxhYi56aXAKc3VkbyBtdiAuL2NvbW1hbmQtZXhlY3V0aW9uLWxhYi9zdGF0aWMvZmxhZzY5MTUyMjAxLnR4dCAv\"\n"
+                    ],
+                    [
+                        86,
+                        "  network_interface_ids = [\n"
+                    ],
+                    [
+                        87,
+                        "    azurerm_network_interface.terraformgoat.id,\n"
+                    ],
+                    [
+                        88,
+                        "  ]\n"
+                    ],
+                    [
+                        89,
+                        "  depends_on = [\n"
+                    ],
+                    [
+                        90,
+                        "    azurerm_resource_group.terraformgoat,\n"
+                    ],
+                    [
+                        91,
+                        "    azurerm_network_interface.terraformgoat\n"
+                    ],
+                    [
+                        92,
+                        "  ]\n"
+                    ],
+                    [
+                        93,
+                        "\n"
+                    ],
+                    [
+                        94,
+                        "  os_disk {\n"
+                    ],
+                    [
+                        95,
+                        "    caching              = \"ReadWrite\"\n"
+                    ],
+                    [
+                        96,
+                        "    storage_account_type = \"Standard_LRS\"\n"
+                    ],
+                    [
+                        97,
+                        "  }\n"
+                    ],
+                    [
+                        98,
+                        "\n"
+                    ],
+                    [
+                        99,
+                        "  source_image_reference {\n"
+                    ],
+                    [
+                        100,
+                        "    publisher = \"Canonical\"\n"
+                    ],
+                    [
+                        101,
+                        "    offer     = \"UbuntuServer\"\n"
+                    ],
+                    [
+                        102,
+                        "    sku       = \"18.04-LTS\"\n"
+                    ],
+                    [
+                        103,
+                        "    version   = \"latest\"\n"
+                    ],
+                    [
+                        104,
+                        "  }\n"
+                    ],
+                    [
+                        105,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "\\main.tf",
+                "file_abs_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\azure\\vm\\vm_command_execution\\main.tf",
+                "repo_file_path": "/TerraformGoat/azure/vm/vm_command_execution/main.tf",
+                "file_line_range": [
+                    77,
+                    105
+                ],
+                "resource": "azurerm_linux_virtual_machine.terraformgoat",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.azure.LinuxVMUsesSSH",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": {},
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": null,
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\azure\\vm\\vm_command_execution\\main.tf"
+            },
+            {
+                "check_id": "CKV_AZURE_149",
+                "bc_check_id": "BC_AZR_GENERAL_84",
+                "check_name": "Ensure that Virtual machine does not enable password authentication",
+                "check_result": {
+                    "result": "FAILED",
+                    "evaluated_keys": [
+                        "disable_password_authentication"
+                    ]
+                },
+                "code_block": [
+                    [
+                        77,
+                        "resource \"azurerm_linux_virtual_machine\" \"terraformgoat\" {\n"
+                    ],
+                    [
+                        78,
+                        "  name                            = \"huoxian-terraform-goat-machine\"\n"
+                    ],
+                    [
+                        79,
+                        "  resource_group_name             = azurerm_resource_group.terraformgoat.name\n"
+                    ],
+                    [
+                        80,
+                        "  location                        = azurerm_resource_group.terraformgoat.location\n"
+                    ],
+                    [
+                        81,
+                        "  size                            = \"Standard_B1ls\"\n"
+                    ],
+                    [
+                        82,
+                        "  admin_username                  = \"huoxian\"\n"
+                    ],
+                    [
+                        83,
+                        "  admin_password                  = \"HuoXia***************************************\"\n"
+                    ],
+                    [
+                        84,
+                        "  disable_password_authentication = false\n"
+                    ],
+                    [
+                        85,
+                        "  user_data                       = \"IyEvYmluL2Jhc2gKc3VkbyBhcHQtZ2V0IC15IHVwZGF0ZQpzdWRvIGFwdC1nZXQgLXkgaW5zdGFsbCBhcGFjaGUyCnN1ZG8gYXB0LWdldCAteSBpbnN0YWxsIHBocApzdWRvIGFwdC1nZXQgLXkgaW5zdGFsbCBwaHAtY3VybApzdWRvIHNlZCAtaSAncy9MaXN0ZW4gODAvTGlzdGVuIDgwODAvJyAvZXRjL2FwYWNoZTIvcG9ydHMuY29uZgpzdWRvIC9ldGMvaW5pdC5kL2FwYWNoZTIgcmVzdGFydApjZCAvdmFyL3d3dy9odG1sCnN1ZG8gYXB0LWdldCAteSBpbnN0YWxsIHdnZXQKc3VkbyB3Z2V0IGh0dHBzOi8vaHVvY29ycC1vc3Mub3NzLWNuLWJlaWppbmcuYWxpeXVuY3MuY29tL3RlcnJhZm9ybS1nb2F0LWRlcGVuZGVuY3ktZmlsZXMvY29tbWFuZC1leGVjdXRpb24tbGFiLnppcApzdWRvIGFwdC1nZXQgLXkgaW5zdGFsbCB1bnppcApzdWRvIHVuemlwIGNvbW1hbmQtZXhlY3V0aW9uLWxhYi56aXAKc3VkbyBtdiAuL2NvbW1hbmQtZXhlY3V0aW9uLWxhYi9zdGF0aWMvZmxhZzY5MTUyMjAxLnR4dCAv\"\n"
+                    ],
+                    [
+                        86,
+                        "  network_interface_ids = [\n"
+                    ],
+                    [
+                        87,
+                        "    azurerm_network_interface.terraformgoat.id,\n"
+                    ],
+                    [
+                        88,
+                        "  ]\n"
+                    ],
+                    [
+                        89,
+                        "  depends_on = [\n"
+                    ],
+                    [
+                        90,
+                        "    azurerm_resource_group.terraformgoat,\n"
+                    ],
+                    [
+                        91,
+                        "    azurerm_network_interface.terraformgoat\n"
+                    ],
+                    [
+                        92,
+                        "  ]\n"
+                    ],
+                    [
+                        93,
+                        "\n"
+                    ],
+                    [
+                        94,
+                        "  os_disk {\n"
+                    ],
+                    [
+                        95,
+                        "    caching              = \"ReadWrite\"\n"
+                    ],
+                    [
+                        96,
+                        "    storage_account_type = \"Standard_LRS\"\n"
+                    ],
+                    [
+                        97,
+                        "  }\n"
+                    ],
+                    [
+                        98,
+                        "\n"
+                    ],
+                    [
+                        99,
+                        "  source_image_reference {\n"
+                    ],
+                    [
+                        100,
+                        "    publisher = \"Canonical\"\n"
+                    ],
+                    [
+                        101,
+                        "    offer     = \"UbuntuServer\"\n"
+                    ],
+                    [
+                        102,
+                        "    sku       = \"18.04-LTS\"\n"
+                    ],
+                    [
+                        103,
+                        "    version   = \"latest\"\n"
+                    ],
+                    [
+                        104,
+                        "  }\n"
+                    ],
+                    [
+                        105,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "\\main.tf",
+                "file_abs_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\azure\\vm\\vm_command_execution\\main.tf",
+                "repo_file_path": "/TerraformGoat/azure/vm/vm_command_execution/main.tf",
+                "file_line_range": [
+                    77,
+                    105
+                ],
+                "resource": "azurerm_linux_virtual_machine.terraformgoat",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.azure.VMDisablePasswordAuthentication",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.paloaltonetworks.com/content/techdocs/en_US/prisma/prisma-cloud/prisma-cloud-code-security-policy-reference/azure-policies/azure-general-policies/ensure-azure-virtual-machine-does-not-enable-password-authentication.html",
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\azure\\vm\\vm_command_execution\\main.tf"
+            },
+            {
+                "check_id": "CKV_AZURE_119",
+                "bc_check_id": "BC_AZR_NETWORKING_36",
+                "check_name": "Ensure that Network Interfaces don't use public IPs",
+                "check_result": {
+                    "result": "FAILED",
+                    "entity": {
+                        "azurerm_network_interface": {
+                            "terraformgoat": {
+                                "__end_line__": 75,
+                                "__start_line__": 59,
+                                "depends_on": [
+                                    [
+                                        "azurerm_public_ip.terraformgoat",
+                                        "azurerm_resource_group.terraformgoat",
+                                        "azurerm_subnet.terraformgoat"
+                                    ]
+                                ],
+                                "ip_configuration": [
+                                    {
+                                        "name": [
+                                            "huoxian-terraform-goat-internal"
+                                        ],
+                                        "private_ip_address_allocation": [
+                                            "Dynamic"
+                                        ],
+                                        "public_ip_address_id": [
+                                            "azurerm_public_ip.terraformgoat.id"
+                                        ],
+                                        "subnet_id": [
+                                            "azurerm_subnet.terraformgoat.id"
+                                        ]
+                                    }
+                                ],
+                                "location": [
+                                    "West Europe"
+                                ],
+                                "name": [
+                                    "huoxian-terraform-goat-nic"
+                                ],
+                                "resource_group_name": [
+                                    "huoxian-terraform-goat-resources"
+                                ],
+                                "__address__": "azurerm_network_interface.terraformgoat"
+                            }
+                        }
+                    },
+                    "evaluated_keys": [
+                        "resource_type"
+                    ]
+                },
+                "code_block": [
+                    [
+                        59,
+                        "resource \"azurerm_network_interface\" \"terraformgoat\" {\n"
+                    ],
+                    [
+                        60,
+                        "  name                = \"huoxian-terraform-goat-nic\"\n"
+                    ],
+                    [
+                        61,
+                        "  location            = azurerm_resource_group.terraformgoat.location\n"
+                    ],
+                    [
+                        62,
+                        "  resource_group_name = azurerm_resource_group.terraformgoat.name\n"
+                    ],
+                    [
+                        63,
+                        "  depends_on = [\n"
+                    ],
+                    [
+                        64,
+                        "    azurerm_resource_group.terraformgoat,\n"
+                    ],
+                    [
+                        65,
+                        "    azurerm_public_ip.terraformgoat,\n"
+                    ],
+                    [
+                        66,
+                        "    azurerm_subnet.terraformgoat\n"
+                    ],
+                    [
+                        67,
+                        "  ]\n"
+                    ],
+                    [
+                        68,
+                        "\n"
+                    ],
+                    [
+                        69,
+                        "  ip_configuration {\n"
+                    ],
+                    [
+                        70,
+                        "    name                          = \"huoxian-terraform-goat-internal\"\n"
+                    ],
+                    [
+                        71,
+                        "    subnet_id                     = azurerm_subnet.terraformgoat.id\n"
+                    ],
+                    [
+                        72,
+                        "    private_ip_address_allocation = \"Dynamic\"\n"
+                    ],
+                    [
+                        73,
+                        "    public_ip_address_id          = azurerm_public_ip.terraformgoat.id\n"
+                    ],
+                    [
+                        74,
+                        "  }\n"
+                    ],
+                    [
+                        75,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "\\main.tf",
+                "file_abs_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\azure\\vm\\vm_command_execution\\main.tf",
+                "repo_file_path": "/TerraformGoat/azure/vm/vm_command_execution/main.tf",
+                "file_line_range": [
+                    59,
+                    75
+                ],
+                "resource": "azurerm_network_interface.terraformgoat",
+                "evaluations": null,
+                "check_class": "checkov.common.graph.checks_infra.base_check",
+                "fixed_definition": null,
+                "entity_tags": {},
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.paloaltonetworks.com/content/techdocs/en_US/prisma/prisma-cloud/prisma-cloud-code-security-policy-reference/azure-policies/azure-networking-policies/ensure-that-network-interfaces-dont-use-public-ips.html",
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\azure\\vm\\vm_command_execution\\main.tf"
+            },
+            {
+                "check_id": "CKV2_AZURE_31",
+                "bc_check_id": null,
+                "check_name": "Ensure VNET subnet is configured with a Network Security Group (NSG)",
+                "check_result": {
+                    "result": "FAILED",
+                    "entity": {
+                        "azurerm_subnet": {
+                            "terraformgoat": {
+                                "__end_line__": 57,
+                                "__start_line__": 48,
+                                "address_prefixes": [
+                                    [
+                                        "10.0.2.0/24"
+                                    ]
+                                ],
+                                "depends_on": [
+                                    [
+                                        "azurerm_resource_group.terraformgoat",
+                                        "azurerm_virtual_network.terraformgoat"
+                                    ]
+                                ],
+                                "name": [
+                                    "huoxian-terraform-goat-internal"
+                                ],
+                                "resource_group_name": [
+                                    "huoxian-terraform-goat-resources"
+                                ],
+                                "virtual_network_name": [
+                                    "huoxian-terraform-goat-network"
+                                ],
+                                "__address__": "azurerm_subnet.terraformgoat"
+                            }
+                        }
+                    },
+                    "evaluated_keys": [
+                        "resource_type",
+                        "delegation/service_delegation/name",
+                        "name"
+                    ]
+                },
+                "code_block": [
+                    [
+                        48,
+                        "resource \"azurerm_subnet\" \"terraformgoat\" {\n"
+                    ],
+                    [
+                        49,
+                        "  name                 = \"huoxian-terraform-goat-internal\"\n"
+                    ],
+                    [
+                        50,
+                        "  resource_group_name  = azurerm_resource_group.terraformgoat.name\n"
+                    ],
+                    [
+                        51,
+                        "  virtual_network_name = azurerm_virtual_network.terraformgoat.name\n"
+                    ],
+                    [
+                        52,
+                        "  address_prefixes     = [\"10.0.2.0/24\"]\n"
+                    ],
+                    [
+                        53,
+                        "  depends_on = [\n"
+                    ],
+                    [
+                        54,
+                        "    azurerm_resource_group.terraformgoat,\n"
+                    ],
+                    [
+                        55,
+                        "    azurerm_virtual_network.terraformgoat\n"
+                    ],
+                    [
+                        56,
+                        "  ]\n"
+                    ],
+                    [
+                        57,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "\\main.tf",
+                "file_abs_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\azure\\vm\\vm_command_execution\\main.tf",
+                "repo_file_path": "/TerraformGoat/azure/vm/vm_command_execution/main.tf",
+                "file_line_range": [
+                    48,
+                    57
+                ],
+                "resource": "azurerm_subnet.terraformgoat",
+                "evaluations": null,
+                "check_class": "checkov.common.graph.checks_infra.base_check",
+                "fixed_definition": null,
+                "entity_tags": {},
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": {},
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": null,
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\azure\\vm\\vm_command_execution\\main.tf"
+            }
+        ],
+        "skipped_checks": [],
+        "parsing_errors": []
+    },
+    "summary": {
+        "passed": 6,
+        "failed": 9,
+        "skipped": 0,
+        "parsing_errors": 0,
+        "resource_count": 8,
+        "checkov_version": "2.4.14"
+    },
+    "url": "Add an api key '--bc-api-key <api-key>' to see more detailed insights via https://bridgecrew.cloud"
+}

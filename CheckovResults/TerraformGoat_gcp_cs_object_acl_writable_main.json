@@ -1,0 +1,255 @@
+{
+    "check_type": "terraform",
+    "results": {
+        "passed_checks": [],
+        "failed_checks": [
+            {
+                "check_id": "CKV_GCP_62",
+                "bc_check_id": "BC_GCP_GCS_3",
+                "check_name": "Bucket should log access",
+                "check_result": {
+                    "result": "FAILED",
+                    "evaluated_keys": [
+                        "logging/[0]/log_bucket"
+                    ]
+                },
+                "code_block": [
+                    [
+                        6,
+                        "resource \"google_storage_bucket\" \"bucket\" {\n"
+                    ],
+                    [
+                        7,
+                        "  name          = \"hx-cloud-security-${random_string.random_suffix.result}\"\n"
+                    ],
+                    [
+                        8,
+                        "  location      = \"US\"\n"
+                    ],
+                    [
+                        9,
+                        "  force_destroy = true\n"
+                    ],
+                    [
+                        10,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "\\main.tf",
+                "file_abs_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\gcp\\cs\\object_acl_writable\\main.tf",
+                "repo_file_path": "/TerraformGoat/gcp/cs/object_acl_writable/main.tf",
+                "file_line_range": [
+                    6,
+                    10
+                ],
+                "resource": "google_storage_bucket.bucket",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.gcp.CloudStorageLogging",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.paloaltonetworks.com/content/techdocs/en_US/prisma/prisma-cloud/prisma-cloud-code-security-policy-reference/google-cloud-policies/google-cloud-storage-gcs-policies/bc-gcp-logging-2.html",
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\gcp\\cs\\object_acl_writable\\main.tf"
+            },
+            {
+                "check_id": "CKV_GCP_78",
+                "bc_check_id": "BC_GCP_GENERAL_39",
+                "check_name": "Ensure Cloud storage has versioning enabled",
+                "check_result": {
+                    "result": "FAILED",
+                    "evaluated_keys": [
+                        "versioning/[0]/enabled"
+                    ]
+                },
+                "code_block": [
+                    [
+                        6,
+                        "resource \"google_storage_bucket\" \"bucket\" {\n"
+                    ],
+                    [
+                        7,
+                        "  name          = \"hx-cloud-security-${random_string.random_suffix.result}\"\n"
+                    ],
+                    [
+                        8,
+                        "  location      = \"US\"\n"
+                    ],
+                    [
+                        9,
+                        "  force_destroy = true\n"
+                    ],
+                    [
+                        10,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "\\main.tf",
+                "file_abs_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\gcp\\cs\\object_acl_writable\\main.tf",
+                "repo_file_path": "/TerraformGoat/gcp/cs/object_acl_writable/main.tf",
+                "file_line_range": [
+                    6,
+                    10
+                ],
+                "resource": "google_storage_bucket.bucket",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.gcp.CloudStorageVersioningEnabled",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.paloaltonetworks.com/content/techdocs/en_US/prisma/prisma-cloud/prisma-cloud-code-security-policy-reference/google-cloud-policies/google-cloud-general-policies/ensure-gcp-cloud-storage-has-versioning-enabled.html",
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\gcp\\cs\\object_acl_writable\\main.tf"
+            },
+            {
+                "check_id": "CKV_GCP_29",
+                "bc_check_id": "BC_GCP_GCS_2",
+                "check_name": "Ensure that Cloud Storage buckets have uniform bucket-level access enabled",
+                "check_result": {
+                    "result": "FAILED",
+                    "evaluated_keys": [
+                        "uniform_bucket_level_access"
+                    ]
+                },
+                "code_block": [
+                    [
+                        6,
+                        "resource \"google_storage_bucket\" \"bucket\" {\n"
+                    ],
+                    [
+                        7,
+                        "  name          = \"hx-cloud-security-${random_string.random_suffix.result}\"\n"
+                    ],
+                    [
+                        8,
+                        "  location      = \"US\"\n"
+                    ],
+                    [
+                        9,
+                        "  force_destroy = true\n"
+                    ],
+                    [
+                        10,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "\\main.tf",
+                "file_abs_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\gcp\\cs\\object_acl_writable\\main.tf",
+                "repo_file_path": "/TerraformGoat/gcp/cs/object_acl_writable/main.tf",
+                "file_line_range": [
+                    6,
+                    10
+                ],
+                "resource": "google_storage_bucket.bucket",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.gcp.GoogleStorageBucketUniformAccess",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.paloaltonetworks.com/content/techdocs/en_US/prisma/prisma-cloud/prisma-cloud-code-security-policy-reference/google-cloud-policies/google-cloud-storage-gcs-policies/bc-gcp-gcs-2.html",
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\gcp\\cs\\object_acl_writable\\main.tf"
+            },
+            {
+                "check_id": "CKV_GCP_114",
+                "bc_check_id": null,
+                "check_name": "Ensure public access prevention is enforced on Cloud Storage bucket",
+                "check_result": {
+                    "result": "FAILED",
+                    "evaluated_keys": [
+                        "public_access_prevention"
+                    ]
+                },
+                "code_block": [
+                    [
+                        6,
+                        "resource \"google_storage_bucket\" \"bucket\" {\n"
+                    ],
+                    [
+                        7,
+                        "  name          = \"hx-cloud-security-${random_string.random_suffix.result}\"\n"
+                    ],
+                    [
+                        8,
+                        "  location      = \"US\"\n"
+                    ],
+                    [
+                        9,
+                        "  force_destroy = true\n"
+                    ],
+                    [
+                        10,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "\\main.tf",
+                "file_abs_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\gcp\\cs\\object_acl_writable\\main.tf",
+                "repo_file_path": "/TerraformGoat/gcp/cs/object_acl_writable/main.tf",
+                "file_line_range": [
+                    6,
+                    10
+                ],
+                "resource": "google_storage_bucket.bucket",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.gcp.GoogleStoragePublicAccessPrevention",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": {},
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": null,
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\gcp\\cs\\object_acl_writable\\main.tf"
+            }
+        ],
+        "skipped_checks": [],
+        "parsing_errors": []
+    },
+    "summary": {
+        "passed": 0,
+        "failed": 4,
+        "skipped": 0,
+        "parsing_errors": 0,
+        "resource_count": 4,
+        "checkov_version": "2.4.14"
+    },
+    "url": "Add an api key '--bc-api-key <api-key>' to see more detailed insights via https://bridgecrew.cloud"
+}

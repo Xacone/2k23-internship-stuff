@@ -1,0 +1,655 @@
+{
+    "check_type": "terraform",
+    "results": {
+        "passed_checks": [
+            {
+                "check_id": "CKV_ALI_1",
+                "bc_check_id": "BC_ALI_GENERAL_5",
+                "check_name": "Alibaba Cloud OSS bucket accessible to public",
+                "check_result": {
+                    "result": "PASSED",
+                    "evaluated_keys": [
+                        "acl"
+                    ]
+                },
+                "code_block": [
+                    [
+                        6,
+                        "resource \"alicloud_oss_bucket\" \"huoxian_terraformgoat_bucket\" {\n"
+                    ],
+                    [
+                        7,
+                        "  acl           = \"private\"\n"
+                    ],
+                    [
+                        8,
+                        "  force_destroy = true\n"
+                    ],
+                    [
+                        9,
+                        "  bucket        = \"huoxian-terraformgoat-bucket-${random_string.random_suffix.result}\"\n"
+                    ],
+                    [
+                        10,
+                        "  policy        = <<POLICY\n"
+                    ],
+                    [
+                        11,
+                        "{\n"
+                    ],
+                    [
+                        12,
+                        "\t\"Version\": \"1\",\n"
+                    ],
+                    [
+                        13,
+                        "\t\"Statement\": [{\n"
+                    ],
+                    [
+                        14,
+                        "\t\t\"Effect\": \"Allow\",\n"
+                    ],
+                    [
+                        15,
+                        "\t\t\"Action\": [\n"
+                    ],
+                    [
+                        16,
+                        "\t\t\t\"oss:GetBucketPolicy\"\n"
+                    ],
+                    [
+                        17,
+                        "\t\t],\n"
+                    ],
+                    [
+                        18,
+                        "\t\t\"Principal\": [\n"
+                    ],
+                    [
+                        19,
+                        "\t\t\t\"*\"\n"
+                    ],
+                    [
+                        20,
+                        "\t\t],\n"
+                    ],
+                    [
+                        21,
+                        "\t\t\"Resource\": [\n"
+                    ],
+                    [
+                        22,
+                        "\t\t\t\"acs:oss:*:*:*\"\n"
+                    ],
+                    [
+                        23,
+                        "\t\t]\n"
+                    ],
+                    [
+                        24,
+                        "\t}]\n"
+                    ],
+                    [
+                        25,
+                        "}\n"
+                    ],
+                    [
+                        26,
+                        "POLICY\n"
+                    ],
+                    [
+                        27,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "\\main.tf",
+                "file_abs_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\aliyun\\oss\\bucket_policy_readable\\main.tf",
+                "repo_file_path": "/TerraformGoat/aliyun/oss/bucket_policy_readable/main.tf",
+                "file_line_range": [
+                    6,
+                    27
+                ],
+                "resource": "alicloud_oss_bucket.huoxian_terraformgoat_bucket",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.alicloud.OSSBucketPublic",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.paloaltonetworks.com/content/techdocs/en_US/prisma/prisma-cloud/prisma-cloud-code-security-policy-reference/alibaba-policies/alibaba-general-policies/ensure-alibaba-cloud-oss-bucket-is-not-accessible-to-public.html",
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\aliyun\\oss\\bucket_policy_readable\\main.tf"
+            }
+        ],
+        "failed_checks": [
+            {
+                "check_id": "CKV_ALI_12",
+                "bc_check_id": "BC_ALI_LOGGING_2",
+                "check_name": "Ensure the OSS bucket has access logging enabled",
+                "check_result": {
+                    "result": "FAILED",
+                    "evaluated_keys": [
+                        "logging"
+                    ]
+                },
+                "code_block": [
+                    [
+                        6,
+                        "resource \"alicloud_oss_bucket\" \"huoxian_terraformgoat_bucket\" {\n"
+                    ],
+                    [
+                        7,
+                        "  acl           = \"private\"\n"
+                    ],
+                    [
+                        8,
+                        "  force_destroy = true\n"
+                    ],
+                    [
+                        9,
+                        "  bucket        = \"huoxian-terraformgoat-bucket-${random_string.random_suffix.result}\"\n"
+                    ],
+                    [
+                        10,
+                        "  policy        = <<POLICY\n"
+                    ],
+                    [
+                        11,
+                        "{\n"
+                    ],
+                    [
+                        12,
+                        "\t\"Version\": \"1\",\n"
+                    ],
+                    [
+                        13,
+                        "\t\"Statement\": [{\n"
+                    ],
+                    [
+                        14,
+                        "\t\t\"Effect\": \"Allow\",\n"
+                    ],
+                    [
+                        15,
+                        "\t\t\"Action\": [\n"
+                    ],
+                    [
+                        16,
+                        "\t\t\t\"oss:GetBucketPolicy\"\n"
+                    ],
+                    [
+                        17,
+                        "\t\t],\n"
+                    ],
+                    [
+                        18,
+                        "\t\t\"Principal\": [\n"
+                    ],
+                    [
+                        19,
+                        "\t\t\t\"*\"\n"
+                    ],
+                    [
+                        20,
+                        "\t\t],\n"
+                    ],
+                    [
+                        21,
+                        "\t\t\"Resource\": [\n"
+                    ],
+                    [
+                        22,
+                        "\t\t\t\"acs:oss:*:*:*\"\n"
+                    ],
+                    [
+                        23,
+                        "\t\t]\n"
+                    ],
+                    [
+                        24,
+                        "\t}]\n"
+                    ],
+                    [
+                        25,
+                        "}\n"
+                    ],
+                    [
+                        26,
+                        "POLICY\n"
+                    ],
+                    [
+                        27,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "\\main.tf",
+                "file_abs_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\aliyun\\oss\\bucket_policy_readable\\main.tf",
+                "repo_file_path": "/TerraformGoat/aliyun/oss/bucket_policy_readable/main.tf",
+                "file_line_range": [
+                    6,
+                    27
+                ],
+                "resource": "alicloud_oss_bucket.huoxian_terraformgoat_bucket",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.alicloud.OSSBucketAccessLogs",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.paloaltonetworks.com/content/techdocs/en_US/prisma/prisma-cloud/prisma-cloud-code-security-policy-reference/alibaba-policies/alibaba-logging-policies/ensure-alibaba-cloud-oss-bucket-has-access-logging-enabled.html",
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\aliyun\\oss\\bucket_policy_readable\\main.tf"
+            },
+            {
+                "check_id": "CKV_ALI_6",
+                "bc_check_id": "BC_ALI_GENERAL_2",
+                "check_name": "Ensure OSS bucket is encrypted with Customer Master Key",
+                "check_result": {
+                    "result": "FAILED",
+                    "evaluated_keys": [
+                        "server_side_encryption_rule/[0]/kms_master_key_id"
+                    ]
+                },
+                "code_block": [
+                    [
+                        6,
+                        "resource \"alicloud_oss_bucket\" \"huoxian_terraformgoat_bucket\" {\n"
+                    ],
+                    [
+                        7,
+                        "  acl           = \"private\"\n"
+                    ],
+                    [
+                        8,
+                        "  force_destroy = true\n"
+                    ],
+                    [
+                        9,
+                        "  bucket        = \"huoxian-terraformgoat-bucket-${random_string.random_suffix.result}\"\n"
+                    ],
+                    [
+                        10,
+                        "  policy        = <<POLICY\n"
+                    ],
+                    [
+                        11,
+                        "{\n"
+                    ],
+                    [
+                        12,
+                        "\t\"Version\": \"1\",\n"
+                    ],
+                    [
+                        13,
+                        "\t\"Statement\": [{\n"
+                    ],
+                    [
+                        14,
+                        "\t\t\"Effect\": \"Allow\",\n"
+                    ],
+                    [
+                        15,
+                        "\t\t\"Action\": [\n"
+                    ],
+                    [
+                        16,
+                        "\t\t\t\"oss:GetBucketPolicy\"\n"
+                    ],
+                    [
+                        17,
+                        "\t\t],\n"
+                    ],
+                    [
+                        18,
+                        "\t\t\"Principal\": [\n"
+                    ],
+                    [
+                        19,
+                        "\t\t\t\"*\"\n"
+                    ],
+                    [
+                        20,
+                        "\t\t],\n"
+                    ],
+                    [
+                        21,
+                        "\t\t\"Resource\": [\n"
+                    ],
+                    [
+                        22,
+                        "\t\t\t\"acs:oss:*:*:*\"\n"
+                    ],
+                    [
+                        23,
+                        "\t\t]\n"
+                    ],
+                    [
+                        24,
+                        "\t}]\n"
+                    ],
+                    [
+                        25,
+                        "}\n"
+                    ],
+                    [
+                        26,
+                        "POLICY\n"
+                    ],
+                    [
+                        27,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "\\main.tf",
+                "file_abs_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\aliyun\\oss\\bucket_policy_readable\\main.tf",
+                "repo_file_path": "/TerraformGoat/aliyun/oss/bucket_policy_readable/main.tf",
+                "file_line_range": [
+                    6,
+                    27
+                ],
+                "resource": "alicloud_oss_bucket.huoxian_terraformgoat_bucket",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.alicloud.OSSBucketEncryptedWithCMK",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.paloaltonetworks.com/content/techdocs/en_US/prisma/prisma-cloud/prisma-cloud-code-security-policy-reference/alibaba-policies/alibaba-general-policies/ensure-alibaba-cloud-oss-bucket-is-encrypted-with-customer-master-key.html",
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\aliyun\\oss\\bucket_policy_readable\\main.tf"
+            },
+            {
+                "check_id": "CKV_ALI_11",
+                "bc_check_id": "BC_ALI_GENERAL_1",
+                "check_name": "Ensure OSS bucket has transfer Acceleration enabled",
+                "check_result": {
+                    "result": "FAILED",
+                    "evaluated_keys": [
+                        "transfer_acceleration/[0]/enabled"
+                    ]
+                },
+                "code_block": [
+                    [
+                        6,
+                        "resource \"alicloud_oss_bucket\" \"huoxian_terraformgoat_bucket\" {\n"
+                    ],
+                    [
+                        7,
+                        "  acl           = \"private\"\n"
+                    ],
+                    [
+                        8,
+                        "  force_destroy = true\n"
+                    ],
+                    [
+                        9,
+                        "  bucket        = \"huoxian-terraformgoat-bucket-${random_string.random_suffix.result}\"\n"
+                    ],
+                    [
+                        10,
+                        "  policy        = <<POLICY\n"
+                    ],
+                    [
+                        11,
+                        "{\n"
+                    ],
+                    [
+                        12,
+                        "\t\"Version\": \"1\",\n"
+                    ],
+                    [
+                        13,
+                        "\t\"Statement\": [{\n"
+                    ],
+                    [
+                        14,
+                        "\t\t\"Effect\": \"Allow\",\n"
+                    ],
+                    [
+                        15,
+                        "\t\t\"Action\": [\n"
+                    ],
+                    [
+                        16,
+                        "\t\t\t\"oss:GetBucketPolicy\"\n"
+                    ],
+                    [
+                        17,
+                        "\t\t],\n"
+                    ],
+                    [
+                        18,
+                        "\t\t\"Principal\": [\n"
+                    ],
+                    [
+                        19,
+                        "\t\t\t\"*\"\n"
+                    ],
+                    [
+                        20,
+                        "\t\t],\n"
+                    ],
+                    [
+                        21,
+                        "\t\t\"Resource\": [\n"
+                    ],
+                    [
+                        22,
+                        "\t\t\t\"acs:oss:*:*:*\"\n"
+                    ],
+                    [
+                        23,
+                        "\t\t]\n"
+                    ],
+                    [
+                        24,
+                        "\t}]\n"
+                    ],
+                    [
+                        25,
+                        "}\n"
+                    ],
+                    [
+                        26,
+                        "POLICY\n"
+                    ],
+                    [
+                        27,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "\\main.tf",
+                "file_abs_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\aliyun\\oss\\bucket_policy_readable\\main.tf",
+                "repo_file_path": "/TerraformGoat/aliyun/oss/bucket_policy_readable/main.tf",
+                "file_line_range": [
+                    6,
+                    27
+                ],
+                "resource": "alicloud_oss_bucket.huoxian_terraformgoat_bucket",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.alicloud.OSSBucketTransferAcceleration",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.paloaltonetworks.com/content/techdocs/en_US/prisma/prisma-cloud/prisma-cloud-code-security-policy-reference/alibaba-policies/alibaba-general-policies/ensure-alibaba-cloud-oss-bucket-has-transfer-acceleration-disabled.html",
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\aliyun\\oss\\bucket_policy_readable\\main.tf"
+            },
+            {
+                "check_id": "CKV_ALI_10",
+                "bc_check_id": "BC_ALI_GENERAL_3",
+                "check_name": "Ensure OSS bucket has versioning enabled",
+                "check_result": {
+                    "result": "FAILED",
+                    "evaluated_keys": [
+                        "versioning/[0]/status"
+                    ]
+                },
+                "code_block": [
+                    [
+                        6,
+                        "resource \"alicloud_oss_bucket\" \"huoxian_terraformgoat_bucket\" {\n"
+                    ],
+                    [
+                        7,
+                        "  acl           = \"private\"\n"
+                    ],
+                    [
+                        8,
+                        "  force_destroy = true\n"
+                    ],
+                    [
+                        9,
+                        "  bucket        = \"huoxian-terraformgoat-bucket-${random_string.random_suffix.result}\"\n"
+                    ],
+                    [
+                        10,
+                        "  policy        = <<POLICY\n"
+                    ],
+                    [
+                        11,
+                        "{\n"
+                    ],
+                    [
+                        12,
+                        "\t\"Version\": \"1\",\n"
+                    ],
+                    [
+                        13,
+                        "\t\"Statement\": [{\n"
+                    ],
+                    [
+                        14,
+                        "\t\t\"Effect\": \"Allow\",\n"
+                    ],
+                    [
+                        15,
+                        "\t\t\"Action\": [\n"
+                    ],
+                    [
+                        16,
+                        "\t\t\t\"oss:GetBucketPolicy\"\n"
+                    ],
+                    [
+                        17,
+                        "\t\t],\n"
+                    ],
+                    [
+                        18,
+                        "\t\t\"Principal\": [\n"
+                    ],
+                    [
+                        19,
+                        "\t\t\t\"*\"\n"
+                    ],
+                    [
+                        20,
+                        "\t\t],\n"
+                    ],
+                    [
+                        21,
+                        "\t\t\"Resource\": [\n"
+                    ],
+                    [
+                        22,
+                        "\t\t\t\"acs:oss:*:*:*\"\n"
+                    ],
+                    [
+                        23,
+                        "\t\t]\n"
+                    ],
+                    [
+                        24,
+                        "\t}]\n"
+                    ],
+                    [
+                        25,
+                        "}\n"
+                    ],
+                    [
+                        26,
+                        "POLICY\n"
+                    ],
+                    [
+                        27,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "\\main.tf",
+                "file_abs_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\aliyun\\oss\\bucket_policy_readable\\main.tf",
+                "repo_file_path": "/TerraformGoat/aliyun/oss/bucket_policy_readable/main.tf",
+                "file_line_range": [
+                    6,
+                    27
+                ],
+                "resource": "alicloud_oss_bucket.huoxian_terraformgoat_bucket",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.alicloud.OSSBucketVersioning",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.paloaltonetworks.com/content/techdocs/en_US/prisma/prisma-cloud/prisma-cloud-code-security-policy-reference/alibaba-policies/alibaba-general-policies/ensure-alibaba-cloud-oss-bucket-has-versioning-enabled.html",
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\aliyun\\oss\\bucket_policy_readable\\main.tf"
+            }
+        ],
+        "skipped_checks": [],
+        "parsing_errors": []
+    },
+    "summary": {
+        "passed": 1,
+        "failed": 4,
+        "skipped": 0,
+        "parsing_errors": 0,
+        "resource_count": 2,
+        "checkov_version": "2.4.14"
+    },
+    "url": "Add an api key '--bc-api-key <api-key>' to see more detailed insights via https://bridgecrew.cloud"
+}

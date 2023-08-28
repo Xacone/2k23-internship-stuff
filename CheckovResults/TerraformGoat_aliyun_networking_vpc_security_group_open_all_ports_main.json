@@ -1,0 +1,203 @@
+{
+    "check_type": "terraform",
+    "results": {
+        "passed_checks": [],
+        "failed_checks": [
+            {
+                "check_id": "CKV_ALI_2",
+                "bc_check_id": "BC_ALI_NETWORKING_2",
+                "check_name": "Ensure no security groups allow ingress from 0.0.0.0:0 to port 22",
+                "check_result": {
+                    "result": "FAILED",
+                    "evaluated_keys": [
+                        "port_range",
+                        "cidr_ip"
+                    ]
+                },
+                "code_block": [
+                    [
+                        37,
+                        "resource \"alicloud_security_group_rule\" \"allow_all_tcp\" {\n"
+                    ],
+                    [
+                        38,
+                        "  type              = \"ingress\"\n"
+                    ],
+                    [
+                        39,
+                        "  ip_protocol       = \"tcp\"\n"
+                    ],
+                    [
+                        40,
+                        "  nic_type          = \"intranet\"\n"
+                    ],
+                    [
+                        41,
+                        "  policy            = \"accept\"\n"
+                    ],
+                    [
+                        42,
+                        "  port_range        = \"1/65535\"\n"
+                    ],
+                    [
+                        43,
+                        "  priority          = 1\n"
+                    ],
+                    [
+                        44,
+                        "  security_group_id = alicloud_security_group.group.id\n"
+                    ],
+                    [
+                        45,
+                        "  cidr_ip           = \"0.0.0.0/0\"\n"
+                    ],
+                    [
+                        46,
+                        "  depends_on = [\n"
+                    ],
+                    [
+                        47,
+                        "    alicloud_security_group.group\n"
+                    ],
+                    [
+                        48,
+                        "  ]\n"
+                    ],
+                    [
+                        49,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "\\main.tf",
+                "file_abs_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\aliyun\\networking\\vpc_security_group_open_all_ports\\main.tf",
+                "repo_file_path": "/TerraformGoat/aliyun/networking/vpc_security_group_open_all_ports/main.tf",
+                "file_line_range": [
+                    37,
+                    49
+                ],
+                "resource": "alicloud_security_group_rule.allow_all_tcp",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.alicloud.SecurityGroupUnrestrictedIngress22",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.paloaltonetworks.com/content/techdocs/en_US/prisma/prisma-cloud/prisma-cloud-code-security-policy-reference/alibaba-policies/alibaba-networking-policies/ensure-no-alibaba-cloud-security-groups-allow-ingress-from-00000-to-port-22.html",
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\aliyun\\networking\\vpc_security_group_open_all_ports\\main.tf"
+            },
+            {
+                "check_id": "CKV_ALI_3",
+                "bc_check_id": "BC_ALI_NETWORKING_1",
+                "check_name": "Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389",
+                "check_result": {
+                    "result": "FAILED",
+                    "evaluated_keys": [
+                        "port_range",
+                        "cidr_ip"
+                    ]
+                },
+                "code_block": [
+                    [
+                        37,
+                        "resource \"alicloud_security_group_rule\" \"allow_all_tcp\" {\n"
+                    ],
+                    [
+                        38,
+                        "  type              = \"ingress\"\n"
+                    ],
+                    [
+                        39,
+                        "  ip_protocol       = \"tcp\"\n"
+                    ],
+                    [
+                        40,
+                        "  nic_type          = \"intranet\"\n"
+                    ],
+                    [
+                        41,
+                        "  policy            = \"accept\"\n"
+                    ],
+                    [
+                        42,
+                        "  port_range        = \"1/65535\"\n"
+                    ],
+                    [
+                        43,
+                        "  priority          = 1\n"
+                    ],
+                    [
+                        44,
+                        "  security_group_id = alicloud_security_group.group.id\n"
+                    ],
+                    [
+                        45,
+                        "  cidr_ip           = \"0.0.0.0/0\"\n"
+                    ],
+                    [
+                        46,
+                        "  depends_on = [\n"
+                    ],
+                    [
+                        47,
+                        "    alicloud_security_group.group\n"
+                    ],
+                    [
+                        48,
+                        "  ]\n"
+                    ],
+                    [
+                        49,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "\\main.tf",
+                "file_abs_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\aliyun\\networking\\vpc_security_group_open_all_ports\\main.tf",
+                "repo_file_path": "/TerraformGoat/aliyun/networking/vpc_security_group_open_all_ports/main.tf",
+                "file_line_range": [
+                    37,
+                    49
+                ],
+                "resource": "alicloud_security_group_rule.allow_all_tcp",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.alicloud.SecurityGroupUnrestrictedIngress3389",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.paloaltonetworks.com/content/techdocs/en_US/prisma/prisma-cloud/prisma-cloud-code-security-policy-reference/alibaba-policies/alibaba-networking-policies/ensure-no-alibaba-cloud-security-groups-allow-ingress-from-00000-to-port-3389.html",
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "C:\\Users\\1234Y\\PycharmProjects\\JustAnotherShellcodeGenerator\\TerraformGoat\\aliyun\\networking\\vpc_security_group_open_all_ports\\main.tf"
+            }
+        ],
+        "skipped_checks": [],
+        "parsing_errors": []
+    },
+    "summary": {
+        "passed": 0,
+        "failed": 2,
+        "skipped": 0,
+        "parsing_errors": 0,
+        "resource_count": 5,
+        "checkov_version": "2.4.14"
+    },
+    "url": "Add an api key '--bc-api-key <api-key>' to see more detailed insights via https://bridgecrew.cloud"
+}
