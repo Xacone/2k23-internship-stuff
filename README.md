@@ -1,4 +1,4 @@
-# INRIA's 2k23 internship : DevSecOps - some used scripts and results
+# INRIA's 2k23 internship : DevSecOps - Some used scripts and results
 
 TerraformGoat : https://github.com/HXSecurity/TerraformGoat
 
